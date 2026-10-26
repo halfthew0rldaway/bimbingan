@@ -15,7 +15,7 @@
 
   <!-- TOP HEADER -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="w-full px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
           M
@@ -40,7 +40,7 @@
 
   <!-- STEP NAVIGATION BAR -->
   <div class="bg-slate-900 text-white border-b border-slate-800 py-2 px-4 overflow-x-auto">
-    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
+    <div class="w-full px-4 sm:px-6 lg:px-10 flex items-center justify-between text-xs space-x-2 min-w-[750px]">
       <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>01</span>
         <span>Dashboard Overview</span>
@@ -78,11 +78,11 @@
     </div>
   </div>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="w-full px-4 sm:px-6 lg:px-10 py-6">
 
-    <!-- FINAL STEP SUCCESS HEADER -->
-    <div class="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 mb-6">
-      <div class="flex items-start justify-between border-b border-slate-100 pb-5 mb-6">
+    <!-- FINAL STEP SUCCESS HEADER BANNER -->
+    <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
         <div>
           <div class="flex items-center space-x-2">
             <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-xs">
@@ -91,7 +91,7 @@
             </span>
             <span class="text-xs font-mono font-bold text-slate-500" id="final-ticket-id">TCK-202610-0195</span>
           </div>
-          <h2 class="text-base sm:text-lg font-bold text-slate-900 mt-2">
+          <h2 class="text-base sm:text-xl font-bold text-slate-900 mt-2">
             Verifikasi Selesai: POS Kasir Utama 1 di RamenYA Gandaria City
           </h2>
           <p class="text-xs text-slate-500 mt-1">
@@ -99,96 +99,163 @@
           </p>
         </div>
 
-        <div class="text-right">
+        <div class="md:text-right">
           <span class="text-[10px] text-slate-400 uppercase font-semibold block">Kepatuhan SLA</span>
-          <span class="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 mt-1">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-            <span>100% On-Time (33 Menit)</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 mt-1">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>100% On-Time (33 Menit / Target 60 Menit)</span>
           </span>
         </div>
       </div>
 
       <!-- AUDIT TRAIL LIFECYCLE TIME -->
-      <div class="mb-6">
+      <div class="mt-5">
         <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-          Jejak Waktu Siklus Penanganan (Audit Trail)
+          Jejak Waktu Siklus Penanganan (Audit Trail Terukur)
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">1. Laporan Masuk</span>
-            <div class="font-bold text-slate-800 text-xs mt-0.5">12:15 WIB</div>
-            <div class="text-[10px] text-slate-500">Oleh Irfan (PIC)</div>
+            <div class="font-bold text-slate-800 text-sm mt-0.5">12:15 WIB</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Oleh Irfan (PIC Cabang)</div>
           </div>
 
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+          <div class="p-3.5 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">2. SPK Dispatch</span>
-            <div class="font-bold text-rose-700 text-xs mt-0.5">12:18 WIB (3 mnt)</div>
-            <div class="text-[10px] text-slate-500">Budi Santoso terpilih</div>
+            <div class="font-bold text-rose-700 text-sm mt-0.5">12:18 WIB (3 mnt)</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Budi Santoso terpilih (Rank #1)</div>
           </div>
 
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+          <div class="p-3.5 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">3. Tiba di Outlet</span>
-            <div class="font-bold text-slate-800 text-xs mt-0.5">12:30 WIB (12 mnt)</div>
-            <div class="text-[10px] text-slate-500">Perjalanan 3.2 km</div>
+            <div class="font-bold text-slate-800 text-sm mt-0.5">12:30 WIB (12 mnt)</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Perjalanan 3.2 km (Haversine)</div>
           </div>
 
-          <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+          <div class="p-3.5 bg-emerald-50 rounded-lg border border-emerald-200">
             <span class="text-emerald-800 block text-[10px] uppercase font-bold">4. Selesai Diperbaiki</span>
-            <div class="font-bold text-emerald-900 text-xs mt-0.5">12:48 WIB (18 mnt)</div>
-            <div class="text-[10px] text-emerald-700">Total: 33 Menit</div>
+            <div class="font-bold text-emerald-900 text-sm mt-0.5">12:48 WIB (18 mnt)</div>
+            <div class="text-[11px] text-emerald-700 mt-0.5">Total Penanganan: 33 Menit</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- FORM VERIFIKASI PIC & RATING -->
-      <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
-        <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">
-          Formulir Konfirmasi PIC Cabang & Evaluasi Layanan
+    <!-- 2 COLUMN CONTENT: VERIFIKASI PIC CABANG & DETAIL AKADEMIS -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+
+      <!-- LEFT: FORM VERIFIKASI PIC & RATING (7 COLS) -->
+      <div class="lg:col-span-7 bg-white rounded-xl border border-slate-200 p-6 space-y-4">
+        <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider pb-2 border-b border-slate-100 flex items-center justify-between">
+          <span>Formulir Konfirmasi PIC Cabang & Evaluasi Layanan</span>
+          <span class="text-[11px] text-slate-400 font-normal">Tanda Tangan Digital</span>
         </h3>
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Catatan Tindakan Teknisi Lapangan:</label>
-          <div class="w-full p-2.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-800">
+          <div class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800">
             Ganti Power Supply Unit (PSU) 250W Kasir 1. Pengujian transaksi kasir 3x sukses tanpa reboot.
           </div>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Rating Kepuasan Layanan Teknisi:</label>
-          <div class="flex items-center space-x-1.5 text-amber-500">
+          <div class="flex items-center space-x-1.5 text-amber-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
             <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
             <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
             <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
             <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
             <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-            <span class="text-xs font-bold text-slate-700 ml-2">5.0 / 5.0 (Sangat Memuaskan)</span>
+            <span class="text-xs font-bold text-slate-800 ml-2">5.0 / 5.0 (Sangat Memuaskan)</span>
           </div>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Ulasan / Catatan PIC Cabang:</label>
-          <textarea rows="2" class="w-full text-xs p-2.5 bg-white border border-slate-200 rounded-lg text-slate-800" readonly>Respon cepat dan teknisi Budi tiba tepat waktu. Kasir 1 kembali normal sebelum antrean jam makan siang bertambah panjang. Sangat membantu operasional gerai.</textarea>
+          <textarea rows="3" class="w-full text-xs p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 leading-relaxed" readonly>Respon cepat dan teknisi Budi tiba tepat waktu. Kasir 1 kembali normal sebelum antrean jam makan siang bertambah panjang. Sangat membantu kelancaran operasional gerai.</textarea>
         </div>
 
-        <div class="pt-3 flex items-center justify-between">
+        <div class="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span class="text-xs text-slate-500">Status tiket akan resmi diperbarui menjadi <strong>CLOSED</strong>.</span>
-          <button onclick="closeTicketOfficially()" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition">
+          <button onclick="closeTicketOfficially()" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition">
             <i data-lucide="check" class="w-3.5 h-3.5"></i>
             <span>Tutup & Arsipkan Tiket</span>
           </button>
         </div>
       </div>
 
+      <!-- RIGHT: STATISTIK SLA & EFISIENSI OPERASIONAL (5 COLS) -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <div class="bg-white rounded-xl border border-slate-200 p-6">
+          <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4 pb-2 border-b border-slate-100">
+            Perbandingan Waktu: Aktual vs Standar SLA
+          </h3>
+
+          <div class="space-y-4 text-xs">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600">Durasi Penanganan Riil</span>
+                <span class="font-bold text-emerald-700">33 Menit</span>
+              </div>
+              <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 rounded-full" style="width: 55%"></div>
+              </div>
+              <span class="text-[10px] text-slate-400 mt-0.5 block">55% dari batas toleransi maksimal</span>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600">Batas Toleransi SLA Level 4 (Critical)</span>
+                <span class="font-bold text-slate-700">60 Menit</span>
+              </div>
+              <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-slate-400 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-[11px] text-emerald-800 leading-relaxed">
+              <strong>Efisiensi Terwujud:</strong> Pengalokasian teknisi melalui algoritma berhasil menghemat waktu respon sebesar <strong>27 menit</strong> lebih cepat dari batas toleransi kerugian operasional gerai.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-6">
+          <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-3 pb-2 border-b border-slate-100">
+            Rincian Teknisi Terpilih
+          </h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between">
+              <span class="text-slate-500">Nama Teknisi:</span>
+              <span class="font-bold text-slate-900">Budi Santoso</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">ID Teknisi:</span>
+              <span class="font-mono text-slate-700">TECH-01</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Nilai Kelayakan SPK:</span>
+              <span class="font-bold text-rose-600">87.2% (Peringkat #1)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Status Tugas Sebelumnya:</span>
+              <span class="font-medium text-slate-700">Selesai Tuntas (Senayan City)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- CALLOUT PENUTUP UNTUK LAPORAN TA -->
-    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs leading-relaxed flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs leading-relaxed flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span class="text-rose-400 font-bold uppercase tracking-wider block mb-1">Ringkasan Validasi Sistem:</span>
-        Simulasi alur membuktikan bahwa integrasi <strong>metode MCDM dengan parameter jarak spasial dan sisa waktu SOP</strong> mampu mengalokasikan teknisi paling optimal pada insiden kritis tanpa mengorbankan kontinuitas outlet lain yang sedang ditangani.
+        <span class="text-rose-400 font-bold uppercase tracking-wider block mb-1">Ringkasan Validasi Sistem Tugas Akhir:</span>
+        Simulasi alur membuktikan bahwa integrasi <strong>metode MCDM dengan parameter jarak spasial (Haversine) dan sisa waktu SOP</strong> mampu mengalokasikan teknisi paling optimal pada insiden kritis tanpa mengorbankan kontinuitas outlet lain yang sedang ditangani.
       </div>
-      <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs border border-slate-700 whitespace-nowrap transition">
-        <span>Menu Utama</span>
+      <a href="index.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs border border-slate-700 whitespace-nowrap transition">
+        <span>Kembali ke Beranda Utama</span>
         <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
       </a>
     </div>
