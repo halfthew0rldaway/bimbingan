@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Langkah 01 - Dashboard Operasional IT Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+  <!-- TOP HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
+          M
+        </a>
+        <div>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">PT Maju Mapan YIC — Helpdesk Monitoring</h1>
+          <p class="text-[11px] text-slate-500">Dashboard Operasional IT Infrastructure (91 Cabang / 3 Brand)</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
+          👤 Mode Akses: IT Supervisor (SPV)
+        </span>
+        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
+          🏠 Beranda Prototype
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STEP NAVIGATION BAR -->
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
+      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+        <span>01</span>
+        <span>Dashboard Overview</span>
+      </div>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>02</span>
+        <span>Pelaporan Tiket PIC</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>03</span>
+        <span>Antrean Tiket SPV</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-amber-300 hover:text-amber-200 px-2 py-1 rounded transition font-medium">
+        <span>⭐ 04</span>
+        <span>SPK Pemilihan Teknisi</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>05</span>
+        <span>Dispatch & Rute</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>06</span>
+        <span>Mobile Teknisi</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>07</span>
+        <span>Resolusi & Rating</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN BODY -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- BANNER PENJELASAN LANGKAH 1 -->
+    <div class="bg-white border-l-4 border-rose-600 rounded-r-xl p-4 shadow-sm mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <h2 class="text-sm font-bold text-slate-900 flex items-center">
+          <span class="bg-rose-100 text-rose-800 text-[11px] font-bold px-2 py-0.5 rounded mr-2">Tahap 1 dari 7</span>
+          Kondisi Eksisting: Seluruh 6 Teknisi Lapangan Sedang Sibuk di Outlet Lain
+        </h2>
+        <p class="text-xs text-slate-600 mt-1">
+          Sistem melacak waktu mulai kerja teknisi saat check-in di outlet. <strong>Estimasi Sisa Waktu</strong> dihitung otomatis dari: <em>Standar Durasi SOP (Benchmark) dikurangi Waktu yang Sudah Berjalan (Elapsed Time)</em>.
+        </p>
+      </div>
+      <a href="02_pelaporan_tiket_pic_cabang.html" class="inline-flex items-center px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold whitespace-nowrap transition shadow-sm">
+        Simulasikan Tiket Masuk &rarr;
+      </a>
+    </div>
+
+    <!-- METRIC STATS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>Total Outlet / Cabang</span>
+          <span class="text-emerald-600 font-semibold">91 Aktif</span>
+        </div>
+        <div class="text-2xl font-extrabold text-slate-900 mt-2">91 Cabang</div>
+        <div class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-rose-500 inline-block"></span> 64 RamenYA! | 
+          <span class="w-2 h-2 rounded-full bg-orange-500 inline-block"></span> 27 SushiYa
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>Total Laporan Periode Ini</span>
+          <span class="text-rose-600 font-semibold">+194 Issue</span>
+        </div>
+        <div class="text-2xl font-extrabold text-slate-900 mt-2">194 Tiket</div>
+        <div class="text-xs text-slate-500 mt-1">
+          <span class="text-rose-600 font-bold">14 Critical</span> • 33 High • 62 Med • 85 Low
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-amber-300 bg-amber-50/40 shadow-sm">
+        <div class="flex items-center justify-between text-xs text-amber-800 font-semibold">
+          <span>Status Teknisi Lapangan</span>
+          <span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold text-[10px]">100% UTILIZATION</span>
+        </div>
+        <div class="text-2xl font-extrabold text-amber-900 mt-2">6 / 6 Sibuk</div>
+        <div class="text-xs text-amber-700 mt-1 font-medium">
+          ⚠️ Tidak ada teknisi yang berstatus standby/idle!
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>Kepatuhan SLA Bulan Ini</span>
+          <span class="text-emerald-600 font-semibold">Target 90%</span>
+        </div>
+        <div class="text-2xl font-extrabold text-emerald-600 mt-2">94.3%</div>
+        <div class="text-xs text-slate-500 mt-1">Rata-rata Respon: 8.5 menit</div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID: STATUS TEKNISI & LOG TIKET -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- 6 TECHNICIANS LIVE TABLE (2 COLUMNS SPAN) -->
+      <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm">Status Tugas 6 IT Support Lapangan</h3>
+            <p class="text-xs text-slate-500">Estimasi sisa waktu penanganan dihitung otomatis dari Standar SOP dikurangi Waktu Berjalan.</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-medium">
+            Live Check-in Data
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="bg-slate-50 text-slate-600 border-b border-slate-200">
+                <th class="py-2.5 px-3 font-semibold">Teknisi</th>
+                <th class="py-2.5 px-3 font-semibold">Lokasi Saat Ini</th>
+                <th class="py-2.5 px-3 font-semibold">Tugas Aktif & Urgensi</th>
+                <th class="py-2.5 px-3 font-semibold">Mulai Kerja</th>
+                <th class="py-2.5 px-3 font-semibold">Estimasi Sisa Waktu</th>
+              </tr>
+            </thead>
+            <tbody id="technician-table-body" class="divide-y divide-slate-100">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start space-x-2">
+          <span class="text-rose-600 font-bold text-base leading-none">💡</span>
+          <div>
+            <strong>Logika Tanpa Membebani Teknisi:</strong> Teknisi di lapangan hanya perlu melakukan 2 tindakan sederhana: <em>Check-in (Tiba & Mulai)</em> dan <em>Check-out (Selesai & Upload Foto)</em>. Sistem otomatis menghitung estimasi sisa waktu tanpa teknisi harus repot update status di tengah pekerjaan.
+          </div>
+        </div>
+      </div>
+
+      <!-- KANBAN / SUMMARY TICKETS (1 COLUMN) -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+            <h3 class="font-bold text-slate-900 text-sm">Distribusi Kategori Insiden</h3>
+            <span class="text-[11px] text-slate-400">194 Laporan</span>
+          </div>
+
+          <div class="space-y-3 text-xs mb-6">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium text-slate-700">Hardware & POS Kasir</span>
+                <span class="font-semibold text-rose-600">47 Tiket (24%)</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                <div class="bg-rose-500 h-full rounded-full" style="width: 24%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium text-slate-700">Printer Thermal & EDC</span>
+                <span class="font-semibold text-amber-600">58 Tiket (30%)</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                <div class="bg-amber-500 h-full rounded-full" style="width: 30%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium text-slate-700">Jaringan LAN & Wi-Fi Outlet</span>
+                <span class="font-semibold text-indigo-600">42 Tiket (22%)</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                <div class="bg-indigo-500 h-full rounded-full" style="width: 22%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium text-slate-700">CCTV & Display Menu Promosi</span>
+                <span class="font-semibold text-emerald-600">47 Tiket (24%)</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                <div class="bg-emerald-500 h-full rounded-full" style="width: 24%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg border border-rose-200 bg-rose-50/60 mb-4">
+            <div class="flex items-center space-x-2 text-rose-800 font-bold text-xs mb-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
+              <span>Skenario Simulasi Penelitian:</span>
+            </div>
+            <p class="text-xs text-rose-700 leading-relaxed">
+              Tekan tombol di bawah untuk masuk ke antarmuka <strong>PIC Cabang Gandaria City</strong> yang akan melaporkan POS Kasir Utama mati mendadak saat jam makan siang.
+            </p>
+          </div>
+        </div>
+
+        <a href="02_pelaporan_tiket_pic_cabang.html" class="w-full py-2.5 px-4 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-semibold text-xs text-center transition shadow-md shadow-rose-900/20">
+          Lanjut ke Langkah 02: Buat Laporan Darurat &rarr;
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="shared_state.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const { techs } = getStoredData();
+      const tbody = document.getElementById("technician-table-body");
+      
+      tbody.innerHTML = techs.map(tech => {
+        let badgeColor = "bg-slate-100 text-slate-700";
+        if (tech.tugasAktif.level === "Critical") badgeColor = "bg-rose-100 text-rose-800 border border-rose-300 font-bold";
+        else if (tech.tugasAktif.level === "High") badgeColor = "bg-amber-100 text-amber-800 border border-amber-300 font-bold";
+        else if (tech.tugasAktif.level === "Medium") badgeColor = "bg-blue-100 text-blue-800";
+        else badgeColor = "bg-emerald-100 text-emerald-800";
+
+        let sisaColor = "text-slate-700";
+        if (tech.tugasAktif.sisaWaktuMenit <= 10) sisaColor = "text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded";
+        else if (tech.tugasAktif.sisaWaktuMenit >= 40) sisaColor = "text-rose-700 font-bold bg-rose-50 px-2 py-0.5 rounded";
+
+        return `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="py-3 px-3">
+              <div class="font-bold text-slate-900">${tech.nama}</div>
+              <div class="text-[10px] text-slate-400 font-mono">${tech.id}</div>
+            </td>
+            <td class="py-3 px-3 font-medium text-slate-700">
+              ${tech.cabangSaatIni}
+            </td>
+            <td class="py-3 px-3">
+              <div class="text-slate-800 font-medium">${tech.tugasAktif.perangkat}</div>
+              <span class="inline-block px-1.5 py-0.5 rounded text-[10px] ${badgeColor} mt-0.5">
+                ${tech.tugasAktif.level}
+              </span>
+            </td>
+            <td class="py-3 px-3">
+              <div class="text-slate-800 font-mono">${tech.tugasAktif.waktuMulai}</div>
+              <div class="text-[10px] text-slate-400">SOP: ${tech.tugasAktif.standarSopMenit} mnt</div>
+            </td>
+            <td class="py-3 px-3">
+              <div class="text-xs ${sisaColor}">
+                ~${tech.tugasAktif.sisaWaktuMenit} Menit Lagi
+              </div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Berjalan: ${tech.tugasAktif.elapsedMenit} mnt</div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>

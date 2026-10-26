@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Langkah 06 - Tampilan Mobile App IT Support Lapangan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .mobile-frame {
+      width: 380px;
+      height: 760px;
+      border: 12px solid #1e293b;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen">
+
+  <!-- TOP HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
+          M
+        </a>
+        <div>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">Simulasi Aplikasi Mobile IT Support</h1>
+          <p class="text-[11px] text-slate-500">Antarmuka Smartphone untuk 6 Teknisi Lapangan PT Maju Mapan YIC</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
+          👤 Mode Akses: Teknisi Lapangan (Budi Santoso)
+        </span>
+        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
+          🏠 Beranda
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STEP NAVIGATION BAR -->
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
+      <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>01</span>
+        <span>Dashboard Overview</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>02</span>
+        <span>Pelaporan Tiket PIC</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>03</span>
+        <span>Antrean Tiket SPV</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>⭐ 04</span>
+        <span>SPK Pemilihan Teknisi</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>05</span>
+        <span>Dispatch & Rute</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+        <span>06</span>
+        <span>Mobile Teknisi</span>
+      </div>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>07</span>
+        <span>Resolusi & Rating</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center">
+
+    <!-- INSTRUCTION BANNER -->
+    <div class="w-full max-w-xl bg-white border-l-4 border-rose-600 rounded-r-xl p-4 shadow-sm mb-6 text-xs text-slate-600">
+      <span class="font-bold text-slate-900 block mb-1">Prinsip Desain Realistis di Lapangan:</span>
+      Teknisi yang sedang sibuk membongkar mesin <strong>hanya melakukan 2 kali interaksi sederhana</strong>: 
+      <em>(1) Check-in saat tiba</em> dan <em>(2) Check-out saat selesai</em>. Sistem di backend yang menghitung estimasi waktu otomatis tanpa mengganggu fokus teknisi!
+    </div>
+
+    <!-- SMARTPHONE DEVICE FRAME -->
+    <div class="mobile-frame bg-slate-900 flex flex-col relative">
+
+      <!-- TOP NOTCH & STATUS BAR -->
+      <div class="bg-slate-900 text-white px-6 pt-3 pb-2 flex justify-between items-center text-[10px] select-none z-20">
+        <span>12:35</span>
+        <div class="w-20 h-4 bg-black rounded-full mx-auto"></div>
+        <div class="flex items-center space-x-1">
+          <span>5G</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <!-- APP HEADER -->
+      <div class="bg-rose-600 text-white px-4 py-3 flex items-center justify-between shadow-md z-10">
+        <div class="flex items-center space-x-2">
+          <span class="font-extrabold text-sm tracking-tight">MMYIC Mobile Support</span>
+        </div>
+        <div class="text-[10px] px-2 py-0.5 rounded bg-rose-700 font-medium">
+          Budi Santoso
+        </div>
+      </div>
+
+      <!-- SCROLLABLE APP CONTENT -->
+      <div class="flex-1 bg-slate-50 overflow-y-auto p-4 space-y-4">
+
+        <!-- INCOMING EMERGENCY ALERT NOTIFICATION -->
+        <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl shadow-sm">
+          <div class="flex items-center justify-between text-[10px] font-bold text-rose-800 mb-1">
+            <span class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-rose-600 mr-1.5 animate-ping"></span>
+              PENUGASAN TIKET DARURAT
+            </span>
+            <span class="text-rose-600 font-mono">12:25 WIB</span>
+          </div>
+          <div class="text-xs font-bold text-slate-900">POS Kasir Utama 1 Mati Total</div>
+          <div class="text-[11px] text-rose-700">RamenYA Gandaria City (UG-24)</div>
+        </div>
+
+        <!-- TICKET SUMMARY CARD -->
+        <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-2.5">
+          <div class="flex justify-between items-center pb-2 border-b border-slate-100">
+            <span class="text-[10px] font-mono font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded">TCK-202610-0195</span>
+            <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-rose-600 text-white">CRITICAL (L4)</span>
+          </div>
+
+          <div class="text-xs">
+            <span class="text-slate-400 text-[10px] block">Gejala Masalah:</span>
+            <p class="text-slate-800 font-medium text-[11px] mt-0.5 leading-snug">
+              Mesin kasir mati total, bau hangus PSU. Antrean makan siang tertahan.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-[10px] pt-1">
+            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+              <span class="text-slate-400 block">PIC Cabang:</span>
+              <span class="font-bold text-slate-800">Irfan Hakim</span>
+            </div>
+            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+              <span class="text-slate-400 block">Jarak Tempuh:</span>
+              <span class="font-bold text-emerald-700">3.2 km (~12 mnt)</span>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS: CALL & MAPS -->
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <a href="tel:081298765432" class="py-1.5 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-[10px] text-center border border-slate-200 transition">
+              📞 Hubungi PIC
+            </a>
+            <button onclick="alert('Membuka rute di Google Maps: Senayan City -> Gandaria City via Jl. Kyai Maja (3.2 km)')" class="py-1.5 px-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold text-[10px] text-center border border-emerald-200 transition">
+              🗺️ Navigasi Rute
+            </button>
+          </div>
+        </div>
+
+        <!-- WORKFLOW STATUS PROGRESS CARD (HANYA 2 AKSI: CHECK-IN & CHECK-OUT) -->
+        <div class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm space-y-3">
+          <div class="text-xs font-bold text-slate-900 border-b border-slate-100 pb-1.5 flex items-center justify-between">
+            <span>Aksi Operasional Teknisi</span>
+            <span class="text-[10px] text-slate-400 font-normal">Hanya 2 Ketukan</span>
+          </div>
+
+          <!-- AKSI 1: CHECK IN -->
+          <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[11px] font-bold text-slate-700">1. Saat Tiba di Lokasi:</span>
+              <span id="badge-checkin" class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">SUDAH CHECK-IN</span>
+            </div>
+            <button onclick="checkIn()" class="w-full py-2 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold text-center transition flex items-center justify-center space-x-1.5">
+              <span>📍 Tiba & Mulai Pengerjaan (12:30 WIB)</span>
+            </button>
+            <span class="text-[9px] text-slate-400 mt-1 block leading-tight">*Mencatat waktu mulai di sistem otomatis untuk monitoring SLA.</span>
+          </div>
+
+          <!-- AKSI 2: CHECK OUT -->
+          <div class="p-2.5 rounded-lg border border-rose-200 bg-rose-50/40 space-y-2">
+            <span class="text-[11px] font-bold text-rose-900 block">2. Saat Pekerjaan Selesai:</span>
+            
+            <div>
+              <label class="text-[10px] font-semibold text-slate-600 block">Part yang Diganti:</label>
+              <input type="text" id="sparepart-input" value="Ganti Power Supply Unit (PSU) 250W Kasir" class="w-full text-xs border border-slate-300 rounded p-1.5 bg-white font-medium">
+            </div>
+
+            <!-- FOTO BUKTI SELESAI -->
+            <div class="p-2 rounded border border-slate-200 bg-white text-center">
+              <span class="text-[9px] text-slate-400 block mb-1">Foto Bukti Perangkat Sudah Menyala:</span>
+              <div class="w-full h-14 bg-slate-800 text-emerald-400 text-[11px] font-mono font-bold flex items-center justify-center rounded">
+                [POS-01: SYSTEM ONLINE & READY]
+              </div>
+              <span class="text-[9px] text-emerald-600 font-semibold mt-0.5 block">✓ Foto Terverifikasi di Kasir 1</span>
+            </div>
+
+            <!-- FINISH BUTTON -->
+            <button onclick="finishTask()" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition flex items-center justify-center space-x-1">
+              <span>✓ Selesai & Kirim Laporan</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM PHONE HOME INDICATOR -->
+      <div class="bg-slate-900 py-1.5 flex justify-center">
+        <div class="w-32 h-1 bg-slate-600 rounded-full"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="shared_state.js"></script>
+  <script>
+    function checkIn() {
+      alert("Check-in Berhasil tercatat di sistem:\n\nWaktu Tiba: 12:30 WIB\nLokasi: RamenYA Gandaria City\nSLA Timer: Dimulai.");
+    }
+
+    function finishTask() {
+      const { ticket, techs } = getStoredData();
+      const sparepart = document.getElementById("sparepart-input").value;
+      
+      ticket.statusPenanganan = "Resolved";
+      ticket.status = "Pekerjaan Selesai (Menunggu Konfirmasi PIC)";
+      ticket.catatanSolusi = sparepart;
+      
+      saveStoredData(ticket, techs);
+
+      alert("Pekerjaan Selesai & Terverifikasi di Lapangan!\n\nCatatan: " + sparepart + "\n\nSekarang membuka Langkah 07 untuk verifikasi akhir & rating oleh PIC Cabang.");
+      window.location.href = "07_verifikasi_resolusi_tiket.html";
+    }
+  </script>
+</body>
+</html>

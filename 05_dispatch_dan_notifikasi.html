@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Langkah 05 - Konfirmasi Penugasan & Transmisi Dispatch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+  <!-- TOP HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
+          M
+        </a>
+        <div>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">Konfirmasi Dispatch & Transmisi Penugasan</h1>
+          <p class="text-[11px] text-slate-500">Sistem Pengiriman Tugas ke Aplikasi Mobile Teknisi Lapangan</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
+          👤 Mode Akses: IT Supervisor
+        </span>
+        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
+          🏠 Beranda
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STEP NAVIGATION BAR -->
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
+      <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>01</span>
+        <span>Dashboard Overview</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>02</span>
+        <span>Pelaporan Tiket PIC</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>03</span>
+        <span>Antrean Tiket SPV</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>⭐ 04</span>
+        <span>SPK Pemilihan Teknisi</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+        <span>05</span>
+        <span>Dispatch & Rute</span>
+      </div>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>06</span>
+        <span>Mobile Teknisi</span>
+      </a>
+      <span class="text-slate-600">&rarr;</span>
+      <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>07</span>
+        <span>Resolusi & Rating</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- SUCCESS DISPATCH BANNER -->
+    <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 shadow-sm mb-6 flex items-start space-x-4">
+      <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">
+        ✓
+      </div>
+      <div class="flex-1">
+        <div class="flex items-center space-x-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-200 px-2 py-0.5 rounded">Dispatch Berhasil</span>
+          <span class="text-xs text-emerald-700 font-mono">Status: Penugasan Terkirim ke Mobile</span>
+        </div>
+        <h2 class="text-base font-bold text-slate-900 mt-1">
+          Tiket TCK-202610-0195 Resmi Ditugaskan ke <span id="assigned-tech-name" class="text-rose-600 font-extrabold">Budi Santoso</span>
+        </h2>
+        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+          Notifikasi instan telah dikirimkan ke smartphone teknisi. PIC Cabang Gandaria City juga telah menerima update status bahwa teknisi sedang dalam persiapan menuju lokasi.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 COLUMN CARD: DETAIL PENUGASAN & VISUALISASI RUTE -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+      <!-- DETAIL TIKET & TEKNISI -->
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 pb-2 border-b border-slate-100">
+            Rincian Penugasan Lapangan
+          </h3>
+
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Nomor Tiket:</span>
+              <span class="font-mono font-bold text-slate-900" id="detail-ticket-id">TCK-202610-0195</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Tingkat Urgensi:</span>
+              <span class="font-bold text-rose-600">CRITICAL (Level 4)</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Teknisi Bertugas:</span>
+              <span class="font-bold text-slate-900" id="detail-tech-name">Budi Santoso (TECH-01)</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Cabang Asal Teknisi:</span>
+              <span class="font-medium text-slate-700" id="detail-tech-origin">RamenYA Senayan City</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Cabang Tujuan (Darurat):</span>
+              <span class="font-bold text-rose-700">RamenYA Gandaria City</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">Jarak Tempuh (Haversine):</span>
+              <span class="font-extrabold text-slate-900" id="detail-tech-dist">3.2 km (~12 Menit)</span>
+            </div>
+
+            <div class="flex justify-between py-1 border-b border-slate-50">
+              <span class="text-slate-500">PIC Cabang Penerima:</span>
+              <span class="font-medium text-slate-800">Irfan Hakim (0812-9876-5432)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-100">
+          <div class="text-[11px] text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <strong>Instruksi Operasional SPV:</strong> Teknisi menyelesaikan 5 menit terakhir pengecekan printer thermal di Senayan City, kemudian langsung bergerak ke Gandaria City dengan membawa modul power supply cadangan.
+          </div>
+        </div>
+      </div>
+
+      <!-- MAPS & ROUTE SIMULATION -->
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Simulasi Navigasi GPS Rute Lapangan
+            </h3>
+            <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              Lalu Lintas: Lancar
+            </span>
+          </div>
+
+          <!-- MOCK MAP DISPLAY -->
+          <div class="w-full h-52 bg-slate-900 rounded-xl relative overflow-hidden flex flex-col items-center justify-center p-4 border border-slate-800 shadow-inner">
+            <!-- Mock road lines -->
+            <div class="absolute inset-0 opacity-20">
+              <div class="w-full h-1 bg-white absolute top-10 rotate-12"></div>
+              <div class="w-full h-1 bg-white absolute top-28 -rotate-6"></div>
+              <div class="w-full h-1 bg-white absolute top-40 rotate-3"></div>
+              <div class="h-full w-1 bg-white absolute left-20"></div>
+              <div class="h-full w-1 bg-white absolute left-60"></div>
+            </div>
+
+            <!-- Route curve line -->
+            <div class="relative z-10 w-full flex items-center justify-between px-6">
+              <!-- Point A -->
+              <div class="text-center">
+                <div class="w-10 h-10 rounded-full bg-slate-700 text-white border-2 border-emerald-400 flex items-center justify-center font-bold text-xs shadow-lg">
+                  A
+                </div>
+                <div class="text-[10px] text-emerald-400 font-bold mt-1">Senayan City</div>
+                <div class="text-[9px] text-slate-400">(Lokasi Asal)</div>
+              </div>
+
+              <!-- Route info in middle -->
+              <div class="flex-1 px-4 text-center">
+                <div class="h-1 bg-emerald-500 rounded-full relative">
+                  <div class="w-3 h-3 rounded-full bg-white absolute -top-1 left-1/2 -translate-x-1/2 shadow animate-ping"></div>
+                </div>
+                <div class="text-[11px] font-bold text-white mt-2">3.2 km (12 mnt)</div>
+                <div class="text-[9px] text-slate-400">via Jl. Kyai Maja</div>
+              </div>
+
+              <!-- Point B -->
+              <div class="text-center">
+                <div class="w-10 h-10 rounded-full bg-rose-600 text-white border-2 border-rose-300 flex items-center justify-center font-bold text-xs shadow-lg animate-bounce">
+                  B
+                </div>
+                <div class="text-[10px] text-rose-400 font-bold mt-1">Gandaria City</div>
+                <div class="text-[9px] text-slate-400">(Tujuan Darurat)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs text-slate-500">Langkah berikutnya: Lihat aksi di sisi teknisi.</span>
+          <a href="06_mobile_app_teknisi.html" class="px-5 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-900/20 transition flex items-center space-x-1">
+            <span>Buka Layar Mobile Teknisi</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="shared_state.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const { ticket } = getStoredData();
+      const tech = ticket.teknisiDitugaskan || {
+        nama: "Budi Santoso",
+        id: "TECH-01",
+        cabangSaatIni: "RamenYA Senayan City",
+        jarakKm: 3.2,
+        estimasiMenit: 12
+      };
+
+      document.getElementById("assigned-tech-name").innerText = tech.nama;
+      document.getElementById("detail-ticket-id").innerText = ticket.id;
+      document.getElementById("detail-tech-name").innerText = `${tech.nama} (${tech.id})`;
+      document.getElementById("detail-tech-origin").innerText = tech.cabangSaatIni;
+      document.getElementById("detail-tech-dist").innerText = `${tech.jarakKm} km (~${tech.estimasiMenit} Menit)`;
+    });
+  </script>
+</body>
+</html>
+
