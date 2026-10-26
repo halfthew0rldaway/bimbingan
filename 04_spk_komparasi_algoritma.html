@@ -6,19 +6,15 @@
   <title>Laboratorium Komparasi Algoritma SPK Penentuan Teknisi - PT Maju Mapan YIC</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .tab-active {
-      border-bottom: 3px solid #e11d48;
-      color: #e11d48;
-      font-weight: 700;
-    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
@@ -27,17 +23,19 @@
         <div>
           <div class="flex items-center space-x-2">
             <h1 class="text-sm font-bold text-slate-900 leading-tight">Laboratorium Komparasi Algoritma SPK Penentuan Teknisi</h1>
-            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 border border-indigo-200 uppercase">Uji Algoritma</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200 uppercase">Uji Algoritma</span>
           </div>
           <p class="text-[11px] text-slate-500">Perbandingan Metode SAW, TOPSIS, dan Weighted Product (WP) berbasis Data Riil</p>
         </div>
       </div>
       <div class="flex items-center space-x-3">
-        <a href="04_spk_rekomendasi_teknisi.html" class="text-xs px-3 py-1.5 rounded-md bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-semibold transition">
-          &larr; Kembali ke Alur Tiket
+        <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-semibold transition">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Kembali ke Alur Tiket</span>
         </a>
-        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🏠 Beranda
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Beranda</span>
         </a>
       </div>
     </div>
@@ -186,28 +184,28 @@
       <!-- ASAL-USUL ANGKA DATA MENTAH -->
       <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 rounded-xl p-4 text-xs text-slate-700">
         <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-1.5">
-          <span>🔍</span>
-          <span>Darimana Angka-Angka pada Matriks Awal ($X$) Ini Berasal?</span>
+          <i data-lucide="help-circle" class="w-4 h-4 text-slate-500"></i>
+          <span>Penjelasan Asal Data pada Matriks Awal ($X$):</span>
         </h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] leading-relaxed">
           <div class="bg-white p-3 rounded-lg border border-slate-200">
-            <strong class="text-rose-700 block mb-1">📍 C1. Jarak Tempuh (Formula Haversine):</strong>
+            <strong class="text-rose-700 block mb-1">C1. Jarak Tempuh (Formula Haversine):</strong>
             Dihitung dari koordinat GPS outlet pelapor (RamenYA Gandaria City: -6.2442, 106.7835) ke koordinat outlet teknisi saat ini. Contoh: Anton di PIM = <strong>2.1 km</strong>, Budi di SenCity = <strong>3.2 km</strong>, Rian di Kelapa Gading = <strong>22.0 km</strong>.
           </div>
           <div class="bg-white p-3 rounded-lg border border-slate-200">
-            <strong class="text-amber-700 block mb-1">⏱️ C2. Sisa Waktu (Standar SOP - Durasi Berjalan):</strong>
+            <strong class="text-amber-700 block mb-1">C2. Sisa Waktu (Standar SOP - Durasi Berjalan):</strong>
             Budi: SOP Printer 30m - waktu berjalan 25m = <strong>5 menit lagi</strong>.<br>
             Anton: SOP Server 90m - waktu berjalan 20m = <strong>70 menit lagi</strong>.<br>
-            Teknisi tidak perlu input progres, sistem menghitung otomatis dari jam check-in!
+            Sistem menghitung sisa waktu secara otomatis berdasarkan data check-in.
           </div>
           <div class="bg-white p-3 rounded-lg border border-slate-200">
-            <strong class="text-blue-700 block mb-1">⚖️ C3. Risiko Interupsi (Tingkat Urgensi Tugas Asal):</strong>
+            <strong class="text-blue-700 block mb-1">C3. Risiko Interupsi (Tingkat Urgensi Tugas Asal):</strong>
             Skala bobot: Critical = <strong>4</strong>, High = <strong>3</strong>, Medium = <strong>2</strong>, Low = <strong>1</strong>.<br>
             Anton menangani Critical (bobot 4, fatal ditinggal), Budi menangani Medium (bobot 2, aman ditinggal).
           </div>
           <div class="bg-white p-3 rounded-lg border border-slate-200">
-            <strong class="text-emerald-700 block mb-1">⭐ C4. Keahlian POS (Matriks Skill Teknisi):</strong>
-            Skala 1 - 5 dinilai dari rekam jejak sertifikasi & kecepatan menyelesaikan kendala hardware kasir. Anton & Budi = <strong>5</strong> (Master POS), Eko = <strong>4</strong>, Rian = <strong>2</strong>.
+            <strong class="text-emerald-700 block mb-1">C4. Keahlian POS (Matriks Skill Teknisi):</strong>
+            Skala 1 - 5 dinilai dari sertifikasi & pengalaman penanganan hardware kasir. Anton & Budi = <strong>5</strong> (Master POS), Eko = <strong>4</strong>, Rian = <strong>2</strong>.
           </div>
         </div>
       </div>
@@ -240,10 +238,13 @@
           <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono font-bold">Rumus: Skor = ∑ (Bobot × Nilai)</span>
         </div>
 
-        <div class="p-3.5 bg-blue-50/80 border border-blue-200 rounded-xl text-xs text-blue-950 mb-4 leading-relaxed">
-          <strong class="text-blue-900 block mb-1">💡 Penjelasan Mudah untuk Awam / Pemula:</strong>
-          Metode SAW bekerja persis seperti <strong>menghitung nilai rata-rata raport sekolah</strong>. Setiap kriteria dinilai dari 0 sampai 1, lalu dikalikan persentase bobot kepentingannya, kemudian dijumlahkan:
-          <div class="mt-1.5 font-mono text-[11px] bg-white/80 p-2 rounded border border-blue-200 text-blue-900">
+        <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 mb-4 leading-relaxed">
+          <strong class="text-slate-900 block mb-1 flex items-center gap-1.5">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-600"></i>
+            <span>Prinsip Perhitungan Metode SAW:</span>
+          </strong>
+          Metode SAW menormalisasi setiap kriteria ke dalam rentang 0 sampai 1, lalu mengalikannya dengan bobot kepentingan masing-masing:
+          <div class="mt-1.5 font-mono text-[11px] bg-white p-2 rounded border border-slate-200 text-slate-900">
             Skor Akhir = (30% × Nilai Jarak) + (30% × Nilai Sisa Waktu) + (25% × Nilai Risiko) + (15% × Nilai Skill)
           </div>
         </div>
@@ -329,8 +330,8 @@
 
         <!-- RINCIAN LANGKAH PERHITUNGAN SAW -->
         <div class="mt-4 p-4 rounded-xl bg-slate-900 text-white font-mono text-[11px] leading-relaxed border border-slate-800">
-          <div class="text-amber-400 font-bold uppercase mb-2 flex items-center gap-1.5">
-            <span>📝</span>
+          <div class="text-rose-400 font-bold uppercase mb-2 flex items-center gap-1.5">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
             <span>Rincian Pembuktian Matematis SAW (Langkah demi Langkah):</span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -382,9 +383,12 @@
           <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono font-bold">Rumus: Skor = Jarak Buruk / (Jarak Idaman + Jarak Buruk)</span>
         </div>
 
-        <div class="p-3.5 bg-indigo-50/80 border border-indigo-200 rounded-xl text-xs text-indigo-950 mb-4 leading-relaxed">
-          <strong class="text-indigo-900 block mb-1">💡 Penjelasan Mudah untuk Awam / Pemula:</strong>
-          Metode TOPSIS bekerja dengan cara mencari <strong>sosok "Teknisi Idaman"</strong>. Teknisi idaman adalah teknisi yang: <em>paling dekat, sisa waktunya paling cepat selesai (5 menit), dan tugas lamanya tidak berisiko</em>. Sistem mengukur siapa yang posisinya paling mendekati sosok idaman tersebut:
+        <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 mb-4 leading-relaxed">
+          <strong class="text-slate-900 block mb-1 flex items-center gap-1.5">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-600"></i>
+            <span>Prinsip Perhitungan Metode TOPSIS:</span>
+          </strong>
+          Metode TOPSIS mengukur jarak geometris euclidean setiap teknisi terhadap solusi ideal positif (kondisi terbaik) dan solusi ideal negatif (kondisi terburuk):
         </div>
 
         <div class="overflow-x-auto">
@@ -454,8 +458,8 @@
 
         <!-- RINCIAN LANGKAH PERHITUNGAN TOPSIS -->
         <div class="mt-4 p-4 rounded-xl bg-slate-900 text-white font-mono text-[11px] leading-relaxed border border-slate-800">
-          <div class="text-amber-400 font-bold uppercase mb-2 flex items-center gap-1.5">
-            <span>📝</span>
+          <div class="text-rose-400 font-bold uppercase mb-2 flex items-center gap-1.5">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
             <span>Rincian Pembuktian Matematis TOPSIS (Langkah demi Langkah):</span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -503,9 +507,12 @@
           <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono font-bold">Rumus: Skor = Perkalian Pangkat / Total Semua Perkalian</span>
         </div>
 
-        <div class="p-3.5 bg-emerald-50/80 border border-emerald-200 rounded-xl text-xs text-emerald-950 mb-4 leading-relaxed">
-          <strong class="text-emerald-900 block mb-1">💡 Penjelasan Mudah untuk Awam / Pemula:</strong>
-          Metode WP bekerja dengan sistem <strong>seleksi ketat berbasis perkalian pangkat</strong>. Berbeda dengan penjumlahan biasa, pada sistem perkalian jika ada 1 kelemahan fatal (seperti Anton yang sisa waktunya masih 70 menit), nilainya langsung dipotong drastis dan tidak terselamatkan oleh nilai lainnya.
+        <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 mb-4 leading-relaxed">
+          <strong class="text-slate-900 block mb-1 flex items-center gap-1.5">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-600"></i>
+            <span>Prinsip Perhitungan Metode WP (Weighted Product):</span>
+          </strong>
+          Metode WP menggunakan perkalian berpangkat. Nilai kriteria Cost dipangkatkan bobot negatif, sedangkan Benefit dipangkatkan positif. Jika terdapat satu kriteria yang sangat buruk (seperti sisa waktu Anton yang mencapai 70 menit), nilainya akan langsung tertekan secara eksponensial.
         </div>
 
         <div class="overflow-x-auto">
@@ -568,8 +575,8 @@
 
         <!-- RINCIAN LANGKAH PERHITUNGAN WP -->
         <div class="mt-4 p-4 rounded-xl bg-slate-900 text-white font-mono text-[11px] leading-relaxed border border-slate-800">
-          <div class="text-amber-400 font-bold uppercase mb-2 flex items-center gap-1.5">
-            <span>📝</span>
+          <div class="text-rose-400 font-bold uppercase mb-2 flex items-center gap-1.5">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
             <span>Rincian Pembuktian Matematis WP (Langkah demi Langkah):</span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -635,7 +642,12 @@
                 <td class="py-3 px-3 text-center text-blue-700 font-mono font-black">#1 (0.7718)</td>
                 <td class="py-3 px-3 text-center text-indigo-700 font-mono font-black">#1 (0.8665)</td>
                 <td class="py-3 px-3 text-center text-purple-700 font-mono font-black">#1 (0.2641)</td>
-                <td class="py-3 px-3 text-center bg-emerald-200 text-emerald-950 font-black">✓ REKOMENDASI TERPILIH</td>
+                <td class="py-3 px-3 text-center bg-emerald-100 text-emerald-950 font-bold">
+                  <span class="inline-flex items-center gap-1">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-700"></i>
+                    <span>Rekomendasi Terpilih</span>
+                  </span>
+                </td>
               </tr>
               <tr>
                 <td class="py-3 px-3 font-semibold text-slate-800">Eko Prasetyo</td>
@@ -691,6 +703,10 @@
   </main>
 
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+
     function switchTab(tabId) {
       const tabs = ['saw', 'topsis', 'wp', 'compare'];
       tabs.forEach(t => {
@@ -705,6 +721,7 @@
           content.classList.add("hidden");
         }
       });
+      lucide.createIcons();
     }
   </script>
 </body>

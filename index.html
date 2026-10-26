@@ -6,239 +6,263 @@
   <title>Portal Prototype Flow: Sistem Penugasan Teknisi & Ticketing - PT Maju Mapan YIC</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .bg-brand-red { background-color: #e11d48; }
-    .text-brand-red { color: #e11d48; }
-    .border-brand-red { border-color: #e11d48; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
+        <div class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg">
           M
         </div>
         <div>
-          <h1 class="text-lg font-bold text-slate-900 leading-tight">PT Maju Mapan YIC <span class="text-xs px-2 py-0.5 rounded bg-rose-100 text-rose-700 font-semibold ml-1">RamenYA! & SushiYa</span></h1>
-          <p class="text-xs text-slate-500">Interactive Clickable UI Prototype — Alur Ticketing & Rekomendasi Teknisi Dinamis</p>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight flex items-center gap-2">
+            PT Maju Mapan YIC
+            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">RamenYA! & SushiYa</span>
+          </h1>
+          <p class="text-xs text-slate-500">Interactive Clickable UI Prototype — Alur Ticketing & Rekomendasi Penugasan Teknisi</p>
         </div>
       </div>
-      <div class="flex items-center space-x-2">
-        <button onclick="resetDataAndReload()" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🔄 Reset State Prototype
+      <div class="flex items-center space-x-3">
+        <button onclick="resetDataAndReload()" class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span>Reset State</span>
         </button>
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-          ● Status: Clickable Prototype
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Clickable Prototype</span>
         </span>
       </div>
     </div>
   </header>
 
-  <!-- HERO / CONTEXT BANNER -->
+  <!-- CONTEXT BANNER (CLEAN ENTERPRISE STYLE) -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl mb-8 relative overflow-hidden">
-      <div class="relative z-10 max-w-3xl">
-        <div class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/30 text-rose-300 border border-rose-400/30 mb-3">
-          Tugas Akhir Teknik Informatika UNDIRA — Peminatan Software Engineering
+    <div class="bg-slate-900 rounded-xl p-6 sm:p-8 text-white border border-slate-800 mb-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-950/80 text-rose-300 border border-rose-800/60 mb-3">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>Tugas Akhir Teknik Informatika UNDIRA — Peminatan Software Engineering</span>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">
+        <h2 class="text-xl sm:text-2xl font-bold mb-3 tracking-tight">
           Prototipe Alur Ticketing & Sistem Penentuan Teknisi Lapangan
         </h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-          Prototipe ini merealisasikan arahan dosen pembimbing untuk menggeser fokus utama riset ke <strong>mekanisme workflow ticketing dan pengambilan keputusan pemilihan teknisi lapangan</strong> ketika terjadi insiden kritis mendadak di saat seluruh teknisi sedang berada di outlet lain.
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+          Prototipe ini memodelkan workflow operasional helpdesk ticketing dan <strong>Sistem Pendukung Keputusan (SPK) penentuan teknisi lapangan</strong> saat terjadi insiden kritis perangkat di restoran ketika seluruh personel teknisi sedang berada di outlet lain.
         </p>
         <div class="flex flex-wrap gap-3">
-          <a href="01_dashboard_operasional.html" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-medium text-sm transition shadow-lg shadow-rose-900/40">
-            ▶ Mulai Walkthrough dari Langkah 1
+          <a href="01_dashboard_operasional.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-medium text-xs transition">
+            <span>Mulai Walkthrough dari Langkah 1</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
-          <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/20 transition">
-            ⭐ Langsung ke Fitur Unggulan: SPK Penentuan Teknisi
+          <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs border border-slate-700 transition">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-rose-400"></i>
+            <span>Langsung ke Fitur: SPK Penentuan Teknisi</span>
+          </a>
+          <a href="04_spk_komparasi_algoritma.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs border border-slate-700 transition">
+            <i data-lucide="flask-conical" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Laboratorium Komparasi (SAW, TOPSIS, WP)</span>
           </a>
         </div>
-      </div>
-      <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl font-black select-none pointer-events-none">
-        MMYIC
       </div>
     </div>
 
     <!-- PARAMETER OPERASIONAL KUNCI -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-        <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">Cakupan Bisnis</div>
-        <div class="text-2xl font-bold text-slate-900 mt-1">91 Cabang</div>
-        <div class="text-xs text-rose-600 mt-1">3 Merek (RamenYA, SushiYa)</div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Cakupan Cabang</span>
+          <i data-lucide="store" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div class="text-xl font-bold text-slate-900 mt-2">91 Cabang</div>
+        <div class="text-xs text-slate-500 mt-1">RamenYA! & SushiYa</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-        <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">Tim Teknisi Lapangan</div>
-        <div class="text-2xl font-bold text-slate-900 mt-1">6 Personel</div>
-        <div class="text-xs text-amber-600 mt-1">Rasio: 15,2 Cabang / Teknisi</div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Teknisi Lapangan</span>
+          <i data-lucide="users" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div class="text-xl font-bold text-slate-900 mt-2">6 Personel</div>
+        <div class="text-xs text-slate-500 mt-1">Rasio: 15,2 Cabang / Teknisi</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-        <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">Supervisi & Triage</div>
-        <div class="text-2xl font-bold text-slate-900 mt-1">1 IT SPV</div>
-        <div class="text-xs text-indigo-600 mt-1">& 1 IT Manager</div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Supervisi & Triage</span>
+          <i data-lucide="shield-check" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div class="text-xl font-bold text-slate-900 mt-2">1 SPV & 1 Manager</div>
+        <div class="text-xs text-slate-500 mt-1">Dept. IT Infrastructure</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-        <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">Volume Masalah</div>
-        <div class="text-2xl font-bold text-slate-900 mt-1">194 / Periode</div>
-        <div class="text-xs text-emerald-600 mt-1">76% Low/Medium | 24% High/Critical</div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Volume Tiket</span>
+          <i data-lucide="ticket" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div class="text-xl font-bold text-slate-900 mt-2">194 / Periode</div>
+        <div class="text-xs text-slate-500 mt-1">24% Kategori Kritis / Tinggi</div>
       </div>
     </div>
 
-    <!-- DAFTAR ALUR SCREENSHOT PROTOTYPE (THE 7 STEPS) -->
+    <!-- DAFTAR ALUR PROTOTYPE (THE 7 STEPS) -->
     <div class="mb-8">
       <div class="flex items-center justify-between mb-4">
         <div>
-          <h3 class="text-lg font-bold text-slate-900">Daftar Langkah & Layar Prototype (Clickable)</h3>
-          <p class="text-xs text-slate-500">Klik salah satu kartu di bawah untuk membuka halaman prototype terkait.</p>
+          <h3 class="text-base font-bold text-slate-900">Alur Pengujian Antarmuka (Langkah 01 s/d 07)</h3>
+          <p class="text-xs text-slate-500">Klik kartu di bawah untuk membuka simulasi pada peran masing-masing.</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- STEP 1 -->
-        <a href="01_dashboard_operasional.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="01_dashboard_operasional.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 01</span>
-              <span class="text-xs font-medium text-slate-400">Role: IT SPV / Manager</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 01</span>
+              <span class="text-[11px] text-slate-400">IT Supervisor / Manager</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">01. Dashboard Operasional IT</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">01. Dashboard Operasional IT</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Monitoring global 91 cabang, peta sebaran 6 teknisi lapangan yang sedang bertugas, metrik SLA, dan grafik distribusi kategori tiket.
+              Monitoring sebaran 91 cabang, visualisasi posisi 6 teknisi lapangan yang sedang bertugas, dan metrik SLA aktif.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 01 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Buka Dashboard</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 2 -->
-        <a href="02_pelaporan_tiket_pic_cabang.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="02_pelaporan_tiket_pic_cabang.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 02</span>
-              <span class="text-xs font-medium text-slate-400">Role: PIC Cabang</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 02</span>
+              <span class="text-[11px] text-slate-400">PIC Cabang Restoran</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">02. Pelaporan Insiden Baru</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">02. Pelaporan Insiden Baru</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Formulir terstruktur pelaporan kendala darurat (Contoh: POS Kasir 1 Black Screen saat jam makan siang di RamenYA Gandaria City).
+              Formulir penerbitan tiket insiden darurat dengan katalog perangkat SOP (Contoh: POS Kasir 1 mati di jam makan siang).
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 02 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Buka Form Pelaporan</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 3 -->
-        <a href="03_antrean_tiket_it_spv.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="03_antrean_tiket_it_spv.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 03</span>
-              <span class="text-xs font-medium text-slate-400">Role: IT SPV</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 03</span>
+              <span class="text-[11px] text-slate-400">IT Supervisor</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">03. Antrean Tiket Masuk & Triage</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">03. Antrean Tiket & Triage</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Meja kerja IT Supervisor untuk meninjau tiket masuk, verifikasi tingkat keparahan, dan pemicu alur Sistem Pendukung Keputusan penugasan.
+              Meja kerja supervisor untuk verifikasi tingkat keparahan insiden dan memicu rekomendasi penugasan teknisi.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 03 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Buka Antrean Tiket</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
-        <!-- STEP 4 - HERO -->
-        <a href="04_spk_rekomendasi_teknisi.html" class="group bg-gradient-to-br from-rose-50 to-white rounded-xl border-2 border-rose-400 p-5 shadow-md hover:shadow-lg transition flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-rose-600 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-bl-lg uppercase tracking-wider">
-            ⭐ Inti Skripsi
+        <!-- STEP 4 - SPK REKOMENDASI -->
+        <a href="04_spk_rekomendasi_teknisi.html" class="group bg-white rounded-xl border-2 border-rose-600 p-5 shadow-xs hover:shadow-sm transition flex flex-col justify-between relative">
+          <div class="absolute top-0 right-0 bg-rose-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-bl-lg">
+            Core DSS
           </div>
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800">Langkah 04 (Hero)</span>
-              <span class="text-xs font-medium text-rose-600">Decision Support System</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800">Langkah 04</span>
+              <span class="text-[11px] font-semibold text-rose-700">Decision Support System</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">04. SPK Rekomendasi Pemilihan Teknisi</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">04. SPK Rekomendasi Teknisi</h4>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              <strong>Menyelesaikan dilema utama:</strong> Menghitung matriks trade-off antara Jarak (Haversine), Urgensi Tugas Lama (Interruption Cost), dan Sisa Waktu Progres untuk 6 teknisi.
+              Peringkat kelayakan 6 teknisi berbasis multi-kriteria: Jarak Haversine, Sisa Waktu SOP, Risiko Interupsi, dan Keahlian.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-rose-200">
-            Uji Keputusan Penugasan &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-rose-100">
+            <span>Uji Rekomendasi Sistem</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 4.B - LAB KOMPARASI ALGORITMA -->
-        <a href="04_spk_komparasi_algoritma.html" class="group bg-gradient-to-br from-indigo-50 to-white rounded-xl border-2 border-indigo-400 p-5 shadow-md hover:shadow-lg transition flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-indigo-600 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-bl-lg uppercase tracking-wider">
-            🧪 Research Lab
-          </div>
+        <a href="04_spk_komparasi_algoritma.html" class="group bg-white rounded-xl border border-indigo-300 p-5 hover:border-indigo-500 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">Eksperimen Algoritma</span>
-              <span class="text-xs font-medium text-indigo-600">MCDM Simulator</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">Eksperimen Riset</span>
+              <span class="text-[11px] font-semibold text-indigo-600">MCDM Simulator</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">04b. Lab Komparasi (SAW vs TOPSIS vs WP)</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition mb-1.5">04b. Lab Komparasi (SAW, TOPSIS, WP)</h4>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              <strong>Interactive Algorithm Tester:</strong> Simulasi perhitungan matematis lengkap dengan matriks normalisasi, pembobotan kriteria, dan ranking perbandingan 3 algoritma.
+              Komparasi perhitungan matematis lengkap dengan matriks normalisasi, pembobotan kriteria, dan ranking perbandingan 3 algoritma.
             </p>
           </div>
-          <div class="text-xs font-semibold text-indigo-600 flex items-center pt-2 border-t border-indigo-200">
-            Buka Simulator Algoritma &rarr;
+          <div class="text-xs font-semibold text-indigo-600 flex items-center gap-1 pt-3 border-t border-indigo-100">
+            <span>Buka Uji Algoritma</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 5 -->
-        <a href="05_dispatch_dan_notifikasi.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="05_dispatch_dan_notifikasi.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 05</span>
-              <span class="text-xs font-medium text-slate-400">Role: IT SPV</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 05</span>
+              <span class="text-[11px] text-slate-400">IT Supervisor</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">05. Konfirmasi Penugasan & Dispatch</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">05. Konfirmasi Penugasan & Dispatch</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Konfirmasi persetujuan oleh SPV, transmisi push alert ke mobile app teknisi terpilih, dan estimasi rute peta perjalanan ke outlet tujuan.
+              Transmisi penugasan ke smartphone teknisi terpilih dan estimasi navigasi rute perjalanan ke cabang tujuan.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 05 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Lihat Dispatch</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 6 -->
-        <a href="06_mobile_app_teknisi.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="06_mobile_app_teknisi.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 06</span>
-              <span class="text-xs font-medium text-slate-400">Role: IT Support Lapangan</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 06</span>
+              <span class="text-[11px] text-slate-400">IT Support Lapangan</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">06. Aplikasi Mobile Teknisi Lapangan</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">06. Aplikasi Mobile Teknisi Lapangan</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Simulasi antarmuka smartphone teknisi: terima tiket darurat, tombol update status (OTW &rarr; In Progress), dan unggah foto perbaikan fisik.
+              Simulasi antarmuka smartphone teknisi: terima tiket darurat, tombol check-in tiba di lokasi, dan upload foto verifikasi.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 06 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Buka Layar Mobile</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
         <!-- STEP 7 -->
-        <a href="07_verifikasi_resolusi_tiket.html" class="group bg-white rounded-xl border border-slate-200 hover:border-rose-400 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="07_verifikasi_resolusi_tiket.html" class="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xs p-5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 07</span>
-              <span class="text-xs font-medium text-slate-400">Role: PIC Cabang & IT SPV</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Langkah 07</span>
+              <span class="text-[11px] text-slate-400">PIC Cabang & IT SPV</span>
             </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-rose-600 transition mb-2">07. Verifikasi, Rating & Penutupan</h4>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-rose-600 transition mb-1.5">07. Verifikasi, Rating & Penutupan</h4>
             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-              Pengujian fungsi perangkat bersama PIC cabang, pemberian rating kepuasan layanan, pencatatan catatan teknis, dan audit pemenuhan SLA.
+              Pengujian fungsi perangkat bersama PIC cabang, evaluasi kepuasan layanan bintang 5, dan penutupan tiket resmi.
             </p>
           </div>
-          <div class="text-xs font-semibold text-rose-600 flex items-center pt-2 border-t border-slate-100">
-            Buka Halaman 07 &rarr;
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1 pt-3 border-t border-slate-100">
+            <span>Buka Verifikasi Akhir</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </div>
         </a>
 
@@ -246,26 +270,30 @@
     </div>
 
     <!-- EXPLANATION BOX FOR DOSEN PEMBIMBING -->
-    <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-      <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center">
-        <span class="w-2.5 h-2.5 rounded-full bg-rose-600 mr-2"></span>
-        Panduan Menunjukkan Prototipe Ini ke Dosen Pembimbing (Bu Desi Ramayanti)
+    <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <h3 class="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+        <i data-lucide="info" class="w-4 h-4 text-rose-600"></i>
+        <span>Panduan Alur Pengujian untuk Dosen Pembimbing (Ibu Desi Ramayanti)</span>
       </h3>
-      <ol class="list-decimal list-inside text-sm text-slate-600 space-y-2 mt-3 leading-relaxed">
-        <li><strong>Buka Langkah 01 (Dashboard):</strong> Perlihatkan bahwa sistem memonitor 91 cabang dan 6 teknisi yang semuanya sedang sibuk bertugas di outlet lain.</li>
-        <li><strong>Buka Langkah 02 & 03:</strong> Simulasikan masuknya tiket kritis darurat dari PIC Cabang Gandaria City (POS Kasir 1 mati di jam makan siang).</li>
-        <li><strong>Soroti Langkah 04 (INTI PENELITIAN):</strong> Jelaskan bagaimana sistem pengambil keputusan (DSS) menghitung kriteria objektif: <em>"Kenapa Budi Santoso direkomendasikan padahal Anton Pratama lebih dekat?"</em> Karena Anton sedang tangani server Critical di PIM yang fatal jika ditinggal, sedangkan Budi sedang tangani printer yang sudah 85% selesai.</li>
-        <li><strong>Buka Langkah 05 s.d. 07:</strong> Tunjukkan eksekusi penugasan ke aplikasi mobile teknisi hingga penyelesaian dan rating tiket secara transparan.</li>
+      <ol class="list-decimal list-inside text-xs text-slate-600 space-y-1.5 mt-3 leading-relaxed">
+        <li><strong>Langkah 01 (Dashboard):</strong> Menunjukkan bahwa seluruh 6 teknisi lapangan sedang aktif menangani tugas di cabang lain.</li>
+        <li><strong>Langkah 02 & 03:</strong> Mensimulasikan insiden darurat dari PIC Cabang Gandaria City (mesin POS kasir mati saat jam makan siang).</li>
+        <li><strong>Langkah 04 (Fokus Penelitian):</strong> Menjelaskan pengambilan keputusan matematis: <em>"Mengapa Budi Santoso terpilih padahal jarak Anton Pratama lebih dekat?"</em> Karena Anton sedang menangani server kritis di PIM yang fatal jika diinterupsi, sedangkan Budi sedang menangani printer yang tinggal 5 menit lagi selesai.</li>
+        <li><strong>Langkah 05 s/d 07:</strong> Menunjukkan eksekusi dispatch ke aplikasi mobile hingga konfirmasi penyelesaian dan rating tiket secara transparan.</li>
       </ol>
     </div>
   </main>
 
   <footer class="border-t border-slate-200 bg-white py-6 mt-12 text-center text-xs text-slate-500">
-    Prototipe UI Alur Sistem Ticketing & Penentuan Teknisi Dinamis — Departemen IT Infrastructure PT Maju Mapan YIC &copy; 2026
+    Prototipe UI Alur Sistem Ticketing & Penentuan Teknisi — Departemen IT Infrastructure PT Maju Mapan YIC &copy; 2026
   </footer>
 
   <script src="shared_state.js"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+
     function resetDataAndReload() {
       resetToDefault();
       alert("Data prototipe telah di-reset ke nilai default awal.");

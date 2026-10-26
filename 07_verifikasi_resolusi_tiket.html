@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Langkah 07 - Verifikasi, Rating & Penutupan Tiket Resmi</title>
+  <title>Langkah 07 - Verifikasi Penyelesaian Tiket & Rating Layanan</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
   </style>
@@ -13,62 +14,64 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
           M
         </a>
         <div>
-          <h1 class="text-sm font-bold text-slate-900 leading-tight">Verifikasi & Penutupan Tiket Resmi (Closed)</h1>
-          <p class="text-[11px] text-slate-500">Departemen IT Infrastructure — PT Maju Mapan YIC</p>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">Verifikasi Penyelesaian & Rating Layanan</h1>
+          <p class="text-[11px] text-slate-500">Konfirmasi Akhir PIC Cabang & Audit Trail Waktu SLA</p>
         </div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-          👤 Mode Akses: PIC Cabang & IT SPV
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+          <i data-lucide="check-check" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Mode: Verifikasi PIC Cabang</span>
         </span>
-        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🏠 Beranda
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Beranda</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- STEP NAVIGATION BAR -->
-  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2 px-4 overflow-x-auto">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
       <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>01</span>
         <span>Dashboard Overview</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>02</span>
         <span>Pelaporan Tiket PIC</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>03</span>
         <span>Antrean Tiket SPV</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
-        <span>⭐ 04</span>
-        <span>SPK Pemilihan Teknisi</span>
+        <span>04</span>
+        <span>SPK Rekomendasi Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>05</span>
         <span>Dispatch & Rute</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>06</span>
         <span>Mobile Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
-      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <div class="flex items-center space-x-1.5 font-semibold text-white bg-rose-600 px-3 py-1 rounded-md">
         <span>07</span>
         <span>Resolusi & Rating</span>
       </div>
@@ -78,16 +81,17 @@
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- FINAL STEP SUCCESS HEADER -->
-    <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-6">
+    <div class="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 mb-6">
       <div class="flex items-start justify-between border-b border-slate-100 pb-5 mb-6">
         <div>
           <div class="flex items-center space-x-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs">
-              ✓ TIKET BERHASIL DISELESAIKAN
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-xs">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span>Tiket Selesai Diperbaiki</span>
             </span>
             <span class="text-xs font-mono font-bold text-slate-500" id="final-ticket-id">TCK-202610-0195</span>
           </div>
-          <h2 class="text-lg font-bold text-slate-900 mt-2">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 mt-2">
             Verifikasi Selesai: POS Kasir Utama 1 di RamenYA Gandaria City
           </h2>
           <p class="text-xs text-slate-500 mt-1">
@@ -97,38 +101,39 @@
 
         <div class="text-right">
           <span class="text-[10px] text-slate-400 uppercase font-semibold block">Kepatuhan SLA</span>
-          <span class="text-xs font-extrabold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-block mt-1">
-            ✓ 100% On-Time (33 Menit)
+          <span class="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 mt-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>100% On-Time (33 Menit)</span>
           </span>
         </div>
       </div>
 
       <!-- AUDIT TRAIL LIFECYCLE TIME -->
       <div class="mb-6">
-        <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
           Jejak Waktu Siklus Penanganan (Audit Trail)
         </h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">1. Laporan Masuk</span>
             <div class="font-bold text-slate-800 text-xs mt-0.5">12:15 WIB</div>
             <div class="text-[10px] text-slate-500">Oleh Irfan (PIC)</div>
           </div>
 
-          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">2. SPK Dispatch</span>
             <div class="font-bold text-rose-700 text-xs mt-0.5">12:18 WIB (3 mnt)</div>
             <div class="text-[10px] text-slate-500">Budi Santoso terpilih</div>
           </div>
 
-          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span class="text-slate-400 block text-[10px] uppercase font-semibold">3. Tiba di Outlet</span>
             <div class="font-bold text-slate-800 text-xs mt-0.5">12:30 WIB (12 mnt)</div>
             <div class="text-[10px] text-slate-500">Perjalanan 3.2 km</div>
           </div>
 
-          <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
-            <span class="text-emerald-700 block text-[10px] uppercase font-bold">4. Selesai Diperbaiki</span>
+          <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+            <span class="text-emerald-800 block text-[10px] uppercase font-bold">4. Selesai Diperbaiki</span>
             <div class="font-bold text-emerald-900 text-xs mt-0.5">12:48 WIB (18 mnt)</div>
             <div class="text-[10px] text-emerald-700">Total: 33 Menit</div>
           </div>
@@ -136,7 +141,7 @@
       </div>
 
       <!-- FORM VERIFIKASI PIC & RATING -->
-      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
+      <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
         <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">
           Formulir Konfirmasi PIC Cabang & Evaluasi Layanan
         </h3>
@@ -150,25 +155,26 @@
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Rating Kepuasan Layanan Teknisi:</label>
-          <div class="flex items-center space-x-1 text-2xl text-amber-400 cursor-pointer select-none">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
+          <div class="flex items-center space-x-1.5 text-amber-500">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
             <span class="text-xs font-bold text-slate-700 ml-2">5.0 / 5.0 (Sangat Memuaskan)</span>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Ulasan / Testimoni PIC Cabang:</label>
-          <textarea rows="2" class="w-full text-xs p-2.5 bg-white border border-slate-200 rounded-lg text-slate-800" readonly>Respon sangat cepat dan teknisi Budi tepat waktu. Kasir 1 kembali normal sebelum antrean jam makan siang semakin panjang. Sangat membantu!</textarea>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Ulasan / Catatan PIC Cabang:</label>
+          <textarea rows="2" class="w-full text-xs p-2.5 bg-white border border-slate-200 rounded-lg text-slate-800" readonly>Respon cepat dan teknisi Budi tiba tepat waktu. Kasir 1 kembali normal sebelum antrean jam makan siang bertambah panjang. Sangat membantu operasional gerai.</textarea>
         </div>
 
         <div class="pt-3 flex items-center justify-between">
-          <span class="text-xs text-slate-500">Dengan menekan tombol ini, status tiket resmi menjadi <strong>CLOSED</strong>.</span>
-          <button onclick="closeTicketOfficially()" class="px-6 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition">
-            ✓ Tutup & Arsipkan Tiket Resmi
+          <span class="text-xs text-slate-500">Status tiket akan resmi diperbarui menjadi <strong>CLOSED</strong>.</span>
+          <button onclick="closeTicketOfficially()" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition">
+            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+            <span>Tutup & Arsipkan Tiket</span>
           </button>
         </div>
       </div>
@@ -176,13 +182,14 @@
     </div>
 
     <!-- CALLOUT PENUTUP UNTUK LAPORAN TA -->
-    <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-md text-xs leading-relaxed flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs leading-relaxed flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span class="text-amber-400 font-bold uppercase tracking-wider block mb-1">Kesimpulan Pengujian Prototype:</span>
-        Sistem berhasil membuktikan bahwa dengan <strong>algoritma penentuan teknisi dinamis berbasis MCDM dan Haversine</strong>, insiden kritis dapat dialokasikan ke teknisi yang paling optimal tanpa mengorbankan cabang lain yang sedang ditangani.
+        <span class="text-rose-400 font-bold uppercase tracking-wider block mb-1">Ringkasan Validasi Sistem:</span>
+        Simulasi alur membuktikan bahwa integrasi <strong>metode MCDM dengan parameter jarak spasial dan sisa waktu SOP</strong> mampu mengalokasikan teknisi paling optimal pada insiden kritis tanpa mengorbankan kontinuitas outlet lain yang sedang ditangani.
       </div>
-      <a href="index.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 whitespace-nowrap transition">
-        Kembali ke Menu Utama &rarr;
+      <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs border border-slate-700 whitespace-nowrap transition">
+        <span>Menu Utama</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
       </a>
     </div>
 
@@ -191,6 +198,7 @@
   <script src="shared_state.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
       const { ticket } = getStoredData();
       document.getElementById("final-ticket-id").innerText = ticket.id;
     });
@@ -208,4 +216,3 @@
   </script>
 </body>
 </html>
-

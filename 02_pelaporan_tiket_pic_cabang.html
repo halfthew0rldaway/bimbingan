@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Langkah 02 - Pelaporan Tiket Insiden PIC Cabang</title>
+  <title>Langkah 02 - Pelaporan Insiden Baru PIC Cabang</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
   </style>
@@ -13,7 +14,7 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
@@ -25,49 +26,51 @@
         </div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-          👤 Mode Akses: PIC Cabang (Irfan Hakim - Gandaria City)
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+          <i data-lucide="store" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Mode: PIC Cabang Restoran</span>
         </span>
-        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🏠 Beranda
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Beranda</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- STEP NAVIGATION BAR -->
-  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2 px-4 overflow-x-auto">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
       <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>01</span>
         <span>Dashboard Overview</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
-      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <div class="flex items-center space-x-1.5 font-semibold text-white bg-rose-600 px-3 py-1 rounded-md">
         <span>02</span>
         <span>Pelaporan Tiket PIC</span>
       </div>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>03</span>
         <span>Antrean Tiket SPV</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
-      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-amber-300 hover:text-amber-200 px-2 py-1 rounded transition font-medium">
-        <span>⭐ 04</span>
-        <span>SPK Pemilihan Teknisi</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>04</span>
+        <span>SPK Rekomendasi Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>05</span>
         <span>Dispatch & Rute</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>06</span>
         <span>Mobile Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>07</span>
         <span>Resolusi & Rating</span>
@@ -78,10 +81,10 @@
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- BANNER PETUNJUK -->
-    <div class="bg-white border-l-4 border-rose-600 rounded-r-xl p-4 shadow-sm mb-6 flex items-center justify-between">
+    <div class="bg-white border-l-4 border-rose-600 rounded-r-xl p-4 border border-slate-200 border-l-rose-600 mb-6 flex items-center justify-between">
       <div>
         <h2 class="text-sm font-bold text-slate-900">
-          <span class="bg-rose-100 text-rose-800 text-[11px] font-bold px-2 py-0.5 rounded mr-2">Tahap 2 dari 7</span>
+          <span class="bg-slate-100 text-slate-800 text-[11px] font-bold px-2 py-0.5 rounded mr-2 border border-slate-200">Tahap 2 dari 7</span>
           Simulasi Laporan Gangguan Darurat oleh PIC Cabang
         </h2>
         <p class="text-xs text-slate-500 mt-1">
@@ -91,14 +94,15 @@
     </div>
 
     <!-- FORM CARD -->
-    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+    <div class="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
       <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
         <div>
           <h3 class="text-base font-bold text-slate-900">Formulir Laporan Insiden Baru</h3>
           <p class="text-xs text-slate-500">Lengkapi data gangguan untuk penerbitan tiket dan penugasan teknisi otomatis.</p>
         </div>
-        <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200">
-          ⚡ Kasus Kritis Darurat
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold bg-rose-50 text-rose-800 border border-rose-200">
+          <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Insiden Kritis</span>
         </span>
       </div>
 
@@ -128,92 +132,77 @@
         <div>
           <div class="flex items-center justify-between mb-2">
             <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider">
-              1. Pilih Perangkat yang Mengalami Kendala (Klik untuk Simulasi Demo)
+              Pilih Jenis Perangkat yang Bermasalah:
             </label>
-            <span class="text-[11px] text-rose-600 font-semibold bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
-              *Klik kartu di bawah untuk melihat perbedaan SOP tiap perangkat
+            <span class="text-[11px] text-slate-500">Klik kartu untuk melihat standar durasi SOP</span>
+          </div>
+
+          <!-- GRID OF DEVICE CARDS -->
+          <div id="device-selection-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- DETAIL SOP & FORMULA EXPLANATION BOX (DYNAMIC PANEL) -->
+        <div id="sop-detail-panel" class="p-4 rounded-xl border border-rose-200 bg-rose-50/40 transition-all">
+          <!-- Injected dynamically by JS -->
+        </div>
+
+        <!-- CHEAT SHEET SKRIPSI: PENJELASAN AKADEMIK TENTANG PERBEDAAN DURASI SOP -->
+        <div class="p-4 rounded-xl bg-slate-900 text-white text-xs border border-slate-800">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-rose-400"></i>
+            <span class="font-bold text-white uppercase text-[11px] tracking-wider">
+              Catatan Metodologi: SLA Respon Bisnis vs Durasi Teknis SOP
             </span>
           </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="device-selection-grid">
-            <!-- Rendered by JavaScript -->
-          </div>
-        </div>
-
-        <!-- PANEL RINCIAN STANDAR WAKTU SOP & TINGKAT URGENSI (DYNAMIC) -->
-        <div id="sop-detail-panel" class="p-5 rounded-2xl bg-gradient-to-r from-rose-50 via-white to-amber-50 border border-rose-200 shadow-sm transition-all duration-300">
-          <!-- Rendered by JavaScript -->
-        </div>
-
-        <!-- KOTAK EDUKASI AKADEMIK (JAWABAN UNTUK DOSEN / PENGUJI SIDANG) -->
-        <div class="bg-slate-900 text-white rounded-2xl p-5 border border-slate-800 shadow-sm">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center flex-shrink-0 text-sm">
-              💡
-            </div>
-            <div class="flex-1">
-              <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-1">
-                Catatan Presentasi Dosen: Kenapa Tingkat Urgensi Sama tapi Standar Waktu SOP Berbeda?
-              </h4>
-              <p class="text-xs text-slate-300 leading-relaxed mb-3">
-                Sering muncul pertanyaan: <em>"POS Kasir dan Server Internet sama-sama level <strong>CRITICAL</strong>, tapi kenapa standar penanganannya beda (POS 60 menit vs Server 90 menit)?"</em>
-              </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] font-sans">
-                <div class="bg-white/10 rounded-xl p-3 border border-white/10">
-                  <div class="font-bold text-rose-300 flex items-center gap-1.5 mb-1">
-                    <span>⚡ Tingkat Urgensi (Business Severity)</span>
-                  </div>
-                  <p class="text-slate-300 leading-relaxed">
-                    Mengukur <strong>dampak terhadap omzet restoran</strong>. Jika POS atau Server mati, transaksi berhenti &rarr; Keduanya berstatus <strong>Critical</strong> (SLA Respon wajib &le; 15 menit).
-                  </p>
-                </div>
-                <div class="bg-white/10 rounded-xl p-3 border border-white/10">
-                  <div class="font-bold text-emerald-300 flex items-center gap-1.5 mb-1">
-                    <span>⏱️ Standar Waktu SOP (Technical MTTR)</span>
-                  </div>
-                  <p class="text-slate-300 leading-relaxed">
-                    Mengukur <strong>kompleksitas fisik perbaikan komponen</strong>. Ganti PSU kasir butuh 60 menit, sementara reflash mikrotik & bridging VPN butuh 90 menit. Durasi teknis tidak bisa disamaratakan!
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="text-slate-300 space-y-1.5 leading-relaxed text-[11px]">
+            <p>
+              • <strong>SLA Respon Bisnis (Maksimal 15 Menit):</strong> Batas waktu komitmen respons dan penugasan teknisi agar segera bergerak menuju outlet.
+            </p>
+            <p>
+              • <strong>Standar SOP Fisik (Durasi Tindakan):</strong> Waktu teknis riil pengerjaan hardware. Misalnya, perbaikan POS (60 mnt) berbeda dengan Server Router (90 mnt) karena router membutuhkan flashing OS, konfigurasi IP gateway, dan re-crimping kabel backbone.
+            </p>
           </div>
         </div>
 
         <!-- DESKRIPSI MASALAH -->
         <div>
           <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
-            2. Deskripsi Detail Gejala Kerusakan
+            Deskripsi Gejala & Dampak Gangguan:
           </label>
-          <textarea id="issue-description" rows="3" class="w-full text-xs border border-slate-300 rounded-lg p-3 text-slate-800 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 font-sans" placeholder="Tuliskan kronologi dan dampak operasional..."></textarea>
+          <textarea id="issue-description" rows="3" class="w-full text-xs border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-rose-500 focus:outline-none text-slate-800 leading-relaxed font-normal"></textarea>
         </div>
 
-        <!-- LAMPIRAN FOTO BUKTI -->
+        <!-- UPLOAD FOTO BUKTI -->
         <div>
           <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
-            3. Lampiran Foto / Tangkapan Layar Kendala
+            Lampiran Foto Bukti Gangguan di Outlet:
           </label>
-          <div class="border-2 border-dashed border-slate-300 rounded-xl p-4 flex items-center space-x-4 bg-slate-50">
-            <div class="w-20 h-20 rounded-lg bg-slate-800 text-slate-400 flex flex-col items-center justify-center text-[10px] font-mono border border-slate-700 shadow-inner">
-              <span class="text-rose-500 text-base font-bold">POS-01</span>
-              <span>NO SIGNAL</span>
+          <div class="flex items-center space-x-3 p-3 bg-slate-50 border border-dashed border-slate-300 rounded-xl">
+            <div class="w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center font-mono text-xs flex-shrink-0">
+              <i data-lucide="image" class="w-5 h-5 text-slate-400"></i>
             </div>
             <div class="flex-1">
               <div class="text-xs font-semibold text-slate-800">bukti_pos_mati_gancit_lunch.jpg (1.8 MB)</div>
               <div class="text-[11px] text-slate-500 mt-0.5">Tampilan layar monitor hitam total & power LED tidak menyala.</div>
-              <span class="text-[10px] text-emerald-600 font-semibold mt-1 inline-block">✓ Terverifikasi oleh PIC</span>
+              <span class="text-[10px] text-emerald-700 font-semibold mt-1 inline-flex items-center gap-1">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                <span>Terverifikasi oleh PIC</span>
+              </span>
             </div>
           </div>
         </div>
 
         <!-- ACTION BUTTONS -->
         <div class="flex items-center justify-between pt-4 border-t border-slate-200">
-          <a href="01_dashboard_operasional.html" class="text-xs font-medium text-slate-500 hover:text-slate-800 transition">
-            &larr; Kembali ke Dashboard
+          <a href="01_dashboard_operasional.html" class="inline-flex items-center gap-1 text-xs font-medium text-slate-500 hover:text-slate-800 transition">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+            <span>Kembali ke Dashboard</span>
           </a>
-          <button type="submit" class="px-6 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-900/20 transition flex items-center space-x-2">
+          <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition">
             <span>Kirim & Terbitkan Tiket Darurat</span>
-            <span>&rarr;</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
         </div>
 
@@ -259,36 +248,36 @@
         urgensiLevel: 2,
         slaRespon: "60 Menit",
         standarSopMenit: 30,
-        kategori: "Perangkat Kasir Tambahan",
-        alasanDurasi: "Dampak MEDIUM karena kasir masih bisa reprint dari kasir sebelah atau catat manual. Waktu SOP 30 menit untuk bersihkan pisau cutter dan gear roll kertas yang terganjal serpihan.",
-        deskripsiDefault: "Printer struk kasir 2 macet dan gigi pemotong kertas tersangkut. Kasir terpaksa mencetak struk secara manual dari stasiun kasir 1.",
-        badgeClass: "bg-blue-100 text-blue-800 border-blue-300"
+        kategori: "Periferal Kasir",
+        alasanDurasi: "Membersihkan roller auto-cutter, swap roll thermal paper, dan cleaning head printer thermal. Pekerjaan periferal ringan yang cepat diselesaikan.",
+        deskripsiDefault: "Printer struk kasir 2 macet dan gear pemotong kertas tersangkut serpihan kertas.",
+        badgeClass: "bg-blue-100 text-blue-800 border-blue-200"
       },
       {
-        id: "edc_machine",
-        nama: "Mesin EDC Pembayaran Kartu",
-        sub: "Terminal EDC BCA / Mandiri",
+        id: "edc_payment",
+        nama: "EDC Mesin Pembayaran BCA/Mandiri",
+        sub: "Mesin Gesek Kartu / QRIS Error",
         level: "High",
         urgensiLevel: 3,
         slaRespon: "30 Menit",
         standarSopMenit: 25,
-        kategori: "Perangkat Kasir Tambahan",
-        alasanDurasi: "Dampak HIGH (pembayaran nontunai terganggu), namun durasi pengerjaan teknis LEBIH CEPAT (25 menit) karena hanya perlu re-pairing bluetooth/line bank, reboot terminal, dan clear memory batch settlement.",
-        deskripsiDefault: "Mesin EDC BCA error Connection Timeout saat gesek kartu debit/kredit pelanggan. Transaksi QRIS dan debit kartu chip tertolak.",
+        kategori: "Sistem Pembayaran EDC",
+        alasanDurasi: "Restart modem GSM EDC, inisialisasi ulang sertifikat perbankan, dan uji coba transaksi reversal Rp 1,-.",
+        deskripsiDefault: "Mesin EDC BCA kasir tidak dapat menerima sinyal kartu debit dan QRIS time out berulang kali.",
         badgeClass: "bg-amber-100 text-amber-800 border-amber-300"
       },
       {
-        id: "cctv_display",
-        nama: "CCTV & Display Promo Digital",
-        sub: "Kamera Security / TV Menu",
+        id: "cctv_offline",
+        nama: "Kamera CCTV Area Kasir & Kitchen",
+        sub: "IP Camera Hikvision / NVR",
         level: "Low",
         urgensiLevel: 1,
         slaRespon: "120 Menit",
         standarSopMenit: 45,
-        kategori: "Fasilitas & Keamanan",
-        alasanDurasi: "Dampak LOW (tidak menghambat penjualan makanan), tapi pengerjaan teknis butuh 45 menit karena harus memanjat tangga, cek kabel coaxial di plafon, dan re-pointing sudut pandang kamera.",
-        deskripsiDefault: "Kamera CCTV sudut kasir dan area dining belakang offline pada layar NVR di ruang manager.",
-        badgeClass: "bg-slate-100 text-slate-800 border-slate-300"
+        kategori: "Security & Monitoring",
+        alasanDurasi: "Cek switch PoE di plafon, re-boot port kamera, dan re-assign IP address kamera di NVR server.",
+        deskripsiDefault: "Kamera CCTV channel 03 yang mengarah ke laci uang kasir tiba-tiba offline di monitor manager.",
+        badgeClass: "bg-emerald-100 text-emerald-800 border-emerald-200"
       }
     ];
 
@@ -297,6 +286,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderDeviceGrid();
       renderSopDetail();
+      lucide.createIcons();
     });
 
     function renderDeviceGrid() {
@@ -307,7 +297,7 @@
           <div onclick="selectDevice('${dev.id}')" 
                class="p-3.5 rounded-xl border-2 cursor-pointer transition-all ${
                  isSelected 
-                   ? 'border-rose-600 bg-rose-50/70 shadow-sm ring-2 ring-rose-200' 
+                   ? 'border-rose-600 bg-rose-50/70 shadow-xs' 
                    : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                }">
             <div class="flex items-start justify-between">
@@ -320,13 +310,15 @@
               <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded border ${dev.badgeClass}">
                 ${dev.level.toUpperCase()}
               </span>
-              <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">
-                ⏱️ SOP: ${dev.standarSopMenit} Menit
+              <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-slate-500"></i>
+                <span>SOP: ${dev.standarSopMenit}m</span>
               </span>
             </div>
           </div>
         `;
       }).join("");
+      lucide.createIcons();
     }
 
     function selectDevice(devId) {
@@ -351,9 +343,9 @@
               <span class="text-xs font-normal text-slate-500">(${dev.kategori})</span>
             </h4>
           </div>
-          <span class="px-3 py-1 rounded-full text-xs font-extrabold shadow-sm ${
+          <span class="px-3 py-1 rounded-md text-xs font-bold ${
             dev.level === 'Critical' ? 'bg-rose-600 text-white' :
-            dev.level === 'High' ? 'bg-amber-500 text-white' :
+            dev.level === 'High' ? 'bg-amber-600 text-white' :
             dev.level === 'Medium' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-white'
           }">
             Tingkat Urgensi: Level ${dev.urgensiLevel} (${dev.level.toUpperCase()})
@@ -361,22 +353,31 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-2xs">
-            <div class="text-[10px] text-slate-500 font-bold uppercase">⏱️ Standar Penanganan SOP Fisik</div>
-            <div class="text-base font-extrabold text-slate-900 mt-0.5">${dev.standarSopMenit} Menit</div>
-            <div class="text-[10px] text-slate-400">Benchmark durasi teknisi membongkar/memperbaiki</div>
+          <div class="bg-white rounded-xl p-3 border border-slate-200">
+            <div class="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1">
+              <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i>
+              <span>Standar Durasi SOP Fisik</span>
+            </div>
+            <div class="text-base font-extrabold text-slate-900 mt-1">${dev.standarSopMenit} Menit</div>
+            <div class="text-[10px] text-slate-400">Durasi teknisi membongkar / perbaikan</div>
           </div>
 
-          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-2xs">
-            <div class="text-[10px] text-slate-500 font-bold uppercase">🎯 Target Maksimal Respon SLA</div>
-            <div class="text-base font-extrabold text-rose-600 mt-0.5">&le; ${dev.slaRespon}</div>
+          <div class="bg-white rounded-xl p-3 border border-slate-200">
+            <div class="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1">
+              <i data-lucide="target" class="w-3 h-3 text-rose-500"></i>
+              <span>Target Respon SLA</span>
+            </div>
+            <div class="text-base font-extrabold text-rose-600 mt-1">&le; ${dev.slaRespon}</div>
             <div class="text-[10px] text-slate-400">Batas waktu dispatch teknisi tiba di outlet</div>
           </div>
 
-          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-2xs">
-            <div class="text-[10px] text-slate-500 font-bold uppercase">⚖️ Bobot Kriteria Urgensi ($C_3$)</div>
-            <div class="text-base font-extrabold text-indigo-700 mt-0.5">${dev.urgensiLevel} dari 4 Poin</div>
-            <div class="text-[10px] text-slate-400">Penalti risiko jika pekerjaan teknisi ini diinterupsi</div>
+          <div class="bg-white rounded-xl p-3 border border-slate-200">
+            <div class="text-[10px] text-slate-500 font-bold uppercase flex items-center gap-1">
+              <i data-lucide="scale" class="w-3 h-3 text-indigo-500"></i>
+              <span>Bobot Kriteria Urgensi (C3)</span>
+            </div>
+            <div class="text-base font-extrabold text-indigo-700 mt-1">${dev.urgensiLevel} dari 4 Poin</div>
+            <div class="text-[10px] text-slate-400">Penalti risiko jika pekerjaan teknisi diinterupsi</div>
           </div>
         </div>
 
@@ -387,6 +388,7 @@
 
       // Update textarea automatically
       document.getElementById("issue-description").value = dev.deskripsiDefault;
+      lucide.createIcons();
     }
 
     function handleFormSubmit(e) {
@@ -411,4 +413,3 @@
   </script>
 </body>
 </html>
-

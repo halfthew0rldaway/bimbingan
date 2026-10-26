@@ -6,6 +6,7 @@
   <title>Langkah 03 - Antrean Tiket & Triage IT Supervisor</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
   </style>
@@ -13,7 +14,7 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
@@ -25,49 +26,51 @@
         </div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
-          👤 Mode Akses: IT Supervisor (SPV Triage)
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Mode: IT Supervisor (Triage)</span>
         </span>
-        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🏠 Beranda
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Beranda</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- STEP NAVIGATION BAR -->
-  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2 px-4 overflow-x-auto">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
       <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>01</span>
         <span>Dashboard Overview</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>02</span>
         <span>Pelaporan Tiket PIC</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
-      <div class="flex items-center space-x-1.5 font-semibold text-rose-400 bg-rose-950/80 px-3 py-1 rounded-md border border-rose-800">
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <div class="flex items-center space-x-1.5 font-semibold text-white bg-rose-600 px-3 py-1 rounded-md">
         <span>03</span>
         <span>Antrean Tiket SPV</span>
       </div>
-      <span class="text-slate-600">&rarr;</span>
-      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-amber-300 hover:text-amber-200 px-2 py-1 rounded transition font-medium">
-        <span>⭐ 04</span>
-        <span>SPK Pemilihan Teknisi</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <a href="04_spk_rekomendasi_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
+        <span>04</span>
+        <span>SPK Rekomendasi Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>05</span>
         <span>Dispatch & Rute</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>06</span>
         <span>Mobile Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>07</span>
         <span>Resolusi & Rating</span>
@@ -78,28 +81,30 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
     <!-- BANNER PERINGATAN DARURAT -->
-    <div class="bg-rose-50 border-2 border-rose-300 rounded-xl p-4 shadow-sm mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div class="bg-white border-l-4 border-rose-600 rounded-r-xl p-4 border border-slate-200 border-l-rose-600 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="flex items-start space-x-3">
-        <div class="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center font-black text-xl flex-shrink-0 animate-pulse">
-          !
+        <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="alert-circle" class="w-5 h-5"></i>
         </div>
         <div>
           <div class="flex items-center space-x-2">
-            <span class="px-2 py-0.5 rounded bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider">Tiket Baru Kritis Masuk</span>
-            <span class="text-xs font-mono font-bold text-rose-900" id="banner-ticket-id">TCK-202610-0195</span>
+            <span class="px-2 py-0.5 rounded bg-rose-600 text-white text-[10px] font-bold uppercase tracking-wider">Tiket Baru Masuk</span>
+            <span class="text-xs font-mono font-bold text-slate-800" id="banner-ticket-id">TCK-202610-0195</span>
           </div>
           <h2 class="text-sm font-bold text-slate-900 mt-1">
             RamenYA Gandaria City — Mesin POS Kasir Utama Mati Total saat Jam Sibuk
           </h2>
-          <p class="text-xs text-rose-700 mt-0.5">
-            Seluruh 6 teknisi lapangan saat ini sedang bertugas di cabang lain. Sistem Pengambil Keputusan (SPK) diperlukan untuk merekomendasikan teknisi mana yang paling tepat untuk dialihkan.
+          <p class="text-xs text-slate-500 mt-0.5">
+            Seluruh 6 teknisi lapangan saat ini sedang bertugas di cabang lain. Sistem Pendukung Keputusan (SPK) diperlukan untuk merekomendasikan teknisi yang paling optimal untuk dialihkan.
           </p>
         </div>
       </div>
 
       <div class="flex-shrink-0">
-        <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-900/30 transition">
-          ⭐ Jalankan SPK Penentuan Teknisi &rarr;
+        <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span>Jalankan SPK Penentuan Teknisi</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
     </div>
@@ -107,7 +112,7 @@
     <!-- TABS FILTER -->
     <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-5">
       <div class="flex space-x-2 text-xs font-medium">
-        <button class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-semibold shadow-sm">
+        <button class="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-semibold">
           Menunggu Penugasan (1)
         </button>
         <button class="px-3 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100 transition">
@@ -127,12 +132,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
       <!-- TICKET HIGHLIGHT CARD (2 COLS) -->
-      <div class="lg:col-span-2 bg-white rounded-xl border-2 border-rose-200 shadow-sm p-6 relative">
+      <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-6 relative">
         <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
           <div>
             <div class="flex items-center space-x-2">
               <span class="text-xs font-mono font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200" id="card-ticket-id">TCK-202610-0195</span>
-              <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-600 text-white">CRITICAL — LEVEL 4</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-600 text-white">CRITICAL (LEVEL 4)</span>
             </div>
             <h3 class="text-base font-bold text-slate-900 mt-2" id="card-title">
               POS Kasir Utama 1 (Hardware / Black Screen)
@@ -143,7 +148,7 @@
           </div>
           <div class="text-right">
             <div class="text-[11px] text-slate-400">Target SLA Dispatch</div>
-            <div class="text-sm font-extrabold text-rose-600 font-mono">15 Menit</div>
+            <div class="text-sm font-bold text-rose-600 font-mono">15 Menit</div>
           </div>
         </div>
 
@@ -155,7 +160,7 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
             <div>
               <span class="text-slate-400 block text-[10px] uppercase font-semibold">Pelapor (PIC)</span>
               <span class="font-bold text-slate-800 text-xs" id="card-pic">Irfan Hakim</span>
@@ -175,45 +180,55 @@
           </div>
 
           <!-- STATUS PENUGASAN -->
-          <div class="p-4 rounded-xl border border-amber-200 bg-amber-50/50 flex items-center justify-between">
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-              <span class="text-2xl">⏳</span>
+              <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+              </div>
               <div>
                 <div class="font-bold text-slate-900 text-xs">Status: Belum Ada Teknisi Ditugaskan</div>
                 <div class="text-[11px] text-slate-500">Perlu evaluasi kriteria lokasi & status teknisi saat ini.</div>
               </div>
             </div>
-            <a href="04_spk_rekomendasi_teknisi.html" class="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-sm transition">
-              Buka SPK Rekomendasi &rarr;
+            <a href="04_spk_rekomendasi_teknisi.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition">
+              <span>Buka Rekomendasi SPK</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
       </div>
 
       <!-- SIDEBAR INFO TENTANG DILEMA KEPUTUSAN -->
-      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col justify-between">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 flex flex-col justify-between">
         <div>
           <div class="pb-3 border-b border-slate-100 mb-3">
             <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Dilema Pengambilan Keputusan</h4>
-            <p class="text-[11px] text-slate-500 mt-1">Mengapa penugasan tidak bisa asal pilih?</p>
+            <p class="text-[11px] text-slate-500 mt-1">Mengapa penugasan tidak bisa hanya melihat jarak terdekat?</p>
           </div>
 
           <div class="space-y-3 text-xs leading-relaxed text-slate-600">
-            <div class="p-2.5 rounded-lg bg-rose-50 border border-rose-100">
-              <strong class="text-rose-900 block mb-0.5">⚠️ Risiko Salah Pilih:</strong>
-              Jika SPV hanya melihat teknisi paling dekat (Anton di PIM, 2.1 km), gerai PIM yang sedang lumpuh kasirnya akan ditinggalkan separuh jalan. Kerugian omzet ganda!
+            <div class="p-3 rounded-lg bg-rose-50/60 border border-rose-200">
+              <div class="flex items-center gap-1.5 text-rose-900 font-bold mb-1">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-600"></i>
+                <span>Risiko Interupsi Cabang Lama:</span>
+              </div>
+              Jika supervisor hanya melihat jarak terdekat (Anton di PIM, 2.1 km), gerai PIM yang sedang lumpuh server kasirnya akan ditinggalkan separuh jalan. Hal ini memicu kerugian operasional ganda.
             </div>
 
-            <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-100">
-              <strong class="text-emerald-900 block mb-0.5">💡 Logika SPK yang Diuji:</strong>
-              Sistem akan menghitung trade-off antara Jarak tempuh, Urgensi tugas lama, dan Sisa waktu progres agar kedua cabang sama-sama tertangani secara optimal.
+            <div class="p-3 rounded-lg bg-emerald-50/60 border border-emerald-200">
+              <div class="flex items-center gap-1.5 text-emerald-900 font-bold mb-1">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+                <span>Solusi Multi-Kriteria:</span>
+              </div>
+              Sistem menghitung trade-off antara Jarak tempuh, Urgensi tugas lama, dan Sisa waktu progres agar kedua cabang sama-sama tertangani secara optimal.
             </div>
           </div>
         </div>
 
         <div class="pt-4 mt-4 border-t border-slate-100">
-          <a href="04_spk_rekomendasi_teknisi.html" class="w-full py-2.5 px-4 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center block transition shadow-sm">
-            Lanjut ke Langkah 04 (SPK Penentuan) &rarr;
+          <a href="04_spk_rekomendasi_teknisi.html" class="w-full py-2.5 px-4 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs text-center block transition flex items-center justify-center gap-1.5">
+            <span>Lanjut ke Langkah 04: SPK Rekomendasi</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -225,6 +240,7 @@
   <script src="shared_state.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
       const { ticket } = getStoredData();
       document.getElementById("banner-ticket-id").innerText = ticket.id;
       document.getElementById("card-ticket-id").innerText = ticket.id;
@@ -238,4 +254,3 @@
   </script>
 </body>
 </html>
-

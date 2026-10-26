@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Langkah 04 - SPK Rekomendasi Pemilihan Teknisi Lapangan (Hero Feature)</title>
+  <title>Langkah 04 - SPK Rekomendasi Pemilihan Teknisi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
   </style>
@@ -13,64 +14,63 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
   <!-- TOP HEADER -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="index.html" class="w-9 h-9 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-lg hover:bg-rose-700 transition">
           M
         </a>
         <div>
-          <div class="flex items-center space-x-2">
-            <h1 class="text-sm font-bold text-slate-900 leading-tight">Sistem Pendukung Keputusan (SPK) Penentuan Teknisi</h1>
-            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-rose-600 text-white uppercase tracking-wider">INTI RISET</span>
-          </div>
-          <p class="text-[11px] text-slate-500">Multi-Criteria Decision Making (MCDM) & Formula Jarak Haversine</p>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">Sistem Pendukung Keputusan Penugasan Teknisi</h1>
+          <p class="text-[11px] text-slate-500">Evaluasi Multi-Kriteria (Jarak Tempuh, Estimasi Waktu SOP, Risiko Interupsi)</p>
         </div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
-          👤 Mode Akses: IT Supervisor
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Mode: IT Supervisor</span>
         </span>
-        <a href="index.html" class="text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition">
-          🏠 Beranda
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-md border border-slate-300 text-slate-600 hover:bg-slate-100 transition font-medium">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Beranda</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- STEP NAVIGATION BAR -->
-  <div class="bg-slate-900 text-white border-b border-slate-800 py-2.5 px-4 overflow-x-auto">
+  <div class="bg-slate-900 text-white border-b border-slate-800 py-2 px-4 overflow-x-auto">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-xs space-x-2 min-w-[750px]">
       <a href="01_dashboard_operasional.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>01</span>
         <span>Dashboard Overview</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="02_pelaporan_tiket_pic_cabang.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>02</span>
         <span>Pelaporan Tiket PIC</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="03_antrean_tiket_it_spv.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>03</span>
         <span>Antrean Tiket SPV</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
-      <div class="flex items-center space-x-1.5 font-bold text-amber-300 bg-amber-950/80 px-3 py-1 rounded-md border border-amber-600 shadow-sm animate-pulse">
-        <span>⭐ 04</span>
-        <span>SPK Pemilihan Teknisi (Hero)</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+      <div class="flex items-center space-x-1.5 font-semibold text-white bg-rose-600 px-3 py-1 rounded-md">
+        <span>04</span>
+        <span>SPK Rekomendasi Teknisi</span>
       </div>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="05_dispatch_dan_notifikasi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>05</span>
         <span>Dispatch & Rute</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="06_mobile_app_teknisi.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>06</span>
         <span>Mobile Teknisi</span>
       </a>
-      <span class="text-slate-600">&rarr;</span>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
       <a href="07_verifikasi_resolusi_tiket.html" class="flex items-center space-x-1.5 text-slate-400 hover:text-white px-2 py-1 rounded transition">
         <span>07</span>
         <span>Resolusi & Rating</span>
@@ -81,67 +81,68 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
     <!-- DETAIL TIKET TARGET -->
-    <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div class="bg-white rounded-xl border border-slate-200 p-4 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
-        <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex flex-col items-center justify-center font-bold">
-          <span class="text-[10px] uppercase font-mono">TIKET</span>
-          <span class="text-xs">#0195</span>
+        <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex flex-col items-center justify-center font-bold">
+          <span class="text-[9px] uppercase font-mono text-slate-400">TIKET</span>
+          <span class="text-xs font-mono">#0195</span>
         </div>
         <div>
           <div class="flex items-center space-x-2">
             <span class="text-xs font-bold text-slate-900" id="target-title">POS Kasir Utama 1 (Hardware / Black Screen)</span>
-            <span class="text-[10px] font-black px-2 py-0.5 rounded bg-rose-600 text-white">CRITICAL (LEVEL 4)</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-600 text-white">CRITICAL (LEVEL 4)</span>
           </div>
           <p class="text-xs text-slate-500 mt-0.5" id="target-location">
             RamenYA Gandaria City (Jakarta Selatan) — PIC: Irfan Hakim (0812-9876-5432)
           </p>
         </div>
       </div>
-      <div class="bg-rose-50 border border-rose-200 rounded-lg px-4 py-2 text-right">
-        <div class="text-[10px] text-rose-700 font-semibold uppercase">Kondisi Lapangan</div>
-        <div class="text-xs font-extrabold text-rose-900">Seluruh 6 Teknisi Sedang Sibuk di Outlet Lain</div>
+      <div class="bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-right">
+        <div class="text-[10px] text-slate-500 font-semibold uppercase">Status Lapangan</div>
+        <div class="text-xs font-bold text-slate-800">Seluruh 6 Teknisi Sedang Menangani Tugas di Cabang Lain</div>
       </div>
     </div>
 
-    <!-- FORMULA & DILEMA EXPLANATION BOX -->
-    <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-2xl p-6 shadow-md mb-6">
+    <!-- FORMULA & DILEMA EXPLANATION BOX (CLEAN ENTERPRISE PANEL) -->
+    <div class="bg-slate-900 border border-slate-800 text-white rounded-xl p-5 mb-6">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
-          <div class="inline-block px-2.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] font-extrabold uppercase tracking-wider mb-2">
-            Metodologi Pemilihan Berdasarkan Standar Waktu Riil
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[10px] font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="scale" class="w-3 h-3 text-rose-400"></i>
+            <span>Metodologi Evaluasi Keputusan Multi-Kriteria</span>
           </div>
-          <h2 class="text-base font-bold text-white mb-1">
-            Dilema Trade-off: Jarak Tempuh vs Estimasi Sisa Waktu Pekerjaan Lama
+          <h2 class="text-sm sm:text-base font-bold text-white mb-1">
+            Analisis Trade-off: Jarak Tempuh vs Estimasi Sisa Waktu Tugas Berjalan
           </h2>
           <p class="text-xs text-slate-300 leading-relaxed max-w-3xl">
-            Sistem tidak membebani teknisi dengan update status di tengah pekerjaan. Estimasi kesiapan dihitung otomatis dari: 
-            <strong>[Standar Waktu SOP Perangkat] - [Waktu Berjalan Sejak Check-in]</strong> dipadukan dengan 
-            <strong>Jarak Haversine</strong> dan <strong>Penalti Risiko Interupsi Cabang Lama</strong>.
+            Sistem menghitung estimasi waktu secara otomatis tanpa membebani teknisi: 
+            <strong>[Standar Waktu SOP] - [Waktu Berjalan Sejak Check-in]</strong> dikombinasikan dengan 
+            <strong>Jarak Haversine</strong> dan <strong>Penalti Risiko Interupsi Tugas Lama</strong>.
           </p>
         </div>
-        <div class="bg-white/10 rounded-xl p-3 border border-white/15 text-xs text-slate-200 flex-shrink-0 font-mono">
-          <div class="text-[10px] text-amber-300 font-bold uppercase mb-1">Rumus Sisa Waktu Otomatis:</div>
+        <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700 text-xs text-slate-200 flex-shrink-0 font-mono">
+          <div class="text-[10px] text-rose-400 font-bold uppercase mb-1">Formula Sisa Waktu:</div>
           <div>Sisa Waktu = Standar SOP - (Waktu Sekarang - Waktu Check-in)</div>
         </div>
       </div>
     </div>
 
-    <!-- BEST RECOMMENDATION CARD (HERO ELEMENT) -->
+    <!-- BEST RECOMMENDATION CARD -->
     <div id="best-recommendation-card" class="mb-6">
       <!-- Injected by JavaScript -->
     </div>
 
-    <!-- DECISION MATRIX RANKING TABLE (LAYER 1 - CLEAN OPERATIONAL VIEW) -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6">
+    <!-- DECISION MATRIX RANKING TABLE -->
+    <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-100">
         <div>
-          <h3 class="font-bold text-slate-900 text-sm">Daftar Kelayakan & Rekomendasi 6 Teknisi Lapangan</h3>
-          <p class="text-xs text-slate-500">Hasil olah data kriteria terukur (Jarak, Sisa Waktu, Risiko, Skill) untuk tiket darurat Gandaria City.</p>
+          <h3 class="font-bold text-slate-900 text-sm">Daftar Peringkat Rekomendasi 6 Teknisi Lapangan</h3>
+          <p class="text-xs text-slate-500">Hasil evaluasi kriteria terukur (Jarak, Sisa Waktu, Risiko Interupsi, Keahlian) untuk tiket Gandaria City.</p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="openAlgoModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm transition">
-            <span>🔍</span>
-            <span>Lihat Detail Kalkulasi Algoritma (SAW, TOPSIS, WP)</span>
+          <button onclick="openAlgoModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Detail Kalkulasi Algoritma (SAW, TOPSIS, WP)</span>
           </button>
         </div>
       </div>
@@ -156,8 +157,8 @@
               <th class="py-3 px-3 font-semibold">Jarak & Waktu Tempuh</th>
               <th class="py-3 px-3 font-semibold">Tugas Lama (Standar SOP)</th>
               <th class="py-3 px-3 font-semibold">Estimasi Sisa Waktu</th>
-              <th class="py-3 px-3 font-semibold">Risiko Jika Dialihkan</th>
-              <th class="py-3 px-3 font-semibold text-center">Skor Hasil Kalkulasi</th>
+              <th class="py-3 px-3 font-semibold">Dampak Jika Dialihkan</th>
+              <th class="py-3 px-3 font-semibold text-center">Skor Kelayakan</th>
               <th class="py-3 px-3 font-semibold text-center">Aksi</th>
             </tr>
           </thead>
@@ -167,20 +168,20 @@
         </table>
       </div>
 
-      <!-- KOTAK LOGIKA SEDERHANA UNTUK OPERASIONAL / AWAM -->
-      <div class="mt-5 p-4 bg-amber-50/80 border border-amber-200 rounded-xl text-xs text-amber-950">
-        <h4 class="font-bold text-amber-900 mb-2 flex items-center gap-1.5 text-xs uppercase tracking-wider">
-          <span>💡</span>
-          <span>Rasionalitas Keputusan Sistem (Bahasa Operasional):</span>
+      <!-- KOTAK LOGIKA OPERASIONAL -->
+      <div class="mt-5 p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-700">
+        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+          <i data-lucide="info" class="w-3.5 h-3.5 text-slate-500"></i>
+          <span>Rasionalitas Keputusan Sistem:</span>
         </h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] leading-relaxed">
-          <div class="bg-white/80 p-3 rounded-lg border border-amber-200">
-            <strong class="text-rose-700 block mb-1">Kenapa Anton Pratama TIDAK Terpilih padahal Jaraknya Paling Dekat (2.1 km)?</strong>
-            Anton sedang menangani <em>Server Down</em> di SushiYa PIM (SOP 90 menit) yang baru berjalan 20 menit. Sisa waktunya masih <strong>70 menit lagi</strong>! Jika Anton disuruh pergi sekarang, gerai PIM ditinggalkan dalam kondisi kasir mati total. Kerugian omzetnya ganda!
+          <div class="bg-white p-3 rounded-lg border border-slate-200">
+            <strong class="text-rose-700 block mb-1">Mengapa Anton Pratama TIDAK Terpilih padahal Jaraknya Paling Dekat (2.1 km)?</strong>
+            Anton sedang menangani perbaikan server di SushiYa PIM (SOP 90 menit) yang baru berjalan 20 menit. Sisa waktunya masih <strong>70 menit lagi</strong>. Jika Anton ditarik ke Gandaria City, gerai PIM ditinggalkan dalam kondisi server kasir mati total, memicu kerugian operasional ganda.
           </div>
-          <div class="bg-white/80 p-3 rounded-lg border border-amber-200">
-            <strong class="text-emerald-700 block mb-1">Kenapa Budi Santoso Terpilih Sebagai Rekomendasi Utama?</strong>
-            Budi sedang menangani printer di Senayan City (SOP 30 menit) dan sudah berjalan 25 menit. Sisa waktunya <strong>hanya 5 menit lagi</strong> untuk selesai tuntas! Menunggu Budi 5 menit lalu meluncur 12 menit (total tiba 17 menit) membuat kedua cabang sama-sama aman dan selamat.
+          <div class="bg-white p-3 rounded-lg border border-slate-200">
+            <strong class="text-emerald-700 block mb-1">Mengapa Budi Santoso Terpilih Sebagai Rekomendasi Utama?</strong>
+            Budi sedang menangani printer di Senayan City (SOP 30 menit) dan telah berjalan 25 menit. Sisa waktunya <strong>hanya 5 menit lagi</strong> untuk selesai tuntas. Menunggu Budi 5 menit lalu meluncur 12 menit (total tiba ~17 menit) membuat kedua cabang sama-sama aman dan terlindungi.
           </div>
         </div>
       </div>
@@ -189,62 +190,61 @@
     <!-- =============================================================== -->
     <!-- LAYER 2: MODAL POPUP DETAIL KALKULASI ALGORITMA (SAW, TOPSIS, WP) -->
     <!-- =============================================================== -->
-    <div id="algo-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4 overflow-y-auto">
-      <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-150">
+    <div id="algo-modal" class="fixed inset-0 z-50 bg-slate-950/70 hidden items-center justify-center p-4 overflow-y-auto">
+      <div class="bg-white rounded-xl border border-slate-200 shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden my-auto">
         
         <!-- MODAL HEADER -->
-        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div>
-            <div class="inline-block px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[10px] font-extrabold uppercase tracking-wider mb-1">
-              Riset Akademik & Transparansi SPK
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-0.5">
+              Riset Akademik & Transparansi Algoritma
             </div>
-            <h3 class="text-base font-bold text-slate-900">Detail Kalkulasi & Komparasi 3 Kandidat Algoritma</h3>
-            <p class="text-xs text-slate-500">Membuktikan keandalan sistem: Menguji apakah metode SAW, TOPSIS, dan WP memberikan rekomendasi yang sama.</p>
+            <h3 class="text-sm font-bold text-slate-900">Pembuktian Matematis & Komparasi 3 Algoritma SPK</h3>
           </div>
-          <button onclick="closeAlgoModal()" class="w-8 h-8 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold flex items-center justify-center transition">
-            ✕
+          <button onclick="closeAlgoModal()" class="w-7 h-7 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition">
+            <i data-lucide="x" class="w-4 h-4"></i>
           </button>
         </div>
 
         <!-- MODAL TABS -->
-        <div class="border-b border-slate-200 bg-slate-100/80 p-2 flex space-x-2 text-xs overflow-x-auto">
-          <button onclick="switchModalTab('saw')" id="modal-tab-saw" class="px-4 py-2 rounded-lg font-bold bg-white text-rose-600 shadow-xs transition whitespace-nowrap">
-            1. Metode SAW (Nilai Raport)
+        <div class="border-b border-slate-200 bg-slate-100 p-2 flex space-x-2 text-xs overflow-x-auto">
+          <button onclick="switchModalTab('saw')" id="modal-tab-saw" class="px-3.5 py-1.5 rounded-lg font-bold bg-white text-rose-600 shadow-xs transition whitespace-nowrap">
+            1. Metode SAW (Simple Additive Weighting)
           </button>
-          <button onclick="switchModalTab('topsis')" id="modal-tab-topsis" class="px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
-            2. Metode TOPSIS (Teknisi Idaman)
+          <button onclick="switchModalTab('topsis')" id="modal-tab-topsis" class="px-3.5 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
+            2. Metode TOPSIS (Ideal Solution Distance)
           </button>
-          <button onclick="switchModalTab('wp')" id="modal-tab-wp" class="px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
-            3. Metode WP (Seleksi Pangkat)
+          <button onclick="switchModalTab('wp')" id="modal-tab-wp" class="px-3.5 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
+            3. Metode WP (Weighted Product)
           </button>
-          <button onclick="switchModalTab('compare')" id="modal-tab-compare" class="px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
-            ⭐ Komparasi 3 Algoritma
+          <button onclick="switchModalTab('compare')" id="modal-tab-compare" class="px-3.5 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 transition whitespace-nowrap">
+            4. Konsensus & Komparasi
           </button>
         </div>
 
         <!-- MODAL BODY (SCROLLABLE) -->
-        <div class="p-6 overflow-y-auto space-y-4 flex-1 text-xs">
+        <div class="p-5 overflow-y-auto space-y-4 flex-1 text-xs">
 
           <!-- TAB 1: SAW -->
           <div id="modal-content-saw" class="space-y-4">
-            <div class="p-3.5 bg-blue-50 border border-blue-200 rounded-xl text-blue-950 leading-relaxed">
-              <strong class="text-blue-900 block mb-1">💡 Cara Kerja Awam Metode SAW (Simple Additive Weighting):</strong>
-              Bekerja seperti <strong>menghitung nilai rata-rata raport sekolah</strong>. Nilai kriteria diukur dari 0 sampai 1, lalu dikalikan persentase bobot kepentingannya, kemudian dijumlahkan:
-              <div class="mt-1.5 font-mono text-[11px] bg-white/80 p-2 rounded border border-blue-200 text-blue-900">
-                Skor Akhir = (30% × Nilai Jarak) + (30% × Nilai Sisa Waktu) + (25% × Nilai Risiko) + (15% × Nilai Skill)
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 leading-relaxed">
+              <strong class="text-slate-900 block mb-1">Metode SAW (Simple Additive Weighting):</strong>
+              Menormalisasi setiap kriteria ke dalam rentang 0 hingga 1, lalu menjumlahkan perkalian antara nilai normalisasi dengan bobot kriteria masing-masing:
+              <div class="mt-1.5 font-mono text-[11px] bg-white p-2 rounded border border-slate-200 text-slate-800">
+                Skor Akhir = (30% × Jarak) + (30% × Sisa Waktu) + (25% × Risiko) + (15% × Keahlian)
               </div>
             </div>
 
-            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left">
                 <thead class="bg-slate-50 text-slate-600 border-b border-slate-200">
                   <tr>
                     <th class="py-2 px-3 font-semibold text-center w-12">Rank</th>
                     <th class="py-2 px-3 font-semibold">Nama Teknisi</th>
-                    <th class="py-2 px-3 text-center">Nilai Jarak (30%)</th>
-                    <th class="py-2 px-3 text-center">Nilai Sisa Waktu (30%)</th>
-                    <th class="py-2 px-3 text-center">Nilai Risiko (25%)</th>
-                    <th class="py-2 px-3 text-center">Nilai Skill (15%)</th>
+                    <th class="py-2 px-3 text-center">Jarak (30%)</th>
+                    <th class="py-2 px-3 text-center">Sisa Waktu (30%)</th>
+                    <th class="py-2 px-3 text-center">Risiko (25%)</th>
+                    <th class="py-2 px-3 text-center">Skill (15%)</th>
                     <th class="py-2 px-3 text-center font-bold text-rose-600">Skor Akhir SAW</th>
                   </tr>
                 </thead>
@@ -276,7 +276,7 @@
                     <td class="py-2 px-3 text-center">0.800</td>
                     <td class="py-2 px-3 text-center font-bold">0.5746 (57%)</td>
                   </tr>
-                  <tr class="bg-rose-50/30">
+                  <tr class="bg-rose-50/40">
                     <td class="py-2 px-3 text-center text-rose-700 font-bold">#4</td>
                     <td class="py-2 px-3 font-sans font-bold text-rose-900">Anton Pratama</td>
                     <td class="py-2 px-3 text-center text-emerald-700">1.000 (Dekat)</td>
@@ -307,30 +307,30 @@
               </table>
             </div>
 
-            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 leading-relaxed">
-              <strong>Kesimpulan SAW:</strong> Budi Santoso mendapatkan nilai sempurna 1.000 pada sisa waktu karena pekerjaannya tinggal 5 menit lagi beres. Anton Pratama meskipun berjarak paling dekat, nilainya anjlok di kriteria sisa waktu (0.071) dan risiko (0.250).
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 leading-relaxed text-[11px]">
+              <strong>Kesimpulan SAW:</strong> Budi Santoso meraih nilai tertinggi 1.000 pada kriteria sisa waktu karena pekerjaannya tinggal 5 menit selesai. Meskipun jarak Anton Pratama paling dekat, nilainya anjlok drastis pada sisa waktu (0.071) dan risiko (0.250).
             </div>
           </div>
 
           <!-- TAB 2: TOPSIS -->
           <div id="modal-content-topsis" class="space-y-4 hidden">
-            <div class="p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl text-indigo-950 leading-relaxed">
-              <strong class="text-indigo-900 block mb-1">💡 Cara Kerja Awam Metode TOPSIS:</strong>
-              Mencari teknisi yang profilnya paling mendekati sosok <strong>"Teknisi Idaman"</strong> (jarak paling dekat, sisa waktu paling cepat beres, dan aman ditinggal).
-              <div class="mt-1.5 font-mono text-[11px] bg-white/80 p-2 rounded border border-indigo-200 text-indigo-900">
-                Skor = Jarak ke Kondisi Terburuk / (Jarak ke Kondisi Idaman + Jarak ke Kondisi Terburuk)
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 leading-relaxed">
+              <strong class="text-slate-900 block mb-1">Metode TOPSIS (Technique for Order Preference by Similarity to Ideal Solution):</strong>
+              Mengevaluasi jarak geometris euclidean setiap teknisi terhadap solusi ideal positif (terbaik) dan solusi ideal negatif (terburuk).
+              <div class="mt-1.5 font-mono text-[11px] bg-white p-2 rounded border border-slate-200 text-slate-800">
+                Skor Kedekatan = Jarak ke Negatif / (Jarak ke Positif + Jarak ke Negatif)
               </div>
             </div>
 
-            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left">
                 <thead class="bg-slate-50 text-slate-600 border-b border-slate-200">
                   <tr>
                     <th class="py-2 px-3 font-semibold text-center w-12">Rank</th>
                     <th class="py-2 px-3 font-semibold">Nama Teknisi</th>
-                    <th class="py-2 px-3 text-center">Jarak ke Idaman (D+)</th>
-                    <th class="py-2 px-3 text-center">Jarak ke Terburuk (D-)</th>
-                    <th class="py-2 px-3 text-center font-bold text-rose-600">Skor Kedekatan Relatif</th>
+                    <th class="py-2 px-3 text-center">Jarak ke Positif (D+)</th>
+                    <th class="py-2 px-3 text-center">Jarak ke Negatif (D-)</th>
+                    <th class="py-2 px-3 text-center font-bold text-rose-600">Skor Preferensi</th>
                     <th class="py-2 px-3">Status</th>
                   </tr>
                 </thead>
@@ -338,10 +338,10 @@
                   <tr class="bg-emerald-50/50 font-bold">
                     <td class="py-2 px-3 text-center text-emerald-700">#1</td>
                     <td class="py-2 px-3 font-sans text-slate-900">Budi Santoso</td>
-                    <td class="py-2 px-3 text-center text-emerald-700">0.0382 (Sangat Dekat)</td>
+                    <td class="py-2 px-3 text-center text-emerald-700">0.0382 (Dekat)</td>
                     <td class="py-2 px-3 text-center text-emerald-700">0.2481</td>
                     <td class="py-2 px-3 text-center text-emerald-700 font-extrabold text-sm">0.8665 (87%)</td>
-                    <td class="py-2 px-3 font-sans text-emerald-800">Paling Mendekati Idaman</td>
+                    <td class="py-2 px-3 font-sans text-emerald-800">Paling Mendekati Solusi Ideal</td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 text-center text-slate-500">#2</td>
@@ -359,13 +359,13 @@
                     <td class="py-2 px-3 text-center font-bold">0.5633 (56%)</td>
                     <td class="py-2 px-3 font-sans text-slate-600">Alternatif Moderat</td>
                   </tr>
-                  <tr class="bg-rose-50/30">
+                  <tr class="bg-rose-50/40">
                     <td class="py-2 px-3 text-center text-rose-700 font-bold">#4</td>
                     <td class="py-2 px-3 font-sans font-bold text-rose-900">Anton Pratama</td>
                     <td class="py-2 px-3 text-center text-rose-600">0.1920 (Jauh)</td>
                     <td class="py-2 px-3 text-center">0.1215</td>
                     <td class="py-2 px-3 text-center text-rose-700 font-bold text-sm">0.3875 (39%)</td>
-                    <td class="py-2 px-3 font-sans text-rose-700">Jauh dari kondisi idaman</td>
+                    <td class="py-2 px-3 font-sans text-rose-700">Jauh dari kondisi ideal</td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 text-center text-slate-500">#5</td>
@@ -387,29 +387,29 @@
               </table>
             </div>
 
-            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 leading-relaxed">
-              <strong>Kesimpulan TOPSIS:</strong> Menunggu Budi selama 5 menit adalah solusi paling ideal bagi operasional kedua cabang.
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 leading-relaxed text-[11px]">
+              <strong>Kesimpulan TOPSIS:</strong> Menunggu Budi selama 5 menit adalah solusi yang paling mendekati profil ideal operasional kedua cabang.
             </div>
           </div>
 
           <!-- TAB 3: WP -->
           <div id="modal-content-wp" class="space-y-4 hidden">
-            <div class="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-950 leading-relaxed">
-              <strong class="text-emerald-900 block mb-1">💡 Cara Kerja Awam Metode WP (Weighted Product):</strong>
-              Sistem seleksi ketat menggunakan <strong>perkalian berpangkat</strong>. Jika ada 1 kelemahan fatal (seperti sisa waktu Anton yang masih 70 menit), nilainya langsung dipotong habis dan tidak terselamatkan.
-              <div class="mt-1.5 font-mono text-[11px] bg-white/80 p-2 rounded border border-emerald-200 text-emerald-900">
-                Skor = Perkalian Pangkat Bobot / Total Perkalian Semua Teknisi
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 leading-relaxed">
+              <strong class="text-slate-900 block mb-1">Metode WP (Weighted Product):</strong>
+              Menggunakan perkalian untuk menghubungkan rating atribut, di mana setiap rating dipangkatkan dengan bobot kriteria terkait.
+              <div class="mt-1.5 font-mono text-[11px] bg-white p-2 rounded border border-slate-200 text-slate-800">
+                Vektor V = Nilai Vektor S / Total Seluruh Vektor S
               </div>
             </div>
 
-            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left">
                 <thead class="bg-slate-50 text-slate-600 border-b border-slate-200">
                   <tr>
                     <th class="py-2 px-3 font-semibold text-center w-12">Rank</th>
                     <th class="py-2 px-3 font-semibold">Nama Teknisi</th>
-                    <th class="py-2 px-3 text-center">Hasil Perkalian Pangkat (S)</th>
-                    <th class="py-2 px-3 text-center font-bold text-rose-600">Skor Vektor WP (V)</th>
+                    <th class="py-2 px-3 text-center">Vektor S</th>
+                    <th class="py-2 px-3 text-center font-bold text-rose-600">Vektor V (Bobot Preferensi)</th>
                     <th class="py-2 px-3">Status</th>
                   </tr>
                 </thead>
@@ -419,7 +419,7 @@
                     <td class="py-2 px-3 font-sans text-slate-900">Budi Santoso</td>
                     <td class="py-2 px-3 text-center text-emerald-700">2.4182</td>
                     <td class="py-2 px-3 text-center text-emerald-700 font-extrabold text-sm">0.2641 (26.4%)</td>
-                    <td class="py-2 px-3 font-sans text-emerald-800">Rank 1 (Pangsa Skor Tertinggi)</td>
+                    <td class="py-2 px-3 font-sans text-emerald-800">Rank 1 (Preferensi Tertinggi)</td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 text-center text-slate-500">#2</td>
@@ -435,12 +435,12 @@
                     <td class="py-2 px-3 text-center font-bold">0.1792 (17.9%)</td>
                     <td class="py-2 px-3 font-sans text-slate-600">Rank 3</td>
                   </tr>
-                  <tr class="bg-rose-50/30">
+                  <tr class="bg-rose-50/40">
                     <td class="py-2 px-3 text-center text-rose-700 font-bold">#4</td>
                     <td class="py-2 px-3 font-sans font-bold text-rose-900">Anton Pratama</td>
                     <td class="py-2 px-3 text-center text-rose-600">1.4115</td>
                     <td class="py-2 px-3 text-center text-rose-700 font-bold text-sm">0.1542 (15.4%)</td>
-                    <td class="py-2 px-3 font-sans text-rose-700">Anjlok karena pangkat sisa waktu 70m</td>
+                    <td class="py-2 px-3 font-sans text-rose-700">Turun akibat pangkat sisa waktu 70m</td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 text-center text-slate-500">#5</td>
@@ -460,28 +460,28 @@
               </table>
             </div>
 
-            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 leading-relaxed">
-              <strong>Kesimpulan WP:</strong> Metode perkalian ini sangat objektif memfilter teknisi yang "kelihatannya dekat tapi sebenarnya masih tertahan lama di lokasi lama".
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 leading-relaxed text-[11px]">
+              <strong>Kesimpulan WP:</strong> Formula perkalian berpangkat secara objektif mendiskualifikasi alternatif yang memiliki bottleneck parah pada satu kriteria kritis.
             </div>
           </div>
 
           <!-- TAB 4: COMPARE ALL -->
           <div id="modal-content-compare" class="space-y-4 hidden">
-            <div class="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-950 leading-relaxed">
-              <strong class="text-emerald-900 block mb-1">⭐ Bukti Konsistensi 3 Algoritma:</strong>
-              Ketiga metode pengambilan keputusan yang berbeda ini menghasilkan <strong>urutan peringkat 100% identik</strong>!
+            <div class="p-3 bg-emerald-50/70 border border-emerald-200 rounded-lg text-emerald-950 leading-relaxed">
+              <strong class="text-emerald-900 block mb-1">Konsistensi Hasil 3 Algoritma:</strong>
+              Ketiga metode pengambilan keputusan menghasilkan <strong>urutan peringkat 100% konsisten</strong>.
             </div>
 
-            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left">
                 <thead class="bg-slate-50 text-slate-600 border-b border-slate-200">
                   <tr>
                     <th class="py-2.5 px-3 font-semibold">Alternatif Teknisi</th>
                     <th class="py-2.5 px-3 font-semibold">Lokasi Saat Ini</th>
-                    <th class="py-2.5 px-3 text-center font-semibold bg-blue-50/50">Rank SAW</th>
-                    <th class="py-2.5 px-3 text-center font-semibold bg-indigo-50/50">Rank TOPSIS</th>
-                    <th class="py-2.5 px-3 text-center font-semibold bg-emerald-50/50">Rank WP</th>
-                    <th class="py-2.5 px-3 text-center font-bold text-emerald-900 bg-emerald-100">Keputusan Akhir</th>
+                    <th class="py-2.5 px-3 text-center font-semibold bg-slate-100">Rank SAW</th>
+                    <th class="py-2.5 px-3 text-center font-semibold bg-slate-100">Rank TOPSIS</th>
+                    <th class="py-2.5 px-3 text-center font-semibold bg-slate-100">Rank WP</th>
+                    <th class="py-2.5 px-3 text-center font-bold text-slate-900 bg-slate-200">Keputusan Akhir</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
@@ -492,7 +492,10 @@
                     <td class="py-2.5 px-3 text-center font-mono text-emerald-700">#1 (0.8665)</td>
                     <td class="py-2.5 px-3 text-center font-mono text-emerald-700">#1 (0.2641)</td>
                     <td class="py-2.5 px-3 text-center">
-                      <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold">✓ Terpilih Mutlak</span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold">
+                        <i data-lucide="check" class="w-3 h-3"></i>
+                        <span>Terpilih Konsensus</span>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -517,7 +520,7 @@
                     <td class="py-2.5 px-3 text-center font-mono text-rose-700 font-bold">#4 (0.5339)</td>
                     <td class="py-2.5 px-3 text-center font-mono text-rose-700 font-bold">#4 (0.3875)</td>
                     <td class="py-2.5 px-3 text-center font-mono text-rose-700 font-bold">#4 (0.1542)</td>
-                    <td class="py-2.5 px-3 text-center text-rose-700 font-bold">Ditolak (Risiko Fatal)</td>
+                    <td class="py-2.5 px-3 text-center text-rose-700 font-bold">Ditolak (Risiko Interupsi Fatal)</td>
                   </tr>
                   <tr>
                     <td class="py-2.5 px-3 text-slate-700">Dedi Kurniawan</td>
@@ -539,8 +542,8 @@
               </table>
             </div>
 
-            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-emerald-900 leading-relaxed font-sans">
-              <strong>Nilai Tambah untuk Sidang Skripsi:</strong> Keselarasan ketiga algoritma ini membuktikan bahwa penentuan teknisi menggunakan parameter waktu SOP dan jarak spasial bersifat <em>robust</em> (sangat andal) dan tidak bias terhadap pilihan algoritma tertentu.
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 leading-relaxed font-sans text-[11px]">
+              <strong>Nilai Tambah Ilmiah:</strong> Keselarasan ketiga algoritma membuktikan bahwa penentuan teknisi menggunakan parameter waktu SOP dan jarak spasial bersifat <em>robust</em> dan bebas bias algoritma tertentu.
             </div>
           </div>
 
@@ -548,12 +551,12 @@
 
         <!-- MODAL FOOTER -->
         <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
-          <a href="04_spk_komparasi_algoritma.html" target="_blank" class="text-xs text-rose-600 font-semibold hover:underline flex items-center gap-1">
-            <span>Buka Halaman Lab Penuh di Tab Baru</span>
-            <span>&rarr;</span>
+          <a href="04_spk_komparasi_algoritma.html" target="_blank" class="text-xs text-rose-600 font-semibold hover:underline inline-flex items-center gap-1">
+            <span>Buka Halaman Uji Algoritma Lengkap</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           </a>
-          <button onclick="closeAlgoModal()" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition">
-            Tutup Rincian & Kembali ke Alur Tiket
+          <button onclick="closeAlgoModal()" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition">
+            Tutup
           </button>
         </div>
 
@@ -564,18 +567,19 @@
 
   <script src="shared_state.js"></script>
   <script>
-    // Data Skor Kelayakan Hasil Kalkulasi Sistem (Simulasi Layer 1)
+    // Data Skor Kelayakan Hasil Kalkulasi Sistem
     const SYSTEM_SCORES = {
-      "TECH-01": { pct: "87%", label: "Sangat Direkomendasikan", bg: "bg-emerald-100 text-emerald-800 border-emerald-300" },
-      "TECH-06": { pct: "69%", label: "Alternatif Cadangan", bg: "bg-blue-100 text-blue-800 border-blue-200" },
+      "TECH-01": { pct: "87%", label: "Sangat Direkomendasikan", bg: "bg-emerald-50 text-emerald-800 border-emerald-200" },
+      "TECH-06": { pct: "69%", label: "Alternatif Cadangan", bg: "bg-blue-50 text-blue-800 border-blue-200" },
       "TECH-04": { pct: "57%", label: "Cukup Layak", bg: "bg-slate-100 text-slate-700 border-slate-200" },
-      "TECH-02": { pct: "53%", label: "Kurang Layak (Sisa 70m)", bg: "bg-rose-100 text-rose-800 border-rose-200" },
+      "TECH-02": { pct: "53%", label: "Kurang Layak (Sisa 70m)", bg: "bg-rose-50 text-rose-800 border-rose-200" },
       "TECH-03": { pct: "43%", label: "Jarak Terlalu Jauh", bg: "bg-slate-100 text-slate-500 border-slate-200" },
       "TECH-05": { pct: "40%", label: "Jarak Sangat Jauh", bg: "bg-slate-100 text-slate-500 border-slate-200" }
     };
 
     document.addEventListener("DOMContentLoaded", () => {
       renderPage();
+      lucide.createIcons();
     });
 
     function renderPage() {
@@ -592,58 +596,58 @@
       const cardContainer = document.getElementById("best-recommendation-card");
 
       cardContainer.innerHTML = `
-        <div class="bg-white rounded-2xl border-2 border-emerald-500 shadow-md p-6 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-emerald-600 text-white font-extrabold text-[10px] px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-            ✓ REKOMENDASI TERBAIK SISTEM (RANK #1)
+        <div class="bg-white rounded-xl border-2 border-emerald-600 p-6 relative">
+          <div class="absolute top-0 right-0 bg-emerald-600 text-white font-bold text-[10px] px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+            Rekomendasi Utama (Peringkat 1)
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             <div class="lg:col-span-2">
               <div class="flex items-center space-x-3 mb-2">
-                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-extrabold text-lg border border-emerald-300">
+                <div class="w-11 h-11 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-base border border-emerald-200">
                   ${bestTech.nama.charAt(0)}
                 </div>
                 <div>
                   <h3 class="text-base font-bold text-slate-900">${bestTech.nama} <span class="text-xs text-slate-500 font-mono font-normal">(${bestTech.id})</span></h3>
                   <div class="text-xs text-slate-600 flex items-center space-x-2 mt-0.5">
-                    <span>📍 Lokasi: <strong>${bestTech.cabangSaatIni}</strong></span>
+                    <span>Lokasi: <strong>${bestTech.cabangSaatIni}</strong></span>
                     <span>•</span>
                     <span class="text-emerald-700 font-semibold">Jarak: ${bestTech.jarakKm} km (~${bestTech.estimasiPerjalananMenit} menit)</span>
                   </div>
                 </div>
               </div>
 
-              <div class="p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl text-xs text-emerald-900 leading-relaxed mt-3">
-                <span class="font-bold block mb-1">Rasionalitas Rekomendasi Sistem:</span>
-                Teknisi ini memiliki sisa waktu paling singkat (hanya <strong>${bestTech.tugasAktif.sisaWaktuMenit} menit lagi</strong> untuk menyelesaikan printer di Senayan City). Setelah itu ia langsung berangkat menuju Gandaria City (~${bestTech.estimasiPerjalananMenit} menit). <strong>Total waktu respon hanya ~${bestTech.totalWaktuTibaMenit} menit</strong>, dan kedua cabang restoran sama-sama terselamatkan tanpa risiko gangguan operasional.
+              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-700 leading-relaxed mt-3">
+                <span class="font-bold text-slate-900 block mb-1">Rasionalitas Rekomendasi:</span>
+                Teknisi ini memiliki sisa waktu tersingkat (hanya <strong>${bestTech.tugasAktif.sisaWaktuMenit} menit lagi</strong> untuk menyelesaikan printer di Senayan City). Setelah itu langsung berangkat ke Gandaria City (~${bestTech.estimasiPerjalananMenit} menit). <strong>Total estimasi tiba hanya ~${bestTech.totalWaktuTibaMenit} menit</strong>, dan kedua cabang aman tanpa risiko gangguan operasional ganda.
               </div>
 
               <div class="grid grid-cols-3 gap-3 mt-3 text-xs">
-                <div class="p-2 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
                   <span class="text-slate-400 block text-[10px] uppercase font-semibold">Tugas di Senayan City</span>
-                  <span class="font-medium text-slate-800 truncate block">${bestTech.tugasAktif.perangkat}</span>
+                  <span class="font-medium text-slate-800 truncate block mt-0.5">${bestTech.tugasAktif.perangkat}</span>
                 </div>
-                <div class="p-2 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
                   <span class="text-slate-400 block text-[10px] uppercase font-semibold">Estimasi Sisa Waktu</span>
-                  <span class="font-bold text-emerald-700">~${bestTech.tugasAktif.sisaWaktuMenit} Menit Lagi (SOP ${bestTech.tugasAktif.standarSopMenit}m, jalan ${bestTech.tugasAktif.elapsedMenit}m)</span>
+                  <span class="font-bold text-emerald-700 mt-0.5 block">~${bestTech.tugasAktif.sisaWaktuMenit} Menit (SOP ${bestTech.tugasAktif.standarSopMenit}m)</span>
                 </div>
-                <div class="p-2 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
                   <span class="text-slate-400 block text-[10px] uppercase font-semibold">Estimasi Total Tiba</span>
-                  <span class="font-bold text-emerald-700">~${bestTech.totalWaktuTibaMenit} Menit ke Gancit</span>
+                  <span class="font-bold text-emerald-700 mt-0.5 block">~${bestTech.totalWaktuTibaMenit} Menit ke Gancit</span>
                 </div>
               </div>
             </div>
 
             <div class="border-t lg:border-t-0 lg:border-l border-slate-200 pt-4 lg:pt-0 lg:pl-6 flex flex-col justify-between h-full">
               <div class="text-center lg:text-right mb-4">
-                <span class="text-slate-500 text-xs block">Skor Hasil Kalkulasi Sistem</span>
-                <div class="text-4xl font-black text-emerald-600 font-mono">${bestScore.pct}</div>
-                <div class="text-[10px] text-emerald-700 font-bold mt-1">${bestScore.label}</div>
+                <span class="text-slate-500 text-xs block">Skor Kelayakan Sistem</span>
+                <div class="text-4xl font-extrabold text-emerald-700 font-mono">${bestScore.pct}</div>
+                <div class="text-[11px] text-emerald-800 font-bold mt-1">${bestScore.label}</div>
               </div>
 
-              <button onclick="pilihTeknisi('${bestTech.id}')" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-lg shadow-emerald-900/20 transition flex items-center justify-center space-x-2">
-                <span>Pilih & Tugaskan ${bestTech.nama}</span>
-                <span>&rarr;</span>
+              <button onclick="pilihTeknisi('${bestTech.id}')" class="w-full py-2.5 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition flex items-center justify-center gap-1.5">
+                <span>Tugaskan ${bestTech.nama}</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
             </div>
           </div>
@@ -655,11 +659,11 @@
       tbody.innerHTML = techs.map((tech, idx) => {
         const isBest = idx === 0;
         let rankBadge = `<span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center mx-auto text-xs">${idx + 1}</span>`;
-        if (idx === 0) rankBadge = `<span class="w-6 h-6 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center mx-auto text-xs shadow-sm">1</span>`;
+        if (idx === 0) rankBadge = `<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center mx-auto text-xs shadow-xs">1</span>`;
 
         let levelBadge = "bg-slate-100 text-slate-700";
-        if (tech.tugasAktif.level === "Critical") levelBadge = "bg-rose-100 text-rose-800 font-bold border border-rose-300";
-        else if (tech.tugasAktif.level === "High") levelBadge = "bg-amber-100 text-amber-800 font-bold";
+        if (tech.tugasAktif.level === "Critical") levelBadge = "bg-rose-100 text-rose-800 font-bold border border-rose-200";
+        else if (tech.tugasAktif.level === "High") levelBadge = "bg-amber-100 text-amber-800 font-bold border border-amber-200";
         else if (tech.tugasAktif.level === "Medium") levelBadge = "bg-blue-100 text-blue-800";
         else levelBadge = "bg-emerald-100 text-emerald-800";
 
@@ -670,7 +674,7 @@
         const scoreObj = SYSTEM_SCORES[tech.id] || { pct: "50%", label: "Sedang", bg: "bg-slate-100 text-slate-700" };
 
         return `
-          <tr class="${isBest ? 'bg-emerald-50/40 font-medium' : 'hover:bg-slate-50'} transition">
+          <tr class="${isBest ? 'bg-emerald-50/30 font-medium' : 'hover:bg-slate-50'} transition">
             <td class="py-3 px-3 text-center">${rankBadge}</td>
             <td class="py-3 px-3">
               <div class="font-bold text-slate-900">${tech.nama}</div>
@@ -704,12 +708,15 @@
           </tr>
         `;
       }).join('');
+
+      lucide.createIcons();
     }
 
     // Modal Handlers
     function openAlgoModal() {
       document.getElementById("algo-modal").classList.remove("hidden");
       document.getElementById("algo-modal").classList.add("flex");
+      lucide.createIcons();
     }
 
     function closeAlgoModal() {
@@ -723,13 +730,14 @@
         const btn = document.getElementById(`modal-tab-${t}`);
         const content = document.getElementById(`modal-content-${t}`);
         if (t === tabId) {
-          btn.className = "px-4 py-2 rounded-lg font-bold bg-white text-rose-600 shadow-xs transition whitespace-nowrap";
+          btn.className = "px-3.5 py-1.5 rounded-lg font-bold bg-white text-rose-600 shadow-xs transition whitespace-nowrap";
           content.classList.remove("hidden");
         } else {
-          btn.className = "px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900 transition whitespace-nowrap";
+          btn.className = "px-3.5 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 transition whitespace-nowrap";
           content.classList.add("hidden");
         }
       });
+      lucide.createIcons();
     }
 
     function pilihTeknisi(techId) {
