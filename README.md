@@ -65,7 +65,18 @@ Dosen pembimbing meminta penyelesaian konkret atas dilema:
 
 ---
 
-## 4. Cara Menjalankan & Mempresentasikan ke Dosen Pembimbing
+---
+
+## 5. Dokumen Pendukung
+
+| Berkas | Keterangan |
+| :--- | :--- |
+| [`analisis_data/index.html`](./analisis_data/index.html) | **Sajian Analisis Data Tiket:** hasil olahan 788 tiket IT Service Desk periode Sep–Nov 2026 — masalah yang terjadi, bukti angkanya, dan usulan perbaikan. |
+| [`analisis_data/README.md`](./analisis_data/README.md) | Penjelasan isi, struktur berkas, dan cara membuka sajian analisis data. |
+
+---
+
+## 6. Cara Menjalankan & Mempresentasikan ke Dosen Pembimbing
 
 1. **Buka Berkas:** Klik dua kali berkas `index.html` atau buka melalui browser apa pun.
 2. **Panduan Demo Berurutan:**

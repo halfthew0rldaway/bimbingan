@@ -1,0 +1,127 @@
+@startuml diagram_proposed_usecase
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Inter, Segoe UI, Helvetica, Arial"
+skinparam shadowing false
+skinparam dpi 150
+
+skinparam usecase {
+  BackgroundColor #DCFCE7
+  BorderColor #16A34A
+  BorderThickness 1.6
+  FontColor #14532D
+  FontSize 13
+  FontStyle bold
+}
+skinparam actor {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+  FontColor #0F172A
+  FontSize 12
+}
+skinparam package {
+  BackgroundColor #F0FDF4
+  BorderColor #16A34A
+  BorderThickness 2
+  FontColor #15803D
+  FontSize 14
+  FontStyle bold
+}
+skinparam note {
+  BackgroundColor #F0FDF4
+  BorderColor #16A34A
+  FontColor #14532D
+  FontSize 11
+}
+skinparam ArrowColor #475569
+skinparam ArrowThickness 1.4
+
+title
+**DIAGRAM USE CASE SISTEM USULAN (TO-BE) — BAHASA UML 2.5**
+Sumber bukti: docs/cleaned_data/cleaned_tickets.csv — 788 tiket operasional riil
+end title
+
+' ── ACTORS ───────────────────────────────────────────────────────────────
+actor "Staf Outlet\nCabang Pelapor" as STAF
+actor "Admin Helpdesk\nIT Support Coordinator" as HELPDESK
+actor "Teknisi Lapangan\nPIC Layer 1 / Layer 2" as TEKNISI
+actor "Purchasing / Central\nVendor & Logistik Sparepart" as VENDOR
+actor "IT Supervisor" as SUPERVISOR
+
+actor "AI RAG & TOPSIS\n(Aktor Sistem Otomatis)" as SISTEM #EFF6FF
+
+' ── SYSTEM BOUNDARY ──────────────────────────────────────────────────────
+rectangle "SISTEM USULAN: HIMUP TICKETING PLATFORM" {
+
+  usecase "UC-01\nInput Tiket Terstruktur (Kode Aset,\nKategori, Urgensi, Foto)" as UC01
+  usecase "UC-02\nAuto-Triage via AI RAG" as UC02
+  usecase "UC-03\nAuto-Assign Teknisi via TOPSIS" as UC03
+  usecase "UC-04\nEksekusi Tangani + Timer SLA" as UC04
+  usecase "UC-05\nApproval IR Terpusat & Sparepart" as UC05
+  usecase "UC-06\nDashboard Monitoring & Rekap Otomatis" as UC06
+  usecase "UC-07\nEvaluasi Beban Kerja & SLA Report" as UC07
+
+  usecase "Pencarian Semantik\nBasis Pengetahuan" as UC08
+  usecase "Perankingan Kandidat\nTeknisi" as UC09
+}
+
+' ── ASSOCIATIONS ─────────────────────────────────────────────────────────
+STAF       --> UC01
+HELPDESK   --> UC02
+HELPDESK   --> UC06
+TEKNISI    --> UC04
+VENDOR     --> UC05
+SUPERVISOR --> UC07
+
+' ── SYSTEM ACTOR RELATIONS (UML «include») ───────────────────────────────
+SISTEM --> UC02 : «include»
+SISTEM --> UC03 : «include»
+UC02 ..> UC08 : «include»
+UC03 ..> UC09 : «include»
+
+' ── SOLUTION EVIDENCE ────────────────────────────────────────────────────
+note right of UC01
+  **S1 — Formulasi Terstruktur + Validasi**
+  Menutup B1: 0% -> 100% field wajib
+  (kode aset, kategori, urgensi)
+end note
+
+note right of UC02
+  **S2 — Klasifikasi Otomatis AI RAG**
+  Menutup B1: triage konsisten
+  tanpa baca chat manual
+end note
+
+note right of UC03
+  **S3 — Penugasan Objektif TOPSIS**
+  Menutup B2: distribusi beban
+  merata (CV 41,3% -> target < 15%)
+end note
+
+note right of UC04
+  **S4 — Timer SLA & Eskalasi Otomatis**
+  Menutup B3: 15,1% pelanggaran
+  terpantau real-time
+end note
+
+note right of UC05
+  **S5 — Status & Reminder Terpusat**
+  Menutup B4: 77 tiket tertahan
+  (25.246 jam hold) terpantau
+end note
+
+note right of UC06
+  **S6 — Rekap Otomatis & Dashboard**
+  Menggantikan rekapitulasi manual
+  ke spreadsheet
+end note
+
+legend right
+  |= Warna |= Makna |
+  |<#DC2626> |Bottleneck terbukti dari data|
+  |<#CBD5E1> |Langkah tanpa hambatan|
+  |<#16A34A> |Langkah solusi|
+  |<#2563EB> |Aktor sistem / relasi UML|
+endlegend
+
+@enduml

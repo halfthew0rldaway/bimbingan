@@ -1,0 +1,169 @@
+@startuml conventional-helpdesk-process
+title Alur Proses Bisnis Helpdesk Konvensional (AS-IS Saat Ini)\nIdentifikasi Titik Hambatan (Bottleneck) Berdasarkan 788 Tiket Operasional
+
+skinparam {
+    DefaultFontName "Inter, -apple-system, sans-serif"
+    DefaultFontSize 11
+    DefaultFontColor #0f172a
+    RoundCorner 8
+    Shadowing false
+    ActivityBackgroundColor #ffffff
+    ActivityBorderColor #64748b
+    ActivityBorderThickness 1.5
+    ArrowColor #475569
+    ArrowThickness 1.5
+    SwimlaneBorderColor #cbd5e1
+    SwimlaneBorderThickness 1.2
+    SwimlaneTitleFontColor #1e293b
+    SwimlaneTitleFontSize 12
+    SwimlaneTitleFontStyle bold
+    NoteBackgroundColor #ffffff
+    NoteBorderColor #cbd5e1
+    NoteFontSize 10
+}
+
+<style>
+activityDiagram {
+  .bottleneck {
+    LineColor #dc2626
+    LineThickness 2.5
+    BackgroundColor #fee2e2
+    FontColor #991b1b
+    FontStyle bold
+  }
+  .manual_wait {
+    LineColor #ea580c
+    LineThickness 2
+    BackgroundColor #ffedd5
+    FontColor #9a3412
+    FontStyle bold
+  }
+  .normal {
+    LineColor #475569
+    LineThickness 1.5
+    BackgroundColor #ffffff
+    FontColor #0f172a
+  }
+}
+</style>
+
+|#f8fafc|Staf Outlet / Cabang (Pelapor)|
+|#f1f5f9|Admin Helpdesk IT / Koordinator|
+|#f8fafc|Teknisi Lapangan (L1 / L2)|
+|#f1f5f9|Purchasing & Logistik Sparepart|
+
+|Staf Outlet / Cabang (Pelapor)|
+start
+:Gangguan operasional terjadi di cabang
+(Mesin kasir POS freeze, printer thermal macet, atau LAN offline);<<normal>>
+
+-[#dc2626,thickness=2]->
+:Mengetik pesan laporan bebas
+di grup WhatsApp IT Support;<<bottleneck>>
+note right #fee2e2
+  **TITIK HAMBATAN 01: Chat Tertimbun & Format Bebas**
+  --
+  * **Penyebab:** Tidak ada form wajib untuk kode aset & detail teknis.
+  * **Dampak:** Pesan tertimbun ratusan chat lain saat jam sibuk
+    operasional restoran (lunch/dinner rush). Waktu respon awal (MTTA)
+    tidak terukur dan laporan sering terlewat.
+end note
+
+|Admin Helpdesk IT / Koordinator|
+-[#dc2626,thickness=2]->
+:Membaca pesan masuk di grup WA
+dan melakukan triage manual;<<manual_wait>>
+note right #ffedd5
+  **KOORDINASI MANUAL (WAITING TIME)**
+  --
+  * Bergantung pada admin yang sedang standby membaca chat.
+  * Tidak ada sistem antrean tiket terpusat.
+end note
+
+-[#dc2626,thickness=2.5]->
+:Menunjuk teknisi secara subjektif
+dengan mention (@) nama di grup WA;<<bottleneck>>
+note right #fee2e2
+  **TITIK HAMBATAN 02: Penugasan Subjektif & Beban Timpang 7.3×**
+  --
+  * **Penyebab:** Penugasan ditentukan sepihak tanpa melihat antrean aktif.
+  * **Fakta Data 788 Tiket:** 44% beban menumpuk di 2 teknisi saja
+    (Sony menangani 190 tiket, sedangkan Taqiy hanya 26 tiket).
+  * **Dampak:** Teknisi tersibuk mengalami kelebihan beban (overwork),
+    memperpanjang antrean penanganan tiket kritis.
+end note
+
+|Teknisi Lapangan (L1 / L2)|
+-[#dc2626,thickness=2]->
+:Membaca notifikasi mention di WhatsApp
+dan mempersiapkan tindakan (Remote/Visit);<<normal>>
+
+-[#dc2626,thickness=2.5]->
+:Melakukan tindakan penanganan
+gangguan di lokasi outlet atau via remote;<<bottleneck>>
+note right #fee2e2
+  **TITIK HAMBATAN 03: Penanganan Tanpa Indikator SLA Live**
+  --
+  * **Penyebab:** Tidak ada tampilan timer countdown batas SLA.
+  * **Fakta Data:** 23.4% tiket prioritas P2 (High) melanggar batas SLA
+    4 jam, molor hingga rata-rata 21.2 jam tanpa peringatan eskalasi dini.
+end note
+
+if (Apakah membutuhkan sparepart hardware?) then (Ya, butuh part)
+    -[#ea580c,thickness=2]->
+    :Mengajukan permintaan komponen
+    ke tim purchasing / gudang central;<<manual_wait>>
+
+    |Purchasing & Logistik Sparepart|
+    -[#dc2626,thickness=2.5]->
+    :Menunggu persetujuan pengadaan (IR)
+    dan pengiriman unit cadangan central;<<bottleneck>>
+    note right #fee2e2
+      **TITIK HAMBATAN 04: Status Mengambang & Penalti SLA Semu**
+      --
+      * **Penyebab:** Status pending tidak tercatat secara formal di sistem.
+      * **Fakta Data:** 77 tiket tertahan 5–14 hari (menunggu approval IR).
+      * **Dampak:** Timer SLA terus berjalan semu saat menunggu barang,
+        sehingga merusak rapor performa teknisi yang sebenarnya tidak bersalah.
+    end note
+
+    -[#ea580c,thickness=2]->
+    :Mengirimkan sparepart ke cabang
+    lewat kurir logistik / ekspedisi;<<normal>>
+
+    |Teknisi Lapangan (L1 / L2)|
+    -[#ea580c,thickness=2]->
+    :Menerima komponen di cabang
+    dan memasang perangkat ke mesin kasir;<<normal>>
+else (Tidak, perbaikan selesai langsung)
+    -[#475569]->
+endif
+
+|Teknisi Lapangan (L1 / L2)|
+-[#475569]->
+:Mengirim pesan konfirmasi di grup WA
+bahwa mesin kasir sudah "Done";<<normal>>
+
+|Admin Helpdesk IT / Koordinator|
+-[#dc2626,thickness=2.5]->
+:Merekapitulasi riwayat chat WA
+secara manual ke spreadsheet Excel akhir bulan;<<bottleneck>>
+note right #fee2e2
+  **TITIK HAMBATAN 05: Rekapitulasi Manual & Formula Rusak**
+  --
+  * **Penyebab:** Riwayat obrolan disalin ulang satu per satu ke spreadsheet.
+  * **Dampak:** Rawan salah ketik (human error), duplikasi baris,
+    formula spreadsheet rusak (ditemukan Err:509), dan manajemen tidak
+    memiliki visibilitas telemetri kinerja harian secara real-time.
+end note
+
+stop
+
+legend right
+|= Simbol Warna |= Makna Proses |= Dampak Operasional |
+|<#fee2e2> **Garis Merah Bold** | Titik Hambatan Utama (Bottleneck) | Keterlambatan signifikan, chat tenggelam, beban timpang 7.3×, SLA molor |
+|<#ffedd5> **Garis Oranye** | Koordinasi Manual & Waktu Tunggu | Waktu tunggu bergantung ketersediaan pihak lain tanpa audit trail |
+|<#ffffff> **Garis Abu-abu** | Aktivitas Standar | Alur kerja operasional umum |
+endlegend
+
+@enduml

@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 860" width="100%" height="auto"
+     role="img" aria-label="Alur Proses Bisnis Helpdesk Terusulkan TO-BE"
+     style="background:#ffffff; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 3px 8px rgba(15,23,42,.08)">
+  <defs>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-slate2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="1150" height="48" fill="#dcfce7" />
+  <text x="24" y="25" font-family="Inter, sans-serif" font-size="13.5" font-weight="800" fill="#14532d">
+    ALUR PROSES BISNIS HELPDESK TERUSULKAN (TO-BE SISTEM HELPDESK WEB)
+  </text>
+  <text x="24" y="41" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#166534">
+    Otomasi Penugasan Multi-Kriteria (TOPSIS), Countdown SLA Live, dan Pembekuan Timer On-Hold
+  </text>
+  <rect x="940" y="12" width="185" height="24" rx="4" fill="#16a34a" />
+  <text x="1032" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#ffffff">
+    SOLUSI TERINTEGRASI
+  </text>
+
+  <!-- Swimlane Headers -->
+  <!-- Lane 1: Outlet -->
+  <rect x="15" y="60" width="215" height="32" rx="4" fill="#f8fafc" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="122" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#166534">
+    1. STAF OUTLET CABANG
+  </text>
+  <line x1="230" y1="92" x2="230" y2="745" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 2: System Engine -->
+  <rect x="240" y="60" width="225" height="32" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="352" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#1e40af">
+    2. ENGINE SISTEM HELPDESK
+  </text>
+  <line x1="465" y1="92" x2="465" y2="745" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 3: Admin -->
+  <rect x="475" y="60" width="215" height="32" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="582" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#1e293b">
+    3. ADMIN HELPDESK IT
+  </text>
+  <line x1="690" y1="92" x2="690" y2="745" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 4: Technician -->
+  <rect x="700" y="60" width="215" height="32" rx="4" fill="#f8fafc" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="807" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#166534">
+    4. TEKNISI LAPANGAN
+  </text>
+  <line x1="915" y1="92" x2="915" y2="745" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 5: Purchasing -->
+  <rect x="925" y="60" width="210" height="32" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="1030" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" fill="#1e293b">
+    5. PURCHASING / LOGISTIK
+  </text>
+
+  <!-- START NODE -->
+  <circle cx="122" cy="115" r="10" fill="#0f172a" />
+  <line x1="122" y1="125" x2="122" y2="145" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-slate2)"/>
+
+  <!-- STEP 1: Solusi 01 RAG (Lane 1) -->
+  <g transform="translate(25, 145)">
+    <rect width="195" height="85" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2" />
+    <rect x="8" y="7" width="179" height="18" rx="3" fill="#16a34a" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 01: CHATBOT RAG</text>
+    <text x="97" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#14532d">Konsultasi Mandiri Cepat</text>
+    <text x="97" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#166534">Panduan SOP Printer / POS instan</text>
+    <text x="97" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#15803d">Defleksi 39% tiket berulang</text>
+  </g>
+
+  <line x1="122" y1="230" x2="122" y2="255" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+
+  <!-- Decision: Selesai di RAG? -->
+  <g transform="translate(122, 275)">
+    <polygon points="0,-20 40,0 0,20 -40,0" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#14532d">Tuntas?</text>
+  </g>
+
+  <!-- YA -> Finish RAG -->
+  <line x1="162" y1="275" x2="200" y2="275" stroke="#16a34a" stroke-width="1.8"/>
+  <path d="M 200 275 L 200 310" fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)"/>
+  <text x="175" y="268" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#16a34a">YA</text>
+
+  <g transform="translate(140, 310)">
+    <rect width="120" height="35" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2"/>
+    <text x="60" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#15803d">Selesai Tanpa Tiket</text>
+    <text x="60" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#166534">Log defleksi tersimpan</text>
+  </g>
+
+  <!-- TIDAK -> Step 2 Form Lapor (Lane 1) -->
+  <line x1="122" y1="295" x2="122" y2="365" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-slate2)"/>
+  <text x="130" y="325" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#475569">TIDAK</text>
+
+  <!-- STEP 2: Solusi 02 Form Terstruktur (Lane 1) -->
+  <g transform="translate(25, 365)">
+    <rect width="195" height="80" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2" />
+    <rect x="8" y="7" width="179" height="18" rx="3" fill="#16a34a" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 02: FORM TERSTRUKTUR</text>
+    <text x="97" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#14532d">Buat Tiket di Portal Web</text>
+    <text x="97" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#166534">Wajib kode aset, kategori, &amp; foto</text>
+    <text x="97" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#15803d">Bebas chat tenggelam di WA</text>
+  </g>
+
+  <!-- Hand-off Lane 1 to Lane 2 Engine -->
+  <path d="M 220 405 L 352 405 L 352 235" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+  <!-- STEP 3: Solusi 03 TOPSIS (Lane 2) -->
+  <g transform="translate(250, 235)">
+    <rect width="205" height="95" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="2.2" />
+    <rect x="8" y="7" width="189" height="18" rx="3" fill="#2563eb" />
+    <text x="102" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 03: PENUGASAN TOPSIS</text>
+    <text x="102" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#1e40af">Kalkulasi 4 Kriteria Objektif</text>
+    <text x="102" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#1e3a8a">Jarak (C1), Beban (C2), Skill (C3), MTTR (C4)</text>
+    <text x="102" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#1e3a8a">Alokasi beban rata (bebas bias 7.3×)</text>
+    <text x="102" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#2563eb">Timer MTTA mulai berjalan live</text>
+  </g>
+
+  <!-- Hand-off to Admin / Supervisor (Lane 3) -->
+  <line x1="455" y1="282" x2="485" y2="282" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-slate2)"/>
+
+  <!-- Admin confirms (Lane 3) -->
+  <g transform="translate(485, 260)">
+    <rect width="195" height="45" rx="7" fill="#ffffff" stroke="#64748b" stroke-width="1.5" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#0f172a">Admin Konfirmasi Penugasan</text>
+    <text x="97" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#64748b">Tiket otomatis ter-dispatch</text>
+  </g>
+
+  <!-- Hand-off to Technician (Lane 4) -->
+  <path d="M 680 282 L 807 282 L 807 335" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+
+  <!-- STEP 4: Solusi 04 Countdown SLA Live (Lane 4) -->
+  <g transform="translate(710, 335)">
+    <rect width="195" height="85" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2" />
+    <rect x="8" y="7" width="179" height="18" rx="3" fill="#16a34a" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 04: COUNTDOWN SLA LIVE</text>
+    <text x="97" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#14532d">Penanganan Terpantau Real-Time</text>
+    <text x="97" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#166534">Timer mundur (Hijau, Kuning, Merah)</text>
+    <text x="97" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#15803d">Early warning alert sebelum 4 jam habis</text>
+  </g>
+
+  <line x1="807" y1="420" x2="807" y2="450" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-slate2)"/>
+
+  <!-- Decision: Butuh Part? (Lane 4) -->
+  <g transform="translate(807, 470)">
+    <polygon points="0,-20 40,0 0,20 -40,0" fill="#ffffff" stroke="#475569" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#0f172a">Butuh Part?</text>
+  </g>
+
+  <!-- YA -> Lane 5 & Freeze SLA -->
+  <line x1="847" y1="470" x2="935" y2="470" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+  <text x="880" y="462" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#2563eb">YA</text>
+
+  <!-- STEP 5: Solusi 05 On-Hold Freeze SLA (Lane 5) -->
+  <g transform="translate(935, 430)">
+    <rect width="195" height="90" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="2.2" />
+    <rect x="8" y="7" width="179" height="18" rx="3" fill="#2563eb" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 05: ON-HOLD FREEZE SLA</text>
+    <text x="97" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#1e40af">Pause Timer Saat Tunggu IR</text>
+    <text x="97" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#1e3a8a">Timer SLA dihentikan sah di sistem</text>
+    <text x="97" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#2563eb">KPI teknisi aman dari delay purchasing</text>
+  </g>
+
+  <!-- Part Arrives & Resume SLA -->
+  <path d="M 1032 520 L 1032 570 L 807 570 L 807 600" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="920" y="563" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#15803d">Part tiba &gt;&gt; Resume Timer &amp; pasang perangkat</text>
+
+  <!-- TIDAK -> Perbaikan Selesai -->
+  <line x1="767" y1="470" x2="735" y2="470" stroke="#475569" stroke-width="1.8"/>
+  <path d="M 735 470 L 735 600 L 807 600" fill="none" stroke="#475569" stroke-width="1.8"/>
+  <text x="745" y="462" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" fill="#475569">TIDAK</text>
+
+  <!-- STEP 6: Upload Bukti & Selesai (Lane 4) -->
+  <g transform="translate(710, 600)">
+    <rect width="195" height="48" rx="7" fill="#ffffff" stroke="#16a34a" stroke-width="1.8" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#14532d">Upload Bukti &amp; Selesaikan</text>
+    <text x="97" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#475569">Lampirkan foto fisik hasil perbaikan</text>
+  </g>
+
+  <!-- Verification Hand-off to Outlet (Lane 1) -->
+  <path d="M 710 624 L 122 624 L 122 655" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+
+  <!-- STEP 7: Verifikasi Outlet Cabang (Lane 1) -->
+  <g transform="translate(25, 655)">
+    <rect width="195" height="48" rx="7" fill="#ffffff" stroke="#16a34a" stroke-width="1.8" />
+    <text x="97" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#14532d">Verifikasi Digital Staf Cabang</text>
+    <text x="97" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#475569">Konfirmasi mesin kasir beroperasi normal</text>
+  </g>
+
+  <!-- Hand-off to System Telemetry (Lane 2) -->
+  <path d="M 220 679 L 250 679" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+  <!-- STEP 8: Solusi 06 Telemetri Real-Time (Lane 2) -->
+  <g transform="translate(250, 640)">
+    <rect width="205" height="85" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="2.2" />
+    <rect x="8" y="7" width="189" height="18" rx="3" fill="#2563eb" />
+    <text x="102" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#ffffff">🟢 SOLUSI 06: LAPORAN REAL-TIME</text>
+    <text x="102" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#1e40af">Telemetri Otomatis Terbit</text>
+    <text x="102" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#1e3a8a">Status tiket "Closed" &amp; rekam MTTR final</text>
+    <text x="102" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#2563eb">100% Bebas rekapitulasi manual Excel</text>
+  </g>
+
+  <!-- STOP NODE -->
+  <line x1="352" y1="725" x2="352" y2="760" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-slate2)"/>
+  <circle cx="352" cy="775" r="14" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="352" cy="775" r="8" fill="#16a34a"/>
+
+  <!-- LEGEND BOX (Bottom Right) -->
+  <g transform="translate(565, 715)">
+    <rect width="570" height="110" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="16" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#0f172a">LEGENDA &amp; SIMBOL ALUR TERUSULKAN:</text>
+    
+    <rect x="16" y="30" width="18" height="12" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="42" y="40" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#14532d">Garis Hijau Bold:</text>
+    <text x="150" y="40" font-family="Inter, sans-serif" font-size="9.5" fill="#334155">Solusi Terintegrasi — Chatbot RAG, Form terstruktur, Countdown SLA, &amp; Verifikasi digital</text>
+
+    <rect x="16" y="52" width="18" height="12" rx="2" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
+    <text x="42" y="62" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1e40af">Garis Biru Bold:</text>
+    <text x="150" y="62" font-family="Inter, sans-serif" font-size="9.5" fill="#334155">Otomasi Engine Sistem — Perhitungan TOPSIS, Pembekuan timer On-Hold, &amp; Telemetri otomatis</text>
+
+    <rect x="16" y="74" width="18" height="12" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+    <text x="42" y="84" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#334155">Garis Abu-abu:</text>
+    <text x="150" y="84" font-family="Inter, sans-serif" font-size="9.5" fill="#334155">Aktivitas Koordinasi Standar Lintas Peran</text>
+  </g>
+</svg>

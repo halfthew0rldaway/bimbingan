@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIMUP Ticketing — Analisis Data Tiket IT Service Desk</title>
+<meta name="description" content="Analisis 788 tiket IT Service Desk HIMUP periode Sep–Nov 2026: masalah yang terjadi hari ini, penyebabnya, dan rancangan sistem yang diajukan.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-mark">HM</div>
+        <div class="brand-text">HIMUP Ticketing</div>
+    </div>
+    <nav class="topnav" id="topnav">
+        <button data-target="problem">1. Masalah</button>
+        <button data-target="workflow">2. Alur Kerja</button>
+        <button data-target="workload">3. Beban Teknisi</button>
+        <button data-target="sla">4. SLA</button>
+        <button data-target="bottleneck">5. Hambatan</button>
+        <button data-target="rag">6. Masalah Berulang</button>
+        <button data-target="taxonomy">7. Kategori</button>
+        <button data-target="deployment">8. Rancangan Penugasan</button>
+        <button data-target="demo">9. Rancangan Sistem</button>
+    </nav>
+    <div class="topbar-meta">Sumber: <b>788 tiket</b> · Sep–Nov 2026</div>
+</header>
+
+<main class="deck">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     01 — PROBLEM STATEMENT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="problem">
+<div class="eyebrow">01 — Latar Belakang</div>
+<h2 class="slide-title">Hari ini, tiket IT dicatat lewat grup WhatsApp lalu direkap manual ke spreadsheet.</h2>
+<p class="slide-lede">
+    Staf cabang melaporkan gangguan ke grup WhatsApp. PIC cabang mencatatnya, lalu semuanya
+    direkap ulang ke Master Tracker. Bagian ini menjelaskan tiga persoalan yang muncul dari pola
+    tersebut. Semua angka dihitung dari <b><span class="js-ticket-count">788</span> tiket</b>
+    periode <span class="js-period">Sep–Nov 2026</span>.
+</p>
+
+<ol class="findings">
+    <li class="finding">
+        <div class="finding-num">1</div>
+        <div class="finding-body">
+            <div class="finding-title">Pembagian tiket ke teknisi tidak punya aturan tertulis</div>
+            <p>
+                Enam teknisi menangani jumlah tiket yang sangat berbeda. Yang paling sibuk menerima
+                <b data-tech-max>190</b> tiket, yang paling ringan hanya <b data-tech-min>26</b> tiket.
+                Tidak ada aturan siapa mengambil tiket apa, sehingga pembagiannya bergantung pada
+                siapa yang lebih dulu merespons di grup.
+            </p>
+        </div>
+    </li>
+    <li class="finding">
+        <div class="finding-num">2</div>
+        <div class="finding-body">
+            <div class="finding-title">Batas waktu (SLA) tidak pernah dipantau berjalan</div>
+            <p>
+                Tiket prioritas P2 seharusnya selesai dalam <b>4 jam</b>, tetapi rata-rata
+                penyelesaiannya <b><span data-count="sla.P2.avg_hours" data-decimals="1">0</span> jam</b>.
+                Tidak ada penghitung waktu atau peringatan, sehingga keterlambatan baru ketahuan
+                saat rekap bulanan.
+            </p>
+        </div>
+    </li>
+    <li class="finding">
+        <div class="finding-num">3</div>
+        <div class="finding-body">
+            <div class="finding-title">Keluhan yang sama terus masuk dan ditangani ulang</div>
+            <p>
+                Sebagian besar tiket adalah kasus berulang yang cara penyelesaiannya sudah baku
+                (contoh: printer macet, kertas close bill). Kasus seperti ini sebenarnya bisa
+                diselesaikan sendiri oleh staf cabang tanpa menunggu teknisi.
+            </p>
+        </div>
+    </li>
+</ol>
+
+<div class="chart-block">
+    <div class="chart-block-title">Komposisi 788 tiket menurut kategori masalah</div>
+    <div class="chart" id="chart-category"></div>
+    <p class="chart-caption">
+        Dua kategori terbesar mendominasi: close bill dan printer. Artinya, beban tim IT
+        didominasi jenis keluhan yang berulang.
+    </p>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     02 — PERBANDINGAN ALUR KERJA
+     Alur sekarang (WhatsApp) vs sistem yang diusulkan
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="workflow">
+<div class="eyebrow">02 — Alur Kerja</div>
+<h2 class="slide-title">Alur kerja sekarang dibandingkan dengan sistem yang diusulkan.</h2>
+<p class="slide-lede">
+    Kolom kiri adalah alur yang berjalan sekarang lewat grup WhatsApp. Kolom kanan adalah
+    alur yang diusulkan lewat aplikasi web. Di setiap tahap ditandai apa yang menjadi
+    hambatan hari ini dan bagaimana sistem baru mengatasinya.
+</p>
+
+<div class="workflow-container reveal">
+    <!-- COLUMN 1: ALUR KONVENSIONAL (WHATSAPP) -->
+    <div class="workflow-column">
+        <div class="workflow-header is-legacy">
+            <div>
+                <div class="workflow-title" style="color:var(--p1)">Alur sekarang — WhatsApp &amp; spreadsheet</div>
+                <div class="workflow-subtitle">Lima titik yang memperlambat penanganan</div>
+            </div>
+            <span class="badge is-alert">Saat ini</span>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 1</span>
+                <span class="wf-step-actor">Staf cabang</span>
+            </div>
+            <div class="wf-step-title">Laporan gangguan berupa pesan chat bebas</div>
+            <div class="wf-step-desc">
+                Staf cabang mengirim teks atau foto ke grup WhatsApp IT Support saat mesin kasir,
+                printer, atau jaringan bermasalah. Tidak ada format baku untuk melapor.
+            </div>
+            <div class="bottleneck-box">
+                <div class="bottleneck-tag">Kendala 1 — laporan tidak lengkap dan mudah tenggelam</div>
+                <div class="bottleneck-desc">
+                    Tidak ada kode aset, jenis kerusakan, maupun tingkat urgensi. Pada jam makan
+                    siang dan malam, laporan tertimbun chat lain, sehingga waktu respons awal
+                    tidak pernah tercatat dengan benar.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-alert">↓</div>
+
+        <!-- Step 2 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 2</span>
+                <span class="wf-step-actor">Admin helpdesk IT</span>
+            </div>
+            <div class="wf-step-title">Teknisi ditunjuk manual di grup chat</div>
+            <div class="wf-step-desc">
+                Admin membaca chat yang masuk, lalu menandai (@) salah satu teknisi untuk
+                menangani kasus tersebut.
+            </div>
+            <div class="bottleneck-box">
+                <div class="bottleneck-tag">Kendala 2 — beban tidak seimbang</div>
+                <div class="bottleneck-desc">
+                    Penunjukan bergantung pada siapa yang sedang aktif membalas chat.
+                    Yang paling sibuk menerima <b>190 tiket</b>, yang paling ringan hanya
+                    <b>26 tiket</b>. Akibatnya ada teknisi yang kelebihan beban sementara
+                    yang lain menganggur.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-alert">↓</div>
+
+        <!-- Step 3 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 3</span>
+                <span class="wf-step-actor">Teknisi lapangan</span>
+            </div>
+            <div class="wf-step-title">Pengerjaan tanpa batas waktu yang terlihat</div>
+            <div class="wf-step-desc">
+                Teknisi mengerjakan tiket sesuai urutan yang ia ketahui. Tidak ada penanda
+                berapa sisa waktu yang dimiliki tiket tersebut.
+            </div>
+            <div class="bottleneck-box">
+                <div class="bottleneck-tag">Kendala 3 — keterlambatan tidak terdeteksi</div>
+                <div class="bottleneck-desc">
+                    Batas waktu per prioritas tidak pernah dihitung berjalan. Tiket prioritas
+                    P2 pun rata-rata baru selesai dalam
+                    <b><span data-count="sla.P2.avg_hours" data-decimals="1">0</span> jam</b>,
+                    padahal batasnya 4 jam.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-alert">↓</div>
+
+        <!-- Step 4 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 4</span>
+                <span class="wf-step-actor">Teknisi &amp; bagian pengadaan</span>
+            </div>
+            <div class="wf-step-title">Menunggu sparepart tanpa status resmi</div>
+            <div class="wf-step-desc">
+                Jika perbaikan butuh komponen pengganti (kabel sensor, adapter, KDS), teknisi
+                menunggu persetujuan belanja atau kiriman dari pusat. Status menunggu ini hanya
+                dicatat di chat.
+            </div>
+            <div class="bottleneck-box">
+                <div class="bottleneck-tag">Kendala 4 — waktu tunggu dihitung sebagai kelalaian teknisi</div>
+                <div class="bottleneck-desc">
+                    Ada <b>77 tiket</b> tertunda berhari-hari menunggu barang atau persetujuan
+                    pengadaan. Karena waktu tunggu ikut terhitung, penilaian kinerja teknisi
+                    menjadi tidak adil.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-alert">↓</div>
+
+        <!-- Step 5 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 5</span>
+                <span class="wf-step-actor">Admin helpdesk IT</span>
+            </div>
+            <div class="wf-step-title">Rekap manual ke spreadsheet di akhir bulan</div>
+            <div class="wf-step-desc">
+                Admin menyalin riwayat chat satu per satu ke Excel untuk laporan bulanan ke
+                manajemen.
+            </div>
+            <div class="bottleneck-box">
+                <div class="bottleneck-tag">Kendala 5 — data rawan salah dan terlambat</div>
+                <div class="bottleneck-desc">
+                    Rekap ganda membuat data tidak konsisten dan formula rusak (ditemukan
+                    <code>Err:509</code> pada sheet IT Indicator). Manajemen tidak punya
+                    gambaran kondisi harian.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COLUMN 2: ALUR TERUSULKAN (SISTEM TIKET TERINTEGRASI) -->
+    <div class="workflow-column">
+        <div class="workflow-header is-proposed">
+            <div>
+                <div class="workflow-title" style="color:var(--ok)">Alur diusulkan — aplikasi web tiket</div>
+                <div class="workflow-subtitle">Setiap kendala di kiri ditangani di tahap yang sama</div>
+            </div>
+            <span class="badge is-ok">Diusulkan</span>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 1</span>
+                <span class="wf-step-actor">Portal cabang + panduan mandiri</span>
+            </div>
+            <div class="wf-step-title">Panduan mandiri dulu, baru buat tiket</div>
+            <div class="wf-step-desc">
+                Staf cabang mencari solusi lewat panduan yang tersedia di aplikasi. Jika belum
+                selesai, formulir tiket mewajibkan kategori, kode aset, dan foto bukti.
+            </div>
+            <div class="solution-box">
+                <div class="solution-tag">Penanganan 1 — keluhan umum selesai tanpa menunggu teknisi</div>
+                <div class="solution-desc">
+                    <b>173 tiket close bill</b> dan <b>140 tiket printer</b> (sekitar 39% dari
+                    seluruh tiket) punya langkah penyelesaian yang sama. Kasus seperti ini bisa
+                    diselesaikan sendiri lewat panduan, dan formulir memastikan data tiket
+                    selalu lengkap.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-ok">↓</div>
+
+        <!-- Step 2 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 2</span>
+                <span class="wf-step-actor">Sistem penugasan</span>
+            </div>
+            <div class="wf-step-title">Teknisi dipilih sistem dengan aturan yang sama untuk semua</div>
+            <div class="wf-step-desc">
+                Sistem memberi skor ke setiap teknisi memakai empat pertimbangan: jarak ke
+                lokasi, jumlah tiket aktif, kecocokan jenis masalah, dan rata-rata waktu
+                penyelesaiannya. Teknisi dengan skor terbaik menerima tiket.
+            </div>
+            <div class="solution-box">
+                <div class="solution-tag">Penanganan 2 — pembagian tiket lebih merata</div>
+                <div class="solution-desc">
+                    Teknisi yang antreannya sudah panjang mendapat nilai lebih rendah, sehingga
+                    tiket mengalir ke teknisi yang masih longgar. Pembagian tidak lagi
+                    bergantung pada siapa yang lebih dulu membalas chat.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-ok">↓</div>
+
+        <!-- Step 3 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 3</span>
+                <span class="wf-step-actor">Halaman teknisi</span>
+            </div>
+            <div class="wf-step-title">Sisa waktu tiket selalu terlihat</div>
+            <div class="wf-step-desc">
+                Teknisi menerima notifikasi dan melihat hitung mundur batas waktu tiketnya,
+                berwarna hijau, kuning, atau merah sesuai prioritas P1–P4.
+            </div>
+            <div class="solution-box">
+                <div class="solution-tag">Penanganan 3 — peringatan sebelum waktu habis</div>
+                <div class="solution-desc">
+                    Saat waktu tersisa sedikit, supervisor otomatis mendapat peringatan. Tiket
+                    tidak lagi terlupakan sampai rekap bulanan.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-ok">↓</div>
+
+        <!-- Step 4 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 4</span>
+                <span class="wf-step-actor">Status menunggu</span>
+            </div>
+            <div class="wf-step-title">Waktu tunggu pengadaan dicatat sebagai status resmi</div>
+            <div class="wf-step-desc">
+                Bila perbaikan menunggu persetujuan belanja atau vendor, teknisi mengubah tiket
+                ke status <code>On-Hold</code> dengan melampirkan nomor IR Purchasing.
+            </div>
+            <div class="solution-box">
+                <div class="solution-tag">Penanganan 4 — penilaian kinerja jadi adil</div>
+                <div class="solution-desc">
+                    Selama menunggu, batas waktu tiket dihentikan sementara dan alasannya ikut
+                    tercatat. Keterlambatan pengadaan tidak lagi dihitung sebagai kesalahan
+                    teknisi.
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-arrow is-ok">↓</div>
+
+        <!-- Step 5 -->
+        <div class="wf-step">
+            <div class="wf-step-top">
+                <span class="wf-step-num">Tahap 5</span>
+                <span class="wf-step-actor">Database &amp; laporan</span>
+            </div>
+            <div class="wf-step-title">Tiket ditutup dengan bukti, laporan terbentuk sendiri</div>
+            <div class="wf-step-desc">
+                Teknisi mengunggah foto hasil perbaikan, staf cabang memverifikasi, lalu tiket
+                ditutup. Laporan bulanan langsung tersedia dari data yang sama.
+            </div>
+            <div class="solution-box">
+                <div class="solution-tag">Penanganan 5 — tidak ada rekap ulang</div>
+                <div class="solution-desc">
+                    Data tiket dipakai langsung untuk laporan. Manajemen bisa melihat jumlah
+                    tiket, waktu penyelesaian, dan keluhan yang sering muncul kapan saja,
+                    tanpa menyusun rekap manual.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     03 — WORKLOAD IMBALANCE
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="workload">
+<div class="eyebrow">03 — Pembagian Beban Kerja</div>
+<h2 class="slide-title">Beban tiket tidak dibagi rata antar teknisi.</h2>
+<p class="slide-lede">
+    Setiap tiket punya kolom <code>Assigned PIC</code>, jadi siapa mengerjakan apa bisa dilacak.
+    Hasilnya jelas tidak merata: <b class="js-top-two-share">44%</b> tiket dikerjakan hanya oleh dua
+    teknisi, sementara satu teknisi lain hanya menerima <b class="js-bottom-share">3%</b>.
+    Penyebabnya sederhana — tiket diberikan manual di grup chat, biasanya ke orang yang paling
+    cepat membalas.
+</p>
+
+<div class="grid grid-2">
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Jumlah tiket per teknisi</div>
+            <div class="card-note">total <span class="js-ticket-count">788</span> tiket</div>
+        </div>
+        <div class="chart tall" id="chart-workload"></div>
+        <p class="card-sub">
+            Garis putus-putus adalah jumlah yang seharusnya diterima tiap teknisi bila dibagi rata:
+            <b><span data-count="kpis.workload_mean" data-decimals="0">0</span> tiket</b>
+            (788 tiket ÷ 6 teknisi). Tiga teknisi berada jauh di atas garis itu.
+        </p>
+    </div>
+
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Ringkasan per teknisi</div>
+            <div class="card-note">teknisi tersibuk vs paling ringan</div>
+        </div>
+        <div id="tech-profile"></div>
+    </div>
+</div>
+
+<details class="aside-diagram">
+    <summary>Tabel dan grafik pendukung beban kerja</summary>
+    <div class="aside-body">
+        <div class="grid grid-2" style="gap:16px">
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">Beban tiket vs. rata-rata waktu penyelesaian</div>
+                </div>
+                <div class="chart" id="chart-workload-mttr"></div>
+                <p class="card-sub">
+                    Beban tinggi tidak selalu berarti lambat, tetapi teknisi yang sudah penuh
+                    akan sulit menerima tiket yang butuh kunjungan (Layer 2).
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">Sebaran wilayah per teknisi</div>
+                    <div class="card-note">6 kota teratas · semua jenis penanganan</div>
+                </div>
+                <div class="chart" id="chart-city-tech"></div>
+                <p class="card-sub">
+                    Semua teknisi melayani lintas kota. Kedekatan lokasi belum dijadikan
+                    pertimbangan saat menugaskan tiket.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+            <div class="card-head">
+                <div class="card-title">Tiket yang butuh kunjungan fisik, per teknisi</div>
+                <div class="card-note"><span data-count="kpis.layer2">0</span> tiket dari <span class="js-ticket-count">788</span></div>
+            </div>
+            <div style="overflow-x:auto; margin-top:10px" id="matrix-holder"></div>
+            <div class="callout" style="margin-top:14px">
+                <div class="callout-tag">Catatan</div>
+                <div>
+                    Wilayah dengan banyak tiket kunjungan tetap dikerjakan siapa pun yang sedang
+                    tidak sibuk. Akibatnya satu teknisi bisa menjadi satu-satunya penanggung jawab
+                    untuk wilayah tertentu — inilah yang ingin dicegah oleh sistem penugasan.
+                </div>
+            </div>
+        </div>
+    </div>
+</details>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     04 — SLA PERFORMANCE
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="sla">
+<div class="eyebrow">04 — Pencapaian SLA</div>
+<h2 class="slide-title">Batas waktu yang ditetapkan belum tercapai di lapangan.</h2>
+<p class="slide-lede">
+    Setiap prioritas punya batas waktu penanganan: P1 2 jam, P2 4 jam, P3 8 jam, dan P4 48 jam.
+    Batas ini dihitung dari kolom <code>Total Resolution Time</code>.
+    Dari <b><span data-count="kpis.sla_evaluated">732</span> tiket</b> yang durasinya valid,
+    <b><span data-count="kpis.sla_breached">119</span> tiket (<span data-count="kpis.sla_breach_pct" data-decimals="1">0</span>%)</b>
+    melewati batas. Yang paling perlu diperhatikan bukan P1, melainkan <b>P2: hampir satu dari
+    empat</b> tiket prioritas tinggi tidak selesai dalam 4 jam.
+</p>
+
+<div class="grid grid-4 reveal" id="sla-kpi-row"></div>
+
+<div class="card reveal" style="margin-top:16px">
+    <div class="card-head">
+        <div class="card-title">Rincian pencapaian SLA per prioritas</div>
+        <div class="card-note">dihitung dari cleaned_tickets.csv</div>
+    </div>
+    <div style="overflow-x:auto; margin-top:10px" id="sla-table-holder"></div>
+</div>
+
+<details class="aside-diagram">
+    <summary>Grafik pendukung pencapaian SLA</summary>
+    <div class="aside-body">
+        <div class="grid grid-2" style="gap:16px">
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">Batas waktu vs. waktu penyelesaian sebenarnya</div>
+                    <div class="card-note">satuan jam · skala logaritmik</div>
+                </div>
+                <div class="chart tall" id="chart-sla-compare"></div>
+                <p class="card-sub">
+                    Rata-rata bisa menyesatkan: banyak tiket P3/P4 selesai dalam hitungan menit,
+                    tetapi ada sebagian kecil yang tertahan berhari-hari karena pengadaan atau
+                    vendor. Karena itu <b>median</b> ditampilkan berdampingan dengan rata-rata.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">Sebaran waktu penyelesaian</div>
+                    <div class="card-note">per prioritas · garis = batas SLA</div>
+                </div>
+                <div class="tabs" id="sla-box-tabs"></div>
+                <div class="chart" id="chart-sla-box" style="height:300px"></div>
+                <p class="card-sub">
+                    Kotak menunjukkan rentang mayoritas tiket. Ekor yang memanjang ke kanan
+                    menandakan masih ada tiket yang tertahan berhari-hari.
+                </p>
+            </div>
+        </div>
+    </div>
+</details>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     05 — HAMBATAN LAPANGAN NYATA
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="bottleneck">
+<div class="eyebrow">05 — Hambatan di Lapangan</div>
+<h2 class="slide-title">Sebagian besar keterlambatan karena menunggu, bukan karena pengerjaan.</h2>
+<p class="slide-lede">
+    Penyebab keterlambatan tercatat langsung di kolom dataset. Setelah dikelompokkan, penyebabnya
+    bukan teknisi yang lambat bekerja, melainkan <b>proses administrasi dan logistik</b> yang tidak
+    terlacak: persetujuan <code>IR Purchasing</code>, pengiriman sparepart dari pusat, dan
+    penantian vendor. Ada <b><span data-count="kpis.hold_tickets">77</span> tiket</b> yang tercatat
+    menunggu lebih dari 0 jam pada kolom <code>Hold Time</code>.
+</p>
+
+<div class="grid grid-3">
+    <div class="card span-2 reveal">
+        <div class="card-head">
+            <div class="card-title">Waktu penyelesaian menurut cara penanganan</div>
+            <div class="card-note">satuan jam · rata-rata dan median</div>
+        </div>
+        <div class="chart" id="chart-method"></div>
+        <p class="card-sub">
+            Tiket yang bergantung pada pihak lain (<b>Internal Request</b>, <b>Service Vendor</b>,
+            <b>Service Mandiri</b>, <b>Kirim Hardware</b>) jauh lebih lama daripada tiket yang
+            bisa langsung dikerjakan teknisi.
+        </p>
+    </div>
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Dampak waktu tunggu</div>
+            <div class="card-note">Hold Time &gt; 0</div>
+        </div>
+        <div class="chart short" id="chart-hold"></div>
+        <p class="card-sub">
+            Dari <b><span data-count="kpis.hold_tickets">77</span> tiket yang tertahan</b>,
+            <b><span data-count="kpis.hold_breached">35</span></b> akhirnya melanggar SLA. Artinya
+            hampir separuh keterlambatan berasal dari penantian, bukan dari pekerjaan teknis.
+        </p>
+    </div>
+</div>
+
+<div class="grid grid-3" style="margin-top:16px">
+    <div class="card span-2 reveal">
+        <div class="card-head">
+            <div class="card-title">Catatan lapangan</div>
+            <div class="card-note">diurutkan dari durasi terlama</div>
+        </div>
+        <div id="bottleneck-quotes" class="reveal" style="display:flex; flex-direction:column; gap:9px; max-height:420px; overflow-y:auto; padding-right:6px; margin-top:10px"></div>
+    </div>
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Pola penyebab</div>
+            <div class="card-note">dan implikasinya</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px; font-size:12px; color:var(--text-dim); line-height:1.6">
+            <div><span class="pill p3">IR / Purchasing</span><br>Persetujuan belanja tidak punya batas waktu dan tidak terlihat oleh teknisi → perlu status <code>On-Hold</code> dengan alasan yang baku.</div>
+            <div><span class="pill p3">Pengiriman pusat</span><br>Barang datang tapi PIC tidak diberi tahu (“barang datang tanggal 14, dipasang tanggal 24”) → perlu pelacakan status per tiket.</div>
+            <div><span class="pill p3">Vendor / service</span><br>Durasinya sepenuhnya bergantung pihak ketiga → waktu tunggu perlu dipisahkan dari perhitungan SLA pengerjaan.</div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     06 — MASALAH BERULANG YANG BISA DISELESAIKAN SENDIRI
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="rag">
+<div class="eyebrow">06 — Masalah Berulang</div>
+<h2 class="slide-title">Banyak tiket sebenarnya bisa selesai tanpa menunggu teknisi.</h2>
+<p class="slide-lede">
+    Cara penanganan <code>Remote</code> (<span data-count="kpis.remote_pct" data-decimals="1">0</span>%),
+    <code>Guide</code> (<span data-count="kpis.guide_pct" data-decimals="1">0</span>%), dan
+    <code>Service Mandiri</code> menunjukkan bahwa sebagian besar masalah cukup diselesaikan
+    lewat instruksi. Total <b><span data-count="kpis.no_visit">573</span> tiket
+    (<span data-count="kpis.no_visit_pct" data-decimals="1">0</span>%)</b> selesai
+    <b>tanpa kunjungan fisik</b>. Artinya mayoritas keluhan sudah punya langkah penyelesaian
+    baku yang bisa disediakan sebagai panduan mandiri di aplikasi.
+</p>
+
+<div class="grid grid-2">
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Cara tiket diselesaikan</div>
+            <div class="card-note">n = <span class="js-ticket-count">788</span></div>
+        </div>
+        <div class="chart tall" id="chart-solving"></div>
+        <div class="callout" style="margin-top:4px">
+            <div class="callout-tag">Catatan</div>
+            <div>
+                Hanya <b><span data-count="kpis.visit">165</span> tiket (<span data-count="kpis.visit_pct" data-decimals="1">0</span>%)</b>
+                yang benar-benar membutuhkan kunjungan. Sisanya adalah penyampaian instruksi,
+                dan bagian inilah yang bisa disediakan sebagai panduan mandiri.
+            </div>
+        </div>
+    </div>
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Keluhan yang paling sering selesai tanpa kunjungan</div>
+            <div class="card-note">12 kategori teratas</div>
+        </div>
+        <div class="chart tall" id="chart-rag"></div>
+        <p class="card-sub">
+            <b>Close Bill</b>, <b>Menu</b>, <b>Create User</b>, dan <b>Email</b> selesai
+            <b>100% tanpa kunjungan</b>. Langkah penyelesaiannya sudah pasti, sehingga aman
+            dijadikan panduan mandiri.
+        </p>
+    </div>
+</div>
+
+<div class="card reveal" style="margin-top:16px">
+    <div class="card-head">
+        <div class="card-title">Urutan prioritas pembuatan panduan mandiri</div>
+        <div class="card-note">“tanpa kunjungan” = Remote + Guide + Service Mandiri</div>
+    </div>
+    <div style="overflow-x:auto; margin-top:10px" id="rag-table-holder"></div>
+</div>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     07 — STRUKTUR DATA & PELEVELAN TIKET
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="taxonomy">
+<div class="eyebrow">07 — Kategori, Status, dan Tingkat Penanganan</div>
+<h2 class="slide-title">Kategori dan status tiket pada sistem mengikuti istilah yang sudah dipakai di lapangan.</h2>
+<p class="slide-lede">
+    Pilihan kategori pada formulir tiket tidak dibuat mengarang. Semuanya diambil dari
+    <b>istilah yang sudah dipakai staf cabang saat melapor</b>, sehingga kolom
+    <code>Kategori Masalah</code> dan <code>Detail Kategori Masalah</code> pada sistem baru
+    tetap sesuai kebiasaan mereka.
+</p>
+
+<div class="grid grid-2">
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Dua tingkat penanganan: Layer 1 dan Layer 2</div>
+            <div class="card-note">dibedakan dari cara penanganannya</div>
+        </div>
+        <div class="chart short" id="chart-layer"></div>
+        <p class="card-sub">
+            <b>Layer 1</b> = ditangani jarak jauh oleh helpdesk (Remote/Guide).
+            <b>Layer 2</b> = butuh kunjungan, sparepart, atau eskalasi teknis lanjutan.
+            Pembagian ini dipakai sebagai salah satu pertimbangan saat memilih teknisi.
+        </p>
+    </div>
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Status akhir tiket pada data</div>
+            <div class="card-note"><span class="js-ticket-count">788</span> tiket</div>
+        </div>
+        <div class="chart short" id="chart-status"></div>
+        <p class="card-sub">
+            Data lama hanya mencatat dua status akhir. Sistem baru perlu status yang lebih
+            lengkap agar waktu tunggu (<code>On-Hold</code>) terlihat dan perhitungan SLA tidak
+            salah.
+        </p>
+    </div>
+</div>
+
+<div class="card reveal" style="margin-top:16px">
+    <div class="card-head">
+        <div class="card-title">Usulan alur status tiket pada sistem baru</div>
+        <div class="card-note">status otomatis dari data · <span class="pill p3">hold</span> status baru untuk menutup celah data</div>
+    </div>
+    <div class="flow" id="lifecycle-flow"></div>
+    <div class="callout" style="margin-top:16px">
+        <div class="callout-tag">Alasan</div>
+        <div>
+            Data lama tidak mencatat status <b>Assigned</b>, <b>On-Hold</b>, atau <b>Closed</b>
+            secara eksplisit, padahal <b><span data-count="kpis.hold_tickets">77</span> tiket</b>
+            terbukti tertahan menunggu IR, pengiriman, atau vendor. Karena itu status
+            <b>On-Hold</b> perlu ada, dengan <b>hitungan waktu SLA yang dihentikan</b> selama
+            menunggu pihak ketiga — supaya SLA mengukur kinerja teknis, bukan lamanya
+            persetujuan pembelian.
+        </div>
+    </div>
+</div>
+
+<details class="aside-diagram">
+    <summary>Rincian kategori masalah dan kombinasi prioritas</summary>
+    <div class="aside-body">
+        <div class="grid grid-2" style="gap:16px">
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">14 detail kategori masalah terbanyak</div>
+                    <div class="card-note">dipakai sebagai isi dropdown</div>
+                </div>
+                <div class="chart tall" id="chart-detail"></div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-title">Prioritas menurut cara penanganan</div>
+                    <div class="card-note">jumlah tiket</div>
+                </div>
+                <div class="chart tall" id="chart-prio-method"></div>
+                <p class="card-sub">
+                    P3 mendominasi semua cara penanganan. <b>P1 hampir selalu diselesaikan lewat
+                    Guide/Remote dalam hitungan menit</b> — kecepatan merespons lebih menentukan
+                    daripada besar kecilnya masalah.
+                </p>
+            </div>
+        </div>
+    </div>
+</details>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     08 — ALGORITMA DEPLOYMENT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="deployment">
+<div class="eyebrow">08 — Rancangan Penugasan Teknisi</div>
+<h2 class="slide-title">Aturan pengambilan teknisi: dari kebiasaan manual menjadi aturan tertulis.</h2>
+<p class="slide-lede">
+    Empat pertimbangan di bawah diambil langsung dari kolom yang <b>sudah ada di data</b>:
+    kota, kategori, tingkat penanganan, prioritas, durasi, dan PIC. Tidak ada data baru yang
+    dikarang, sehingga aturan ini bisa diuji ulang kapan saja. Klik salah satu pertimbangan
+    untuk melihat bobotnya dan mengubahnya pada simulator.
+</p>
+
+<div class="grid grid-4" id="crit-cards"></div>
+
+<div class="grid grid-3" style="margin-top:16px">
+    <div class="card span-2 reveal">
+        <div class="card-head">
+            <div class="card-title">Simulator penugasan — uji aturan pada data sebenarnya</div>
+            <div class="card-note">skor 0–1 · makin tinggi makin cocok</div>
+        </div>
+        <div class="grid grid-2" style="gap:12px; margin-bottom:14px">
+            <label style="display:block">
+                <span class="kpi-label">Kota / wilayah tiket</span>
+                <select id="sim-city" style="width:100%; margin-top:6px; font:inherit; font-size:12.5px; padding:8px 10px; border-radius:9px; background:var(--surface-2); color:var(--text); border:1px solid var(--line)"></select>
+            </label>
+            <label style="display:block">
+                <span class="kpi-label">Detail kategori</span>
+                <select id="sim-detail" style="width:100%; margin-top:6px; font:inherit; font-size:12.5px; padding:8px 10px; border-radius:9px; background:var(--surface-2); color:var(--text); border:1px solid var(--line)"></select>
+            </label>
+            <label style="display:block">
+                <span class="kpi-label">Tingkat penanganan</span>
+                <select id="sim-layer" style="width:100%; margin-top:6px; font:inherit; font-size:12.5px; padding:8px 10px; border-radius:9px; background:var(--surface-2); color:var(--text); border:1px solid var(--line)">
+                    <option value="Layer 1">Layer 1 — remote / guide</option>
+                    <option value="Layer 2">Layer 2 — perlu kunjungan</option>
+                </select>
+            </label>
+            <label style="display:block">
+                <span class="kpi-label">Prioritas</span>
+                <select id="sim-priority" style="width:100%; margin-top:6px; font:inherit; font-size:12.5px; padding:8px 10px; border-radius:9px; background:var(--surface-2); color:var(--text); border:1px solid var(--line)">
+                    <option value="P1">P1 — Critical</option>
+                    <option value="P2">P2 — High</option>
+                    <option value="P3" selected>P3 — Medium</option>
+                    <option value="P4">P4 — Low</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="card-head" style="margin-bottom:8px">
+            <div class="card-title" style="font-size:11px">Bobot pertimbangan</div>
+            <div class="card-note" id="weight-total">total = 100%</div>
+        </div>
+        <div id="weight-sliders" style="display:flex; flex-direction:column; gap:10px"></div>
+        <div class="weights" id="weight-bar"></div>
+        <div class="legend" id="weight-legend"></div>
+
+        <div class="card-head" style="margin-top:20px; margin-bottom:10px">
+            <div class="card-title" style="font-size:11px">Urutan teknisi yang disarankan</div>
+            <div class="card-note" id="sim-summary">—</div>
+        </div>
+        <div class="rank-list" id="sim-results"></div>
+    </div>
+
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Cara setiap pertimbangan dibaca</div>
+            <div class="card-note">makin kecil atau makin besar</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px; margin-top:6px; font-size:12px; color:var(--text-dim); line-height:1.6">
+            <div>
+                <span class="pill bad">MAKIN KECIL MAKIN BAIK</span>
+                <div style="margin-top:6px"><b>1. Kedekatan wilayah</b><br>Mengutamakan teknisi yang berada di kota atau wilayah terdekat dari cabang.</div>
+            </div>
+            <div>
+                <span class="pill bad">MAKIN KECIL MAKIN BAIK</span>
+                <div style="margin-top:6px"><b>2. Jumlah tiket aktif</b><br>Mengutamakan teknisi dengan tiket aktif paling sedikit agar beban terbagi rata.</div>
+            </div>
+            <div>
+                <span class="pill ok">MAKIN BESAR MAKIN BAIK</span>
+                <div style="margin-top:6px"><b>3. Kecocokan jenis masalah</b><br>Pengalaman teknisi dalam menangani kategori masalah yang serupa.</div>
+            </div>
+            <div>
+                <span class="pill ok">MAKIN BESAR MAKIN BAIK</span>
+                <div style="margin-top:6px"><b>4. Kecepatan penyelesaian</b><br>Riwayat kecepatan teknisi menyelesaikan tiket sesuai batas waktu.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card reveal" style="margin-top:16px">
+    <div class="card-head">
+        <div class="card-title">Nilai keempat pertimbangan untuk setiap teknisi</div>
+        <div class="card-note">dihitung dari 788 tiket</div>
+    </div>
+    <div style="overflow-x:auto; margin-top:10px" id="crit-table-holder"></div>
+</div>
+</section>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     09 — RENCANA DEMO
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="slide" id="demo">
+<div class="eyebrow">09 — Rancangan Tampilan Sistem</div>
+<h2 class="slide-title">Rancangan tiga layar utama sistem.</h2>
+<p class="slide-lede">
+    Tiga tampilan di bawah adalah <b>rancangan tampilan</b>, bukan fitur yang sudah berjalan.
+    Isinya diambil dari hasil analisis pada bagian sebelumnya: daftar kategori, aturan penugasan,
+    dan keluhan yang selesai tanpa kunjungan.
+</p>
+
+<div class="grid grid-3">
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Formulir lapor tiket</div>
+            <div class="card-note">memakai kategori dari data</div>
+        </div>
+        <div style="margin-top:10px; font-size:12px; color:var(--text-dim)">
+            <div style="margin-bottom:10px">
+                <div class="kpi-label" style="margin-bottom:5px">Kategori</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px" id="mock-categories"></div>
+            </div>
+            <div>
+                <div class="kpi-label" style="margin-bottom:5px">Detail kategori</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px" id="mock-details"></div>
+            </div>
+            <div style="margin-top:14px">
+                <div class="kpi-label" style="margin-bottom:6px">Prioritas</div>
+                <div style="display:flex; gap:6px">
+                    <span class="pill p1">● P1</span><span class="pill p2">● P2</span>
+                    <span class="pill p3">● P3</span><span class="pill p4">● P4</span>
+                </div>
+            </div>
+        </div>
+        <p class="card-sub">Warna label mengikuti tingkat prioritas: merah P1, oranye P2, biru P3, hijau P4.</p>
+    </div>
+
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Kartu rekomendasi teknisi</div>
+            <div class="card-note">tampilan pada halaman detail tiket</div>
+        </div>
+        <div class="rank-list" id="mock-rank" style="margin-top:10px"></div>
+        <p class="card-sub">Mengikuti aturan penugasan pada bagian 8, dengan contoh input tiket.</p>
+    </div>
+
+    <div class="card reveal">
+        <div class="card-head">
+            <div class="card-title">Panduan mandiri untuk staf cabang</div>
+            <div class="card-note">contoh percakapan</div>
+        </div>
+        <div id="mock-chat" style="margin-top:10px; display:flex; flex-direction:column; gap:8px; font-size:12px; line-height:1.55"></div>
+        <p class="card-sub">
+            Isi panduan diambil dari keluhan yang <b>100% selesai tanpa kunjungan</b>
+            (Close Bill, Menu, Create User, Email), karena langkah penyelesaiannya sudah pasti.
+        </p>
+    </div>
+</div>
+
+<div class="card reveal" style="margin-top:16px">
+    <div class="card-head">
+        <div class="card-title">Ringkasan: masalah, bukti data, dan usulan</div>
+        <div class="card-note">setiap baris merujuk angka pada bagian sebelumnya</div>
+    </div>
+    <div style="overflow-x:auto; margin-top:10px" id="mapping-holder"></div>
+</div>
+</section>
+
+<footer class="deck-footer">
+    <div>HIMUP Ticketing — Tugas Akhir</div>
+    <div>Data: <b id="footer-source">788 tiket IT Helpdesk</b></div>
+    <div>Sep–Nov 2026 · seluruh angka dihitung dari catatan tiket</div>
+</footer>
+
+</main>
+
+<script src="assets/vendor/echarts.min.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/panels.js"></script>
+</body>
+</html>

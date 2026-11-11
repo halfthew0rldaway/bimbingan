@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 860" width="100%" height="auto"
+     role="img" aria-label="USE CASE SISTEM TERUSULKAN (TO-BE)"
+     style="background:#ffffff;border-radius:12px;border:1px solid #cbd5e1;box-shadow:0 3px 7px rgba(15,23,42,.08)">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="54" fill="#f6fef9"/>
+  <text x="24" y="25" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="800" fill="#16a34a">DIAGRAM USE CASE SISTEM TERUSULKAN (TO-BE) &#183; BAHASA UML 2.5</text>
+  <text x="24" y="43" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#475569">Sumber bukti: docs/cleaned_data/cleaned_tickets.csv &#183; 788 tiket operasional riil</text>
+  <rect x="962" y="16" width="194" height="23" rx="5" fill="#16a34a"/>
+  <text x="1059" y="31" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#ffffff">5 SOLUSI TERINTEGRASI</text>
+
+  <rect x="268" y="92" width="800" height="748" rx="14" fill="#f6fef9" stroke="#16a34a" stroke-dasharray="8,5" stroke-width="2.2"/>
+  <text x="286" y="118" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#16a34a" letter-spacing="0.4">SISTEM TERUSULKAN: HIMUP INTELLIGENT WEB TICKETING</text>
+
+  <polyline points="188.0,344.0 570.0,344.0 570.0,174.0 603.3,174.0" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/><rect x="320.6" y="324.0" width="116.8" height="18" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2563eb"><tspan x="379.0" y="337.0">&lt;&lt;include&gt;&gt;</tspan></text><polyline points="188.0,344.0 570.0,344.0 570.0,270.0 603.3,270.0" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/><rect x="320.6" y="324.0" width="116.8" height="18" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2563eb"><tspan x="379.0" y="337.0">&lt;&lt;include&gt;&gt;</tspan></text><polyline points="188.0,728.0 570.0,728.0 570.0,366.0 603.3,366.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,440.0 570.0,440.0 570.0,366.0 603.3,366.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,728.0 570.0,728.0 570.0,462.0 603.3,462.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,632.0 570.0,632.0 570.0,558.0 603.3,558.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,728.0 570.0,728.0 570.0,558.0 603.3,558.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,152.0 570.0,152.0 570.0,610.0 603.3,610.0" fill="none" stroke="#475569" stroke-width="1.6"/><polyline points="188.0,632.0 570.0,632.0 570.0,706.0 603.3,706.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+  
+  <g transform="translate(104, 152)">
+    <circle cx="0" cy="-30" r="12.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="-17.5" x2="0" y2="15" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="-17" y1="-7" x2="17" y2="-7" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="-14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="-84.0" y="46" width="168.0" height="31" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="61" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Staf Outlet</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Cabang Pelapor</text>
+  </g>
+  <g transform="translate(104, 344)">
+    <rect x="-27" y="-25" width="54" height="54" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="2.2"/>
+    <circle cx="0" cy="2" r="10" fill="none" stroke="#1e40af" stroke-width="2"/>
+    <g stroke="#1e40af" stroke-width="2" stroke-linecap="round">
+      <line x1="0" y1="-8" x2="0" y2="-16"/><line x1="0" y1="12" x2="0" y2="20"/>
+      <line x1="-10" y1="2" x2="-18" y2="2"/><line x1="10" y1="2" x2="18" y2="2"/>
+    </g>
+    <rect x="-84.0" y="38" width="168.0" height="31" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.1"/>
+    <text x="0" y="53" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1e40af">Engine Cerdas</text>
+    <text x="0" y="64" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#2563eb">AI RAG &amp; TOPSIS</text>
+  </g>
+  <g transform="translate(104, 440)">
+    <circle cx="0" cy="-30" r="12.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="-17.5" x2="0" y2="15" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="-17" y1="-7" x2="17" y2="-7" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="-14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="-84.0" y="46" width="168.0" height="31" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="61" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Teknisi Lapangan</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">PIC Layer 1 / Layer 2</text>
+  </g>
+  <g transform="translate(104, 632)">
+    <circle cx="0" cy="-30" r="12.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="-17.5" x2="0" y2="15" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="-17" y1="-7" x2="17" y2="-7" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="-14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="-84.0" y="46" width="168.0" height="31" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="61" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Purchasing / Vendor</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Central Logistics</text>
+  </g>
+  <g transform="translate(104, 728)">
+    <circle cx="0" cy="-30" r="12.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="-17.5" x2="0" y2="15" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="-17" y1="-7" x2="17" y2="-7" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="-14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="0" y1="15" x2="14" y2="37" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="-84.0" y="46" width="168.0" height="31" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="0" y="61" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Admin Helpdesk</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">IT Supervisor</text>
+  </g>
+  <ellipse cx="822" cy="152" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="150">UC-10: Konsultasi</tspan><tspan x="822" y="165">Troubleshooting Mandiri (RAG)</tspan></text><ellipse cx="822" cy="248" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="246">UC-11: Buat Tiket</tspan><tspan x="822" y="261">Terstruktur + Foto Bukti</tspan></text><ellipse cx="822" cy="344" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="342">UC-12: Deployment Otomatis</tspan><tspan x="822" y="357">Teknisi (TOPSIS)</tspan></text><ellipse cx="822" cy="440" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="438">UC-13: Pantau Countdown SLA</tspan><tspan x="822" y="453">Live + Alert Dini</tspan></text><ellipse cx="822" cy="536" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="534">UC-14: Freeze Timer SLA Sah</tspan><tspan x="822" y="549">(Status On-Hold)</tspan></text><ellipse cx="822" cy="632" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="630">UC-15: Verifikasi Digital</tspan><tspan x="822" y="645">&amp; Tutup Tiket</tspan></text><ellipse cx="822" cy="728" rx="226" ry="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2"/><text text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="750" fill="#14532d"><tspan x="822" y="726">UC-16: Dashboard Analitik &amp;</tspan><tspan x="822" y="741">Eskalasi Real-Time</tspan></text>
+  <rect x="316" y="118" width="268" height="68" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/><rect x="316" y="118" width="5" height="68" rx="2.5" fill="#16a34a"/><text text-anchor="start" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#14532d"><tspan x="330" y="134">Defleksi AI RAG + Data Terstruktur</tspan><tspan x="330" y="147">72,7% tiket selesai tanpa kunjungan;</tspan><tspan x="330" y="160">Close Bill (173) &amp; Printer (140) dipandu</tspan><tspan x="330" y="173">instan</tspan></text><rect x="316" y="310" width="268" height="68" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/><rect x="316" y="310" width="5" height="68" rx="2.5" fill="#16a34a"/><text text-anchor="start" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#14532d"><tspan x="330" y="326">Workload Balancing 4 Kriteria Objektif</tspan><tspan x="330" y="339">Menggantikan penunjukan subjektif;</tspan><tspan x="330" y="352">target menekan Koef. Variasi dari 41,3%</tspan></text><rect x="316" y="406" width="268" height="68" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/><rect x="316" y="406" width="5" height="68" rx="2.5" fill="#16a34a"/><text text-anchor="start" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#14532d"><tspan x="330" y="422">Early Warning System P1-P4</tspan><tspan x="330" y="435">Eskalasi otomatis sebelum batas SLA</tspan><tspan x="330" y="448">habis; menekan 119 tiket terlambat</tspan></text><rect x="316" y="502" width="268" height="68" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/><rect x="316" y="502" width="5" height="68" rx="2.5" fill="#16a34a"/><text text-anchor="start" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#14532d"><tspan x="330" y="518">Pembekuan Timer untuk Tunggu Pihak Ketiga</tspan><tspan x="330" y="531">Memisahkan 25.246 jam hold dari MTTR</tspan><tspan x="330" y="544">asli teknisi</tspan></text><rect x="316" y="694" width="268" height="68" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/><rect x="316" y="694" width="5" height="68" rx="2.5" fill="#16a34a"/><text text-anchor="start" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#14532d"><tspan x="330" y="710">Telemetri Real-Time, Rekap Excel Dihilangkan</tspan><tspan x="330" y="723">Menghapus human error &amp; formula rusak</tspan><tspan x="330" y="736">(Err:509) pada sheet manual</tspan></text>
+  <rect x="286" y="804" width="840" height="34" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/><rect x="298.0" y="817" width="15" height="11" rx="3" fill="#dc2626"/><text x="319.0" y="826" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#475569">Bottleneck terbukti dari data</text><rect x="536.4" y="817" width="15" height="11" rx="3" fill="#475569"/><text x="557.4" y="826" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#475569">Langkah tanpa hambatan</text><rect x="734.9" y="817" width="15" height="11" rx="3" fill="#16a34a"/><text x="755.9" y="826" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#475569">Langkah solusi terusulkan</text><rect x="950.5" y="817" width="15" height="11" rx="3" fill="#2563eb"/><text x="971.5" y="826" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#475569">Aktor sistem / relasi UML</text>
+</svg>

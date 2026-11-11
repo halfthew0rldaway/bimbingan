@@ -1,0 +1,104 @@
+@startuml diagram_legacy_usecase
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Inter, Segoe UI, Helvetica, Arial"
+skinparam shadowing false
+skinparam dpi 150
+
+skinparam usecase {
+  BackgroundColor #FEE2E2
+  BorderColor #DC2626
+  BorderThickness 1.6
+  FontColor #7F1D1D
+  FontSize 13
+  FontStyle bold
+}
+skinparam actor {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+  FontColor #0F172A
+  FontSize 12
+}
+skinparam package {
+  BackgroundColor #FEF2F2
+  BorderColor #DC2626
+  BorderThickness 2
+  FontColor #B91C1C
+  FontSize 14
+  FontStyle bold
+}
+skinparam note {
+  BackgroundColor #FFF7ED
+  BorderColor #DC2626
+  FontColor #7F1D1D
+  FontSize 11
+}
+skinparam ArrowColor #475569
+skinparam ArrowThickness 1.4
+
+title
+**DIAGRAM USE CASE PROSES KONVENSIONAL (AS-IS) — BAHASA UML 2.5**
+Sumber bukti: docs/cleaned_data/cleaned_tickets.csv — 788 tiket operasional riil
+end title
+
+' ── ACTORS ───────────────────────────────────────────────────────────────
+actor "Staf Outlet\nCabang Pelapor" as STAF
+actor "Admin Helpdesk\nIT Support Coordinator" as HELPDESK
+actor "Teknisi Lapangan\nPIC Layer 1 / Layer 2" as TEKNISI
+actor "Purchasing / Central\nVendor & Logistik Sparepart" as VENDOR
+
+' ── SYSTEM BOUNDARY ──────────────────────────────────────────────────────
+rectangle "SISTEM KONVENSIONAL: GRUP WHATSAPP & SPREADSHEET MANUAL" {
+
+  usecase "UC-01\nKirim Laporan via Chat Bebas" as UC01
+  usecase "UC-02\nTriage & Baca Chat Manual" as UC02
+  usecase "UC-03\nTunjuk Teknisi via Tag (@) Subjektif" as UC03
+  usecase "UC-04\nEksekusi Tangani (Visit / Remote)" as UC04
+  usecase "UC-05\nTunggu Approval IR / Kirim Sparepart" as UC05
+  usecase "UC-06\nRekapitulasi Manual ke Spreadsheet" as UC06
+}
+
+' ── ASSOCIATIONS ─────────────────────────────────────────────────────────
+STAF     --> UC01
+HELPDESK --> UC02
+HELPDESK --> UC03
+HELPDESK --> UC06
+TEKNISI  --> UC04
+VENDOR   --> UC05
+
+' ── BOTTLENECK EVIDENCE (from cleaned_tickets.csv) ───────────────────────
+note right of UC01
+  **B1 — Laporan Tidak Terstruktur**
+  0% field terstruktur (kode aset,
+  kategori, urgensi) dari 788 tiket
+  Akar masalah: input berupa teks bebas
+end note
+
+note right of UC03
+  **B2 — Beban Kerja Tidak Merata**
+  Sony 190 tiket vs Taqiy 26 tiket
+  (Koef. Variasi 41,3%)
+  Akar masalah: penugasan subjektif
+end note
+
+note right of UC04
+  **B3 — Pelanggaran SLA Tanpa Timer**
+  119 dari 788 tiket (15,1%) lewat SLA
+  P2 21,3% (limit 4 jam, aktual 21,2 jam)
+end note
+
+note right of UC05
+  **B4 — Tiket Tertahan Status Pending**
+  77 tiket (9,8%) tertahan; 25.246 jam
+  hold menumpuk (median 9,5 jam, p90 192 jam)
+end note
+
+legend right
+  |= Warna |= Makna |
+  |<#DC2626> |Bottleneck terbukti dari data|
+  |<#CBD5E1> |Langkah tanpa hambatan|
+  |<#16A34A> |Langkah solusi|
+  |<#2563EB> |Aktor sistem / relasi UML|
+endlegend
+
+@enduml

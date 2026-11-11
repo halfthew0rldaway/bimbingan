@@ -1,0 +1,188 @@
+@startuml proposed-helpdesk-process
+title Alur Proses Bisnis Helpdesk Terusulkan (TO-BE dengan Sistem Helpdesk Web)\nOtomasi Penugasan Multi-Kriteria, Countdown SLA Live, dan Pembekuan Timer On-Hold
+
+skinparam {
+    DefaultFontName "Inter, -apple-system, sans-serif"
+    DefaultFontSize 11
+    DefaultFontColor #0f172a
+    RoundCorner 8
+    Shadowing false
+    ActivityBackgroundColor #ffffff
+    ActivityBorderColor #64748b
+    ActivityBorderThickness 1.5
+    ArrowColor #475569
+    ArrowThickness 1.5
+    SwimlaneBorderColor #cbd5e1
+    SwimlaneBorderThickness 1.2
+    SwimlaneTitleFontColor #1e293b
+    SwimlaneTitleFontSize 12
+    SwimlaneTitleFontStyle bold
+    NoteBackgroundColor #ffffff
+    NoteBorderColor #cbd5e1
+    NoteFontSize 10
+}
+
+<style>
+activityDiagram {
+  .solution {
+    LineColor #16a34a
+    LineThickness 2.2
+    BackgroundColor #dcfce7
+    FontColor #14532d
+    FontStyle bold
+  }
+  .system_auto {
+    LineColor #2563eb
+    LineThickness 2
+    BackgroundColor #eff6ff
+    FontColor #1e40af
+    FontStyle bold
+  }
+  .normal {
+    LineColor #475569
+    LineThickness 1.5
+    BackgroundColor #ffffff
+    FontColor #0f172a
+  }
+}
+</style>
+
+|#f8fafc|Staf Outlet / Cabang (Pelapor)|
+|#eff6ff|Sistem Helpdesk Web (Engine Otomasi & Telemetri)|
+|#f1f5f9|Admin / Koordinator IT Helpdesk|
+|#f8fafc|Teknisi Lapangan (L1 / L2)|
+|#f1f5f9|Purchasing & Logistik Sparepart|
+
+|Staf Outlet / Cabang (Pelapor)|
+start
+:Gangguan operasional terjadi di cabang
+(Kasir POS, printer thermal, atau jaringan internet);<<normal>>
+
+-[#16a34a,thickness=2]->
+:Konsultasi mandiri via Chatbot RAG
+pada antarmuka sistem web;<<solution>>
+note right #dcfce7
+  **SOLUSI 01: Defleksi Tiket Repetitif (Level 0 Self-Service)**
+  --
+  * Sistem memberikan panduan troubleshooting instan dari dokumen SOP.
+  * Mampu menyelesaikan masalah umum (printer macet, gagal close bill)
+    tanpa perlu membuka tiket atau menunggu teknisi datang.
+end note
+
+if (Apakah kendala berhasil teratasi secara mandiri?) then (Ya, masalah selesai)
+    -[#16a34a,thickness=2]->
+    :Konfirmasi masalah selesai;<<solution>>
+    |Sistem Helpdesk Web (Engine Otomasi & Telemetri)|
+    -[#16a34a,thickness=2]->
+    :Catat log keberhasilan defleksi tiket;<<system_auto>>
+    stop
+else (Tidak, butuh penanganan teknisi)
+    -[#475569]->
+endif
+
+|Staf Outlet / Cabang (Pelapor)|
+-[#16a34a,thickness=2]->
+:Mengisi form pelaporan tiket terstruktur
+(Pilih kode aset, kategori, prioritas, & upload foto bukti);<<solution>>
+note right #dcfce7
+  **SOLUSI 02: Standardisasi Laporan & Validasi Data**
+  --
+  * Form web mewajibkan pemilihan aset terdaftar dan detail kendala.
+  * Menghilangkan risiko pesan tertimbun di grup chat WhatsApp.
+end note
+
+|Sistem Helpdesk Web (Engine Otomasi & Telemetri)|
+-[#2563eb,thickness=2]->
+:Tiket tersimpan otomatis ke database,
+timer MTTA mulai berjalan, dan sistem
+menghitung rekomendasi teknisi terbaik (TOPSIS);<<system_auto>>
+note right #eff6ff
+  **SOLUSI 03: Alokasi Beban Berimbang (Algoritma TOPSIS)**
+  --
+  * Menghitung skor preferensi berdasarkan 4 kriteria objektif:
+    1. Kedekatan Regional / Jarak (C1)
+    2. Beban Tiket Aktif / Antrean (C2)
+    3. Kesesuaian Keahlian Perangkat (C3)
+    4. Historis Kecepatan MTTR (C4)
+  * Menghapus bias personal & disparitas beban 7.3× antar teknisi.
+end note
+
+|Admin / Koordinator IT Helpdesk|
+-[#475569]->
+:Memantau antrean tiket dan mengonfirmasi
+rekomendasi penugasan teknisi dari sistem;<<normal>>
+
+|Teknisi Lapangan (L1 / L2)|
+-[#16a34a,thickness=2]->
+:Menerima notifikasi penugasan tiket baru
+dan menekan tombol "Terima Tiket";<<solution>>
+
+-[#16a34a,thickness=2]->
+:Melakukan tindakan penanganan (Remote/Visit)
+dengan panduan Live Countdown Timer SLA;<<solution>>
+note right #dcfce7
+  **SOLUSI 04: Pengawasan SLA Real-Time & Early Warning Alert**
+  --
+  * Timer berjalan mundur transparan dengan indikator warna (Hijau, Kuning, Merah).
+  * Sistem mengirimkan peringatan otomatis sebelum batas SLA P2 (4 jam) terlampaui.
+end note
+
+if (Apakah membutuhkan sparepart hardware?) then (Ya, butuh part)
+    -[#2563eb,thickness=2]->
+    :Mengajukan permohonan status On-Hold
+    dengan melampirkan nomor dokumen IR Purchasing;<<solution>>
+
+    |Sistem Helpdesk Web (Engine Otomasi & Telemetri)|
+    -[#2563eb,thickness=2]->
+    :Membekukan (freeze/pause) timer perhitungan SLA
+    dan mencatat masa penahanan di audit log;<<system_auto>>
+    note right #eff6ff
+      **SOLUSI 05: Pembekuan SLA Resmi (Pause Timer)**
+      --
+      * Timer perhitungan SLA dihentikan sementara secara resmi di sistem.
+      * Waktu tunggu persetujuan IR Purchasing (5–14 hari) tidak merusak
+        skor KPI teknisi, sementara seluruh delay terlacak transparan.
+    end note
+
+    |Purchasing & Logistik Sparepart|
+    -[#475569]->
+    :Memproses persetujuan belanja IR dan
+    mengirimkan sparepart ke cabang via kurir logistik;<<normal>>
+
+    |Teknisi Lapangan (L1 / L2)|
+    -[#16a34a,thickness=2]->
+    :Komponen tiba di cabang, menekan "Resume SLA",
+    memasang sparepart, dan mengunggah foto bukti hasil kerja;<<solution>>
+else (Tidak, penanganan langsung selesai)
+    -[#16a34a,thickness=2]->
+    :Menyelesaikan perbaikan dan mengunggah
+    foto bukti penyelesaian ke aplikasi;<<solution>>
+endif
+
+|Staf Outlet / Cabang (Pelapor)|
+-[#16a34a,thickness=2]->
+:Memverifikasi hasil perbaikan secara digital
+dan mengonfirmasi mesin kasir telah normal kembali;<<solution>>
+
+|Sistem Helpdesk Web (Engine Otomasi & Telemetri)|
+-[#2563eb,thickness=2]->
+:Mengubah status tiket menjadi "Closed",
+merekam metrik durasi MTTA & MTTR final,
+serta memperbarui dashboard telemetri real-time;<<system_auto>>
+note right #eff6ff
+  **SOLUSI 06: Telemetri Otomatis & Nol Rekap Manual**
+  --
+  * Laporan performa teknisi, tren kerusakan cabang, dan pencapaian SLA
+    terbit otomatis tanpa perlu proses salin data ke Excel manual.
+end note
+
+stop
+
+legend right
+|= Simbol Warna |= Makna Proses Terusulkan |= Keunggulan Utama |
+|<#dcfce7> **Garis Hijau Bold** | Solusi Proses Helpdesk Terusulkan | Defleksi mandiri RAG, form terstruktur, countdown SLA, dan verifikasi digital |
+|<#eff6ff> **Garis Biru Bold** | Otomasi Engine Sistem Helpdesk | Algoritma penugasan TOPSIS, pembekuan timer SLA (On-Hold), telemetri otomatis |
+|<#ffffff> **Garis Abu-abu** | Alur Koordinasi Standar | Alur kerja terintegrasi antar pemangku kepentingan |
+endlegend
+
+@enduml

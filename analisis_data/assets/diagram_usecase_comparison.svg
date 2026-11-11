@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 486" width="100%" height="auto"
+     role="img" aria-label="Pemetaan use case konvensional ke sistem terusulkan"
+     style="background:#ffffff;border-radius:12px;border:1px solid #cbd5e1;box-shadow:0 3px 7px rgba(15,23,42,.08)">
+  <defs>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1180" height="54" fill="#eef2f7"/>
+  <text x="24" y="25" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="800" fill="#0f172a">PEMETAAN USE CASE: KONVENSIONAL (AS-IS) &#8594; TERUSULKAN (TO-BE)</text>
+  <text x="24" y="43" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#475569">Setiap bottleneck B1&#8211;B4 dipetakan ke solusi S1&#8211;S6 yang mengeliminasinya</text>
+  <rect x="148" y="70" width="304" height="30" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="300" y="90" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="800" fill="#991b1b">AS-IS &#183; PROSES KONVENSIONAL</text>
+  <rect x="608" y="70" width="304" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="760" y="90" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="800" fill="#14532d">TO-BE &#183; SISTEM TERUSULKAN</text>
+  <rect x="434.0" y="70" width="192" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="530.0" y="90" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="11" font-weight="800" fill="#475569">STATUS ELIMINASI</text>
+  <rect x="142" y="118" width="316" height="42" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="154" y="136" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-01</text>
+  <text x="154" y="151" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Chat bebas tanpa format</text>
+  <rect x="602" y="118" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="136" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-10 / UC-11</text>
+  <text x="614" y="151" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Form terstruktur + AI RAG</text>
+  <line x1="458" y1="139" x2="598" y2="139" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="127" width="192" height="24" rx="5" fill="#ffffff" stroke="#dc2626"/>
+  <text x="530.0" y="143" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#dc2626">B1 &#8594; Eliminasi B1</text>
+  <rect x="142" y="170" width="316" height="42" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4"/>
+  <text x="154" y="188" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-02</text>
+  <text x="154" y="203" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Triage baca chat manual</text>
+  <rect x="602" y="170" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="188" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-12</text>
+  <text x="614" y="203" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Deployment TOPSIS otomatis</text>
+  <line x1="458" y1="191" x2="598" y2="191" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="179" width="192" height="24" rx="5" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="530.0" y="195" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#475569">TANPA BOTTLENECK &#8594; Otomasi</text>
+  <rect x="142" y="222" width="316" height="42" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="154" y="240" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-03</text>
+  <text x="154" y="255" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Tag (@) teknisi subjektif</text>
+  <rect x="602" y="222" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="240" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-12</text>
+  <text x="614" y="255" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Skor 4 kriteria objektif</text>
+  <line x1="458" y1="243" x2="598" y2="243" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="231" width="192" height="24" rx="5" fill="#ffffff" stroke="#dc2626"/>
+  <text x="530.0" y="247" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#dc2626">B2 &#8594; Eliminasi B2</text>
+  <rect x="142" y="274" width="316" height="42" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="154" y="292" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-04</text>
+  <text x="154" y="307" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Eksekusi tanpa timer SLA</text>
+  <rect x="602" y="274" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="292" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-13</text>
+  <text x="614" y="307" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Countdown SLA + alert dini</text>
+  <line x1="458" y1="295" x2="598" y2="295" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="283" width="192" height="24" rx="5" fill="#ffffff" stroke="#dc2626"/>
+  <text x="530.0" y="299" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#dc2626">B3 &#8594; Eliminasi B3</text>
+  <rect x="142" y="326" width="316" height="42" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="154" y="344" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-05</text>
+  <text x="154" y="359" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Tunggu IR / kirim central</text>
+  <rect x="602" y="326" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="344" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-14</text>
+  <text x="614" y="359" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Freeze timer sah saat on-hold</text>
+  <line x1="458" y1="347" x2="598" y2="347" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="335" width="192" height="24" rx="5" fill="#ffffff" stroke="#dc2626"/>
+  <text x="530.0" y="351" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#dc2626">B4 &#8594; Eliminasi B4</text>
+  <rect x="142" y="378" width="316" height="42" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4"/>
+  <text x="154" y="396" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">UC-06</text>
+  <text x="154" y="411" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Rekap manual ke Excel</text>
+  <rect x="602" y="378" width="316" height="42" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="614" y="396" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="800" fill="#14532d">UC-15 / UC-16</text>
+  <text x="614" y="411" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#475569">Verifikasi digital + dashboard</text>
+  <line x1="458" y1="399" x2="598" y2="399" stroke="#475569" stroke-width="1.6" marker-end="url(#arrowG)"/>
+  <rect x="434.0" y="387" width="192" height="24" rx="5" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="530.0" y="403" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="800"
+        fill="#475569">TANPA BOTTLENECK &#8594; Otomasi &amp; integrasi</text>
+  <rect x="170" y="446" width="840" height="28" rx="7" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="590" y="464" text-anchor="middle" font-family="Inter, 'DejaVu Sans', 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#475569">Kotak merah = langkah terbukti bottleneck dari data &#183; Kotak abu = langkah tanpa hambatan terukur</text>
+</svg>
